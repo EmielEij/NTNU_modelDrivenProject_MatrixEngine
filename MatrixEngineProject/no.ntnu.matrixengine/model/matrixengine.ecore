@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="matrixengine" nsURI="http://www.example.org/matrixengine" nsPrefix="matrixengine">
+  <eClassifiers xsi:type="ecore:EClass" name="main">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="setup" upperBound="-1"
+        eType="#//Setup" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="updatefield" upperBound="-1"
+        eType="#//UpdateField" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gameover" upperBound="-1"
+        eType="#//GameOver" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="getuserinput" upperBound="-1"
+        eType="#//GetUserInput" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Setup">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="field" eType="#//Field"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UpdateField">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="field" eType="#//Field"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GameOver">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="field" eType="#//Field"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GetUserInput"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Field">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tile" upperBound="-1" eType="#//Tile"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Tile">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="TileCordinateX" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="TileCodinateY" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+</ecore:EPackage>

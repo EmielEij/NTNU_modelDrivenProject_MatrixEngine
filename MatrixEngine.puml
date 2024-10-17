@@ -1,0 +1,88 @@
+@startuml GenericGameEngineMainStates
+
+[*] --> Setup
+Setup --> GetUserInput
+GetUserInput --> UpdateField : User has given a command
+UpdateField --> GameOver :Game over is triggerd
+UpdateField --> GetUserInput :User command processed\nand can still play
+GameOver --> Setup
+
+Setup: Clear privieus data\nsetup a new field
+
+GetUserInput : wait for user input
+
+UpdateField : Update the field\nusing the user input
+
+@enduml
+
+@startuml GenericGameEngineClasses
+skinparam style strictuml
+' skinparam monochrome true
+skinparam classAttributeIconSize 0
+skinparam groupInheritance 1
+
+
+class Main #yellow {
+
+}
+
+class Setup #00FF00 {
+
+}
+
+class GetUserInput #00FF00 {
+
+}
+
+class UpdateField #00FF00 {
+
+}
+
+class GameOver #00FF00 {
+
+}
+
+class Field #yellow {
+
+}
+
+class Tile #yellow {
+
+}
+
+' this will be a interface to a mouse button input libary
+interface GetMouseButton #LightBlue {
+
+}
+' this will be a interface to a keybort input libary
+interface GetKeyboardButtonPress #LightBlue {
+
+}
+
+' this will be calles to edit a window managed by a lib
+interface WindowTool #LightBlue {
+
+}
+
+Main *-- Setup
+Main *-- GetUserInput
+Main *-- UpdateField
+Main *-- GameOver
+
+Setup o-- Field
+UpdateField o-- Field
+GameOver o-- Field
+GetUserInput ..|> GetMouseButton
+GetUserInput ..|> GetKeyboardButtonPress
+
+Field *-- Tile
+Field ..|> WindowTool
+
+legend right
+    |Color| Type |
+    |<#yellow>| Static classes |
+    |<#00FF00>| Class that will be modeld |
+    |<#LightBlue>| Platform specific code|
+endlegend
+
+@enduml

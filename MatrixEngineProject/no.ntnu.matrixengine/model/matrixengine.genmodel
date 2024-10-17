@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/no.ntnu.matrixengine/src-gen" creationIcons="false"
+    editDirectory="/no.ntnu.matrixengine.edit/src-gen" editorDirectory="/no.ntnu.matrixengine.editor/src-gen"
+    modelPluginID="no.ntnu.matrixengine" modelName="Matrixengine" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="21.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>matrixengine.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Matrixengine" basePackage="no.ntnu" disposableProviderFactory="true"
+      ecorePackage="matrixengine.ecore#/">
+    <genClasses ecoreClass="matrixengine.ecore#//main">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference matrixengine.ecore#//main/setup"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference matrixengine.ecore#//main/updatefield"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference matrixengine.ecore#//main/gameover"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference matrixengine.ecore#//main/getuserinput"/>
+    </genClasses>
+    <genClasses ecoreClass="matrixengine.ecore#//Setup">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matrixengine.ecore#//Setup/field"/>
+    </genClasses>
+    <genClasses ecoreClass="matrixengine.ecore#//UpdateField">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matrixengine.ecore#//UpdateField/field"/>
+    </genClasses>
+    <genClasses ecoreClass="matrixengine.ecore#//GameOver">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matrixengine.ecore#//GameOver/field"/>
+    </genClasses>
+    <genClasses ecoreClass="matrixengine.ecore#//GetUserInput"/>
+    <genClasses ecoreClass="matrixengine.ecore#//Field">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference matrixengine.ecore#//Field/tile"/>
+    </genClasses>
+    <genClasses ecoreClass="matrixengine.ecore#//Tile">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixengine.ecore#//Tile/TileCordinateX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixengine.ecore#//Tile/TileCodinateY"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
