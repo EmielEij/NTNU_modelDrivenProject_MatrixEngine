@@ -10,23 +10,40 @@
         eType="#//GameOver" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="getuserinput" upperBound="-1"
         eType="#//GetUserInput" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Score" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Time" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Setup">
+    <eOperations name="InitField"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="field" eType="#//Field"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UpdateField">
+    <eOperations name="UpdateTile">
+      <eParameters name="CoordX" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="CoordY" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="field" eType="#//Field"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GameOver">
+    <eOperations name="DisplayEndScreen"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="field" eType="#//Field"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GetUserInput"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GetUserInput">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="InputType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Field">
     <eStructuralFeatures xsi:type="ecore:EReference" name="tile" upperBound="-1" eType="#//Tile"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="SizeX" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="SizeY" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Tile">
+    <eOperations name="IsClicked"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="TileCordinateX" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="TileCodinateY" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Color" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Image" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="IsClickable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
 </ecore:EPackage>

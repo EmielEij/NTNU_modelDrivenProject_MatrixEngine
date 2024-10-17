@@ -15,23 +15,40 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference matrixengine.ecore#//main/updatefield"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference matrixengine.ecore#//main/gameover"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference matrixengine.ecore#//main/getuserinput"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixengine.ecore#//main/Score"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixengine.ecore#//main/Time"/>
     </genClasses>
     <genClasses ecoreClass="matrixengine.ecore#//Setup">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matrixengine.ecore#//Setup/field"/>
+      <genOperations ecoreOperation="matrixengine.ecore#//Setup/InitField"/>
     </genClasses>
     <genClasses ecoreClass="matrixengine.ecore#//UpdateField">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matrixengine.ecore#//UpdateField/field"/>
+      <genOperations ecoreOperation="matrixengine.ecore#//UpdateField/UpdateTile">
+        <genParameters ecoreParameter="matrixengine.ecore#//UpdateField/UpdateTile/CoordX"/>
+        <genParameters ecoreParameter="matrixengine.ecore#//UpdateField/UpdateTile/CoordY"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="matrixengine.ecore#//GameOver">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matrixengine.ecore#//GameOver/field"/>
+      <genOperations ecoreOperation="matrixengine.ecore#//GameOver/DisplayEndScreen"/>
     </genClasses>
-    <genClasses ecoreClass="matrixengine.ecore#//GetUserInput"/>
+    <genClasses ecoreClass="matrixengine.ecore#//GetUserInput">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixengine.ecore#//GetUserInput/InputType"/>
+    </genClasses>
     <genClasses ecoreClass="matrixengine.ecore#//Field">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference matrixengine.ecore#//Field/tile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixengine.ecore#//Field/SizeX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixengine.ecore#//Field/SizeY"/>
     </genClasses>
     <genClasses ecoreClass="matrixengine.ecore#//Tile">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixengine.ecore#//Tile/TileCordinateX"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixengine.ecore#//Tile/TileCodinateY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixengine.ecore#//Tile/Color"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixengine.ecore#//Tile/Type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixengine.ecore#//Tile/Image"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixengine.ecore#//Tile/IsClickable"/>
+      <genOperations ecoreOperation="matrixengine.ecore#//Tile/IsClicked"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
