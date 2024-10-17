@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/matrixGameEngine/src-gen" creationIcons="false"
+    editDirectory="/matrixGameEngine.edit/src-gen" editorDirectory="/matrixGameEngine.editor/src-gen"
+    modelPluginID="matrixGameEngine" modelName="MatrixGameEngine" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="21.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>matrixGameEngine.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="MatrixGameEngine" disposableProviderFactory="true" ecorePackage="matrixGameEngine.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="matrixGameEngine.ecore#//TileType">
+      <genEnumLiterals ecoreEnumLiteral="matrixGameEngine.ecore#//TileType/BASIC"/>
+      <genEnumLiterals ecoreEnumLiteral="matrixGameEngine.ecore#//TileType/REVERALBLE"/>
+      <genEnumLiterals ecoreEnumLiteral="matrixGameEngine.ecore#//TileType/TOGGLEABLE"/>
+      <genEnumLiterals ecoreEnumLiteral="matrixGameEngine.ecore#//TileType/INTERACTIVE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="matrixGameEngine.ecore#//ActionType">
+      <genEnumLiterals ecoreEnumLiteral="matrixGameEngine.ecore#//ActionType/NONE"/>
+      <genEnumLiterals ecoreEnumLiteral="matrixGameEngine.ecore#//ActionType/REVEAL"/>
+      <genEnumLiterals ecoreEnumLiteral="matrixGameEngine.ecore#//ActionType/MOVE"/>
+      <genEnumLiterals ecoreEnumLiteral="matrixGameEngine.ecore#//ActionType/TOGGLE"/>
+      <genEnumLiterals ecoreEnumLiteral="matrixGameEngine.ecore#//ActionType/ATTACK"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="matrixGameEngine.ecore#//NewDataType1"/>
+    <genClasses ecoreClass="matrixGameEngine.ecore#//Tile">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixGameEngine.ecore#//Tile/isAccessible"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixGameEngine.ecore#//Tile/Color"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixGameEngine.ecore#//Tile/xCoordinate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixGameEngine.ecore#//Tile/yCoordinate"/>
+      <genOperations ecoreOperation="matrixGameEngine.ecore#//Tile/getTileType"/>
+      <genOperations ecoreOperation="matrixGameEngine.ecore#//Tile/interact">
+        <genParameters ecoreParameter="matrixGameEngine.ecore#//Tile/interact/action"/>
+      </genOperations>
+      <genOperations ecoreOperation="matrixGameEngine.ecore#//Tile/reveal"/>
+      <genOperations ecoreOperation="matrixGameEngine.ecore#//Tile/toggle"/>
+    </genClasses>
+    <genClasses ecoreClass="matrixGameEngine.ecore#//State">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixGameEngine.ecore#//State/turnsTaken"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixGameEngine.ecore#//State/flagsPlaced"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixGameEngine.ecore#//State/isOver"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matrixGameEngine.ecore#//State/tile"/>
+      <genOperations ecoreOperation="matrixGameEngine.ecore#//State/getCurrentStatus"/>
+      <genOperations ecoreOperation="matrixGameEngine.ecore#//State/getPlayersTurn"/>
+    </genClasses>
+    <genClasses ecoreClass="matrixGameEngine.ecore#//Action">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixGameEngine.ecore#//Action/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixGameEngine.ecore#//Action/actionType"/>
+      <genOperations ecoreOperation="matrixGameEngine.ecore#//Action/performAction"/>
+    </genClasses>
+    <genClasses ecoreClass="matrixGameEngine.ecore#//Map">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference matrixGameEngine.ecore#//Map/tile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixGameEngine.ecore#//Map/amountOfTiles"/>
+      <genOperations ecoreOperation="matrixGameEngine.ecore#//Map/initializeMap"/>
+    </genClasses>
+    <genClasses ecoreClass="matrixGameEngine.ecore#//Player">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixGameEngine.ecore#//Player/Score"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matrixGameEngine.ecore#//Player/state"/>
+      <genOperations ecoreOperation="matrixGameEngine.ecore#//Player/takeAction"/>
+    </genClasses>
+    <genClasses ecoreClass="matrixGameEngine.ecore#//GameLogic">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixGameEngine.ecore#//GameLogic/multiplayer"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference matrixGameEngine.ecore#//GameLogic/player"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matrixGameEngine.ecore#//GameLogic/gameaction"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference matrixGameEngine.ecore#//GameLogic/map"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixGameEngine.ecore#//GameLogic/Players"/>
+      <genOperations ecoreOperation="matrixGameEngine.ecore#//GameLogic/applyAction">
+        <genParameters ecoreParameter="matrixGameEngine.ecore#//GameLogic/applyAction/action"/>
+        <genParameters ecoreParameter="matrixGameEngine.ecore#//GameLogic/applyAction/tile"/>
+      </genOperations>
+      <genOperations ecoreOperation="matrixGameEngine.ecore#//GameLogic/isGameOver"/>
+      <genOperations ecoreOperation="matrixGameEngine.ecore#//GameLogic/generateStartingPosition"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

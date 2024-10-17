@@ -1,49 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="matrixengine" nsURI="http://www.example.org/matrixengine" nsPrefix="matrixengine">
-  <eClassifiers xsi:type="ecore:EClass" name="main">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="setup" upperBound="-1"
-        eType="#//Setup" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="updatefield" upperBound="-1"
-        eType="#//UpdateField" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="gameover" upperBound="-1"
-        eType="#//GameOver" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="getuserinput" upperBound="-1"
-        eType="#//GetUserInput" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Score" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Time" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Setup">
     <eOperations name="InitField"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="field" eType="#//Field"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="UpdateField">
-    <eOperations name="UpdateTile">
-      <eParameters name="CoordX" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-      <eParameters name="CoordY" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="field" eType="#//Field"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GameOver">
-    <eOperations name="DisplayEndScreen"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="field" eType="#//Field"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GetUserInput">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="InputType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations name="loadGame" eType="#//GameLogic"/>
+    <eOperations name="setStartTile" eType="#//Tile"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="game" eType="#//GameLogic"
+        eOpposite="#//GameLogic/setup"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="map" lowerBound="1" eType="#//Map"
+        changeable="false" volatile="true" transient="true" derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Field">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tile" upperBound="-1" eType="#//Tile"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="SizeX" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="SizeY" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tile" lowerBound="4" upperBound="-1"
+        eType="#//Tile" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Tile">
-    <eOperations name="IsClicked"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="TileCordinateX" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="TileCodinateY" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eOperations name="IsUsed"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isAccessible" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Color" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Image" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="IsClickable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="neighbours">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+        <eTypeArguments/>
+      </eGenericType>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Player">
+    <eOperations name="takeAction" lowerBound="1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Time" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Score" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="state" eType="#//State"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gamelogic" eType="#//GameLogic"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GameLogic">
+    <eOperations name="applyAction">
+      <eParameters name="action" eType="#//ActionType"/>
+      <eParameters name="tile" eType="#//Tile"/>
+    </eOperations>
+    <eOperations name="checkWinCondition"/>
+    <eOperations name="isGameOver"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplayer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="player" lowerBound="1"
+        upperBound="-1" eType="#//Player" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="setup" eType="#//Setup"
+        eOpposite="#//Setup/game"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="map" lowerBound="1" eType="#//Map"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gameaction" eType="#//Action"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Map">
+    <eOperations name="initializeMap"/>
+    <eOperations name="getTile">
+      <eParameters name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="y" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+    <eOperations name="loadMap" eType="#//Map"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tile" lowerBound="1" upperBound="-1"
+        eType="#//Tile" changeable="false" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="SizeY" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="SizeX" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="State">
+    <eOperations name="getCurrentTile" eType="#//Tile"/>
+    <eOperations name="getPlayersTurn" eType="#//Player"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="map" eType="#//Map"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="turnsTaken" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="flagsPlaced" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isOver" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Action">
+    <eOperations name="performAction"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actiontype" lowerBound="1"
+        eType="#//ActionType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActionType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="validTiles" transient="true">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+        <eTypeArguments/>
+      </eGenericType>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Map">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="state" eType="#//State"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tile" lowerBound="4" upperBound="-1"
+        eType="#//Tile" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>
