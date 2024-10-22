@@ -57,6 +57,8 @@ public class TileItemProvider extends ItemProviderAdapter implements IEditingDom
 			addContentPropertyDescriptor(object);
 			addColorPropertyDescriptor(object);
 			addNeighboursPropertyDescriptor(object);
+			addCoordXPropertyDescriptor(object);
+			addCoordYPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -123,6 +125,36 @@ public class TileItemProvider extends ItemProviderAdapter implements IEditingDom
 	}
 
 	/**
+	 * This adds a property descriptor for the Coord X feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCoordXPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Tile_coordX_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Tile_coordX_feature", "_UI_Tile_type"),
+						MatrixenginePackage.Literals.TILE__COORD_X, true, false, false,
+						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Coord Y feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCoordYPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Tile_coordY_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Tile_coordY_feature", "_UI_Tile_type"),
+						MatrixenginePackage.Literals.TILE__COORD_Y, true, false, false,
+						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+	}
+
+	/**
 	 * This returns Tile.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -171,6 +203,8 @@ public class TileItemProvider extends ItemProviderAdapter implements IEditingDom
 		case MatrixenginePackage.TILE__CONTENT:
 		case MatrixenginePackage.TILE__COLOR:
 		case MatrixenginePackage.TILE__NEIGHBOURS:
+		case MatrixenginePackage.TILE__COORD_X:
+		case MatrixenginePackage.TILE__COORD_Y:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

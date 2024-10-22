@@ -26,6 +26,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link no.ntnu.matrixengine.impl.TileImpl#getContent <em>Content</em>}</li>
  *   <li>{@link no.ntnu.matrixengine.impl.TileImpl#getColor <em>Color</em>}</li>
  *   <li>{@link no.ntnu.matrixengine.impl.TileImpl#getNeighbours <em>Neighbours</em>}</li>
+ *   <li>{@link no.ntnu.matrixengine.impl.TileImpl#getCoordX <em>Coord X</em>}</li>
+ *   <li>{@link no.ntnu.matrixengine.impl.TileImpl#getCoordY <em>Coord Y</em>}</li>
  * </ul>
  *
  * @generated
@@ -100,6 +102,46 @@ public class TileImpl extends MinimalEObjectImpl.Container implements Tile {
 	 * @ordered
 	 */
 	protected EList<?> neighbours;
+
+	/**
+	 * The default value of the '{@link #getCoordX() <em>Coord X</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCoordX()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int COORD_X_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getCoordX() <em>Coord X</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCoordX()
+	 * @generated
+	 * @ordered
+	 */
+	protected int coordX = COORD_X_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getCoordY() <em>Coord Y</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCoordY()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int COORD_Y_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getCoordY() <em>Coord Y</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCoordY()
+	 * @generated
+	 * @ordered
+	 */
+	protected int coordY = COORD_Y_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -221,6 +263,54 @@ public class TileImpl extends MinimalEObjectImpl.Container implements Tile {
 	 * @generated
 	 */
 	@Override
+	public int getCoordX() {
+		return coordX;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setCoordX(int newCoordX) {
+		int oldCoordX = coordX;
+		coordX = newCoordX;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MatrixenginePackage.TILE__COORD_X, oldCoordX,
+					coordX));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int getCoordY() {
+		return coordY;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setCoordY(int newCoordY) {
+		int oldCoordY = coordY;
+		coordY = newCoordY;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MatrixenginePackage.TILE__COORD_Y, oldCoordY,
+					coordY));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public void IsUsed() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -243,6 +333,10 @@ public class TileImpl extends MinimalEObjectImpl.Container implements Tile {
 			return getColor();
 		case MatrixenginePackage.TILE__NEIGHBOURS:
 			return getNeighbours();
+		case MatrixenginePackage.TILE__COORD_X:
+			return getCoordX();
+		case MatrixenginePackage.TILE__COORD_Y:
+			return getCoordY();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -266,6 +360,12 @@ public class TileImpl extends MinimalEObjectImpl.Container implements Tile {
 			return;
 		case MatrixenginePackage.TILE__NEIGHBOURS:
 			setNeighbours((EList<?>) newValue);
+			return;
+		case MatrixenginePackage.TILE__COORD_X:
+			setCoordX((Integer) newValue);
+			return;
+		case MatrixenginePackage.TILE__COORD_Y:
+			setCoordY((Integer) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -291,6 +391,12 @@ public class TileImpl extends MinimalEObjectImpl.Container implements Tile {
 		case MatrixenginePackage.TILE__NEIGHBOURS:
 			setNeighbours((EList<?>) null);
 			return;
+		case MatrixenginePackage.TILE__COORD_X:
+			setCoordX(COORD_X_EDEFAULT);
+			return;
+		case MatrixenginePackage.TILE__COORD_Y:
+			setCoordY(COORD_Y_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -311,6 +417,10 @@ public class TileImpl extends MinimalEObjectImpl.Container implements Tile {
 			return COLOR_EDEFAULT == null ? color != null : !COLOR_EDEFAULT.equals(color);
 		case MatrixenginePackage.TILE__NEIGHBOURS:
 			return neighbours != null;
+		case MatrixenginePackage.TILE__COORD_X:
+			return coordX != COORD_X_EDEFAULT;
+		case MatrixenginePackage.TILE__COORD_Y:
+			return coordY != COORD_Y_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -349,6 +459,10 @@ public class TileImpl extends MinimalEObjectImpl.Container implements Tile {
 		result.append(color);
 		result.append(", neighbours: ");
 		result.append(neighbours);
+		result.append(", coordX: ");
+		result.append(coordX);
+		result.append(", coordY: ");
+		result.append(coordY);
 		result.append(')');
 		return result.toString();
 	}

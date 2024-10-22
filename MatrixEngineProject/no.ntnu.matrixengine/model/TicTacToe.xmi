@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<matrixengine:GameLogic
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:matrixengine="http://www.example.org/matrixengine"
+    multiplayer="true">
+  <player Time="374"
+      Score="1"/>
+  <player Time="368"/>
+  <map tileSizeX="30"
+      tileSizeY="30"
+      mapSizeX="3"
+      mapSizeY="3">
+    <tile Color="White"/>
+    <tile content="1"
+        Color="Black"
+        coordX="1"/>
+    <tile Color="White"
+        coordX="2"/>
+    <tile Color="White"
+        coordY="1"/>
+    <tile content="2"
+        Color="Red"
+        coordX="1"
+        coordY="1"/>
+    <tile Color="White"
+        coordX="2"
+        coordY="1"/>
+    <tile content="2"
+        Color="Red"
+        coordY="2"/>
+    <tile Color="White"
+        coordX="1"
+        coordY="2"/>
+    <tile Color="White"
+        coordX="2"
+        coordY="2"/>
+  </map>
+</matrixengine:GameLogic>

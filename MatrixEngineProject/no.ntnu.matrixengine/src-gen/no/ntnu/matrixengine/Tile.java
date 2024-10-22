@@ -18,6 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link no.ntnu.matrixengine.Tile#getContent <em>Content</em>}</li>
  *   <li>{@link no.ntnu.matrixengine.Tile#getColor <em>Color</em>}</li>
  *   <li>{@link no.ntnu.matrixengine.Tile#getNeighbours <em>Neighbours</em>}</li>
+ *   <li>{@link no.ntnu.matrixengine.Tile#getCoordX <em>Coord X</em>}</li>
+ *   <li>{@link no.ntnu.matrixengine.Tile#getCoordY <em>Coord Y</em>}</li>
  * </ul>
  *
  * @see no.ntnu.matrixengine.MatrixenginePackage#getTile()
@@ -112,6 +114,50 @@ public interface Tile extends EObject {
 	 * @generated
 	 */
 	void setNeighbours(EList<?> value);
+
+	/**
+	 * Returns the value of the '<em><b>Coord X</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Coord X</em>' attribute.
+	 * @see #setCoordX(int)
+	 * @see no.ntnu.matrixengine.MatrixenginePackage#getTile_CoordX()
+	 * @model
+	 * @generated
+	 */
+	int getCoordX();
+
+	/**
+	 * Sets the value of the '{@link no.ntnu.matrixengine.Tile#getCoordX <em>Coord X</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Coord X</em>' attribute.
+	 * @see #getCoordX()
+	 * @generated
+	 */
+	void setCoordX(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Coord Y</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Coord Y</em>' attribute.
+	 * @see #setCoordY(int)
+	 * @see no.ntnu.matrixengine.MatrixenginePackage#getTile_CoordY()
+	 * @model
+	 * @generated
+	 */
+	int getCoordY();
+
+	/**
+	 * Sets the value of the '{@link no.ntnu.matrixengine.Tile#getCoordY <em>Coord Y</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Coord Y</em>' attribute.
+	 * @see #getCoordY()
+	 * @generated
+	 */
+	void setCoordY(int value);
 
 	/**
 	 * <!-- begin-user-doc -->

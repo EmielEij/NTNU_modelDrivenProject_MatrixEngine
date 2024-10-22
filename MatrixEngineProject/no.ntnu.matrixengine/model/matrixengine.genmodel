@@ -25,6 +25,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixengine.ecore#//Tile/content"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixengine.ecore#//Tile/Color"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixengine.ecore#//Tile/neighbours"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixengine.ecore#//Tile/coordX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixengine.ecore#//Tile/coordY"/>
       <genOperations ecoreOperation="matrixengine.ecore#//Tile/IsUsed"/>
     </genClasses>
     <genClasses ecoreClass="matrixengine.ecore#//Player">
@@ -46,18 +48,6 @@
       </genOperations>
       <genOperations ecoreOperation="matrixengine.ecore#//GameLogic/checkWinCondition"/>
       <genOperations ecoreOperation="matrixengine.ecore#//GameLogic/isGameOver"/>
-    </genClasses>
-    <genClasses ecoreClass="matrixengine.ecore#//Map">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixengine.ecore#//Map/name"/>
-      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference matrixengine.ecore#//Map/tile"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixengine.ecore#//Map/SizeY"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixengine.ecore#//Map/SizeX"/>
-      <genOperations ecoreOperation="matrixengine.ecore#//Map/initializeMap"/>
-      <genOperations ecoreOperation="matrixengine.ecore#//Map/getTile">
-        <genParameters ecoreParameter="matrixengine.ecore#//Map/getTile/x"/>
-        <genParameters ecoreParameter="matrixengine.ecore#//Map/getTile/y"/>
-      </genOperations>
-      <genOperations ecoreOperation="matrixengine.ecore#//Map/loadMap"/>
     </genClasses>
     <genClasses ecoreClass="matrixengine.ecore#//State">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matrixengine.ecore#//State/map"/>

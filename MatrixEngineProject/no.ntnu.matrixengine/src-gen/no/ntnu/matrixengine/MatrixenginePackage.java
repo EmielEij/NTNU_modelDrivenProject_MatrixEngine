@@ -214,13 +214,31 @@ public interface MatrixenginePackage extends EPackage {
 	int TILE__NEIGHBOURS = 3;
 
 	/**
+	 * The feature id for the '<em><b>Coord X</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TILE__COORD_X = 4;
+
+	/**
+	 * The feature id for the '<em><b>Coord Y</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TILE__COORD_Y = 5;
+
+	/**
 	 * The number of structural features of the '<em>Tile</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TILE_FEATURE_COUNT = 4;
+	int TILE_FEATURE_COUNT = 6;
 
 	/**
 	 * The operation id for the '<em>Is Used</em>' operation.
@@ -816,6 +834,28 @@ public interface MatrixenginePackage extends EPackage {
 	EAttribute getTile_Neighbours();
 
 	/**
+	 * Returns the meta object for the attribute '{@link no.ntnu.matrixengine.Tile#getCoordX <em>Coord X</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Coord X</em>'.
+	 * @see no.ntnu.matrixengine.Tile#getCoordX()
+	 * @see #getTile()
+	 * @generated
+	 */
+	EAttribute getTile_CoordX();
+
+	/**
+	 * Returns the meta object for the attribute '{@link no.ntnu.matrixengine.Tile#getCoordY <em>Coord Y</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Coord Y</em>'.
+	 * @see no.ntnu.matrixengine.Tile#getCoordY()
+	 * @see #getTile()
+	 * @generated
+	 */
+	EAttribute getTile_CoordY();
+
+	/**
 	 * Returns the meta object for the '{@link no.ntnu.matrixengine.Tile#IsUsed() <em>Is Used</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1340,6 +1380,22 @@ public interface MatrixenginePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TILE__NEIGHBOURS = eINSTANCE.getTile_Neighbours();
+
+		/**
+		 * The meta object literal for the '<em><b>Coord X</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TILE__COORD_X = eINSTANCE.getTile_CoordX();
+
+		/**
+		 * The meta object literal for the '<em><b>Coord Y</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TILE__COORD_Y = eINSTANCE.getTile_CoordY();
 
 		/**
 		 * The meta object literal for the '<em><b>Is Used</b></em>' operation.

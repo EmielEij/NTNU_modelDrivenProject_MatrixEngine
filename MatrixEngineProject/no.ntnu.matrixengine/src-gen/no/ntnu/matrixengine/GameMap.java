@@ -57,7 +57,7 @@ public interface GameMap extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Tile</em>' containment reference list.
 	 * @see no.ntnu.matrixengine.MatrixenginePackage#getGameMap_Tile()
-	 * @model containment="true" lower="4"
+	 * @model containment="true" lower="9"
 	 * @generated
 	 */
 	EList<Tile> getTile();

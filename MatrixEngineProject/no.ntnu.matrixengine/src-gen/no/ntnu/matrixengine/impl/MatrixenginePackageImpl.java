@@ -302,6 +302,26 @@ public class MatrixenginePackageImpl extends EPackageImpl implements Matrixengin
 	 * @generated
 	 */
 	@Override
+	public EAttribute getTile_CoordX() {
+		return (EAttribute) tileEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getTile_CoordY() {
+		return (EAttribute) tileEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EOperation getTile__IsUsed() {
 		return tileEClass.getEOperations().get(0);
 	}
@@ -711,6 +731,8 @@ public class MatrixenginePackageImpl extends EPackageImpl implements Matrixengin
 		createEAttribute(tileEClass, TILE__CONTENT);
 		createEAttribute(tileEClass, TILE__COLOR);
 		createEAttribute(tileEClass, TILE__NEIGHBOURS);
+		createEAttribute(tileEClass, TILE__COORD_X);
+		createEAttribute(tileEClass, TILE__COORD_Y);
 		createEOperation(tileEClass, TILE___IS_USED);
 
 		playerEClass = createEClass(PLAYER);
@@ -818,6 +840,10 @@ public class MatrixenginePackageImpl extends EPackageImpl implements Matrixengin
 		g1.getETypeArguments().add(g2);
 		initEAttribute(getTile_Neighbours(), g1, "neighbours", null, 0, 1, Tile.class, IS_TRANSIENT, !IS_VOLATILE,
 				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTile_CoordX(), ecorePackage.getEInt(), "coordX", null, 0, 1, Tile.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTile_CoordY(), ecorePackage.getEInt(), "coordY", null, 0, 1, Tile.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getTile__IsUsed(), null, "IsUsed", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -900,7 +926,7 @@ public class MatrixenginePackageImpl extends EPackageImpl implements Matrixengin
 		initEReference(getGameMap_State(), this.getState(), null, "state", null, 0, 1, GameMap.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEReference(getGameMap_Tile(), this.getTile(), null, "tile", null, 4, -1, GameMap.class, !IS_TRANSIENT,
+		initEReference(getGameMap_Tile(), this.getTile(), null, "tile", null, 9, -1, GameMap.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 		initEAttribute(getGameMap_TileSizeX(), ecorePackage.getEInt(), "tileSizeX", null, 0, 1, GameMap.class,

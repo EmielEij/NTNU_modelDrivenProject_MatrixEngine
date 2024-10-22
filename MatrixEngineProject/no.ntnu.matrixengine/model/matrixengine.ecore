@@ -24,6 +24,8 @@
         <eTypeArguments/>
       </eGenericType>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="coordX" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="coordY" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Player">
     <eOperations name="takeAction" lowerBound="1"/>
@@ -75,7 +77,7 @@
       <details key="constraints" value="tileSizeMustBeSquare mapSizeMustFitScreen mapSizeMustBeSquare"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="state" eType="#//State"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tile" lowerBound="4" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tile" lowerBound="9" upperBound="-1"
         eType="#//Tile" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tileSizeX" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tileSizeY" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
