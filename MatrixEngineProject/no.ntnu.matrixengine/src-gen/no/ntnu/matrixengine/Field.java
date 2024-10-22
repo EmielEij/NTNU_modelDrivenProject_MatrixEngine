@@ -30,7 +30,7 @@ public interface Field extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Tile</em>' containment reference list.
 	 * @see no.ntnu.matrixengine.MatrixenginePackage#getField_Tile()
-	 * @model containment="true"
+	 * @model containment="true" lower="4"
 	 * @generated
 	 */
 	EList<Tile> getTile();

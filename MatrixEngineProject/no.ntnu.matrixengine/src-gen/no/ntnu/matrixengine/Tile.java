@@ -2,6 +2,7 @@
  */
 package no.ntnu.matrixengine;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -13,8 +14,10 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link no.ntnu.matrixengine.Tile#getTileCordinateX <em>Tile Cordinate X</em>}</li>
- *   <li>{@link no.ntnu.matrixengine.Tile#getTileCodinateY <em>Tile Codinate Y</em>}</li>
+ *   <li>{@link no.ntnu.matrixengine.Tile#getIsAccessible <em>Is Accessible</em>}</li>
+ *   <li>{@link no.ntnu.matrixengine.Tile#getContent <em>Content</em>}</li>
+ *   <li>{@link no.ntnu.matrixengine.Tile#getColor <em>Color</em>}</li>
+ *   <li>{@link no.ntnu.matrixengine.Tile#getNeighbours <em>Neighbours</em>}</li>
  * </ul>
  *
  * @see no.ntnu.matrixengine.MatrixenginePackage#getTile()
@@ -23,47 +26,99 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Tile extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Tile Cordinate X</b></em>' attribute.
+	 * Returns the value of the '<em><b>Is Accessible</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tile Cordinate X</em>' attribute.
-	 * @see #setTileCordinateX(int)
-	 * @see no.ntnu.matrixengine.MatrixenginePackage#getTile_TileCordinateX()
+	 * @return the value of the '<em>Is Accessible</em>' attribute.
+	 * @see #setIsAccessible(int)
+	 * @see no.ntnu.matrixengine.MatrixenginePackage#getTile_IsAccessible()
 	 * @model
 	 * @generated
 	 */
-	int getTileCordinateX();
+	int getIsAccessible();
 
 	/**
-	 * Sets the value of the '{@link no.ntnu.matrixengine.Tile#getTileCordinateX <em>Tile Cordinate X</em>}' attribute.
+	 * Sets the value of the '{@link no.ntnu.matrixengine.Tile#getIsAccessible <em>Is Accessible</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Tile Cordinate X</em>' attribute.
-	 * @see #getTileCordinateX()
+	 * @param value the new value of the '<em>Is Accessible</em>' attribute.
+	 * @see #getIsAccessible()
 	 * @generated
 	 */
-	void setTileCordinateX(int value);
+	void setIsAccessible(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Tile Codinate Y</b></em>' attribute.
+	 * Returns the value of the '<em><b>Content</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tile Codinate Y</em>' attribute.
-	 * @see #setTileCodinateY(int)
-	 * @see no.ntnu.matrixengine.MatrixenginePackage#getTile_TileCodinateY()
+	 * @return the value of the '<em>Content</em>' attribute.
+	 * @see #setContent(int)
+	 * @see no.ntnu.matrixengine.MatrixenginePackage#getTile_Content()
 	 * @model
 	 * @generated
 	 */
-	int getTileCodinateY();
+	int getContent();
 
 	/**
-	 * Sets the value of the '{@link no.ntnu.matrixengine.Tile#getTileCodinateY <em>Tile Codinate Y</em>}' attribute.
+	 * Sets the value of the '{@link no.ntnu.matrixengine.Tile#getContent <em>Content</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Tile Codinate Y</em>' attribute.
-	 * @see #getTileCodinateY()
+	 * @param value the new value of the '<em>Content</em>' attribute.
+	 * @see #getContent()
 	 * @generated
 	 */
-	void setTileCodinateY(int value);
+	void setContent(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Color</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Color</em>' attribute.
+	 * @see #setColor(String)
+	 * @see no.ntnu.matrixengine.MatrixenginePackage#getTile_Color()
+	 * @model
+	 * @generated
+	 */
+	String getColor();
+
+	/**
+	 * Sets the value of the '{@link no.ntnu.matrixengine.Tile#getColor <em>Color</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Color</em>' attribute.
+	 * @see #getColor()
+	 * @generated
+	 */
+	void setColor(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Neighbours</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Neighbours</em>' attribute.
+	 * @see #setNeighbours(EList)
+	 * @see no.ntnu.matrixengine.MatrixenginePackage#getTile_Neighbours()
+	 * @model many="false" transient="true"
+	 * @generated
+	 */
+	EList<?> getNeighbours();
+
+	/**
+	 * Sets the value of the '{@link no.ntnu.matrixengine.Tile#getNeighbours <em>Neighbours</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Neighbours</em>' attribute.
+	 * @see #getNeighbours()
+	 * @generated
+	 */
+	void setNeighbours(EList<?> value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void IsUsed();
 
 } // Tile

@@ -67,28 +67,8 @@ public class MatrixengineAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected MatrixengineSwitch<Adapter> modelSwitch = new MatrixengineSwitch<Adapter>() {
 		@Override
-		public Adapter casemain(main object) {
-			return createmainAdapter();
-		}
-
-		@Override
 		public Adapter caseSetup(Setup object) {
 			return createSetupAdapter();
-		}
-
-		@Override
-		public Adapter caseUpdateField(UpdateField object) {
-			return createUpdateFieldAdapter();
-		}
-
-		@Override
-		public Adapter caseGameOver(GameOver object) {
-			return createGameOverAdapter();
-		}
-
-		@Override
-		public Adapter caseGetUserInput(GetUserInput object) {
-			return createGetUserInputAdapter();
 		}
 
 		@Override
@@ -99,6 +79,41 @@ public class MatrixengineAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseTile(Tile object) {
 			return createTileAdapter();
+		}
+
+		@Override
+		public Adapter casePlayer(Player object) {
+			return createPlayerAdapter();
+		}
+
+		@Override
+		public Adapter caseGameLogic(GameLogic object) {
+			return createGameLogicAdapter();
+		}
+
+		@Override
+		public Adapter caseMap(Map object) {
+			return createMapAdapter();
+		}
+
+		@Override
+		public Adapter caseState(State object) {
+			return createStateAdapter();
+		}
+
+		@Override
+		public Adapter caseAction(Action object) {
+			return createActionAdapter();
+		}
+
+		@Override
+		public Adapter caseActionType(ActionType object) {
+			return createActionTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseGameMap(GameMap object) {
+			return createGameMapAdapter();
 		}
 
 		@Override
@@ -121,20 +136,6 @@ public class MatrixengineAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link no.ntnu.matrixengine.main <em>main</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see no.ntnu.matrixengine.main
-	 * @generated
-	 */
-	public Adapter createmainAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link no.ntnu.matrixengine.Setup <em>Setup</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -145,48 +146,6 @@ public class MatrixengineAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSetupAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link no.ntnu.matrixengine.UpdateField <em>Update Field</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see no.ntnu.matrixengine.UpdateField
-	 * @generated
-	 */
-	public Adapter createUpdateFieldAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link no.ntnu.matrixengine.GameOver <em>Game Over</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see no.ntnu.matrixengine.GameOver
-	 * @generated
-	 */
-	public Adapter createGameOverAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link no.ntnu.matrixengine.GetUserInput <em>Get User Input</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see no.ntnu.matrixengine.GetUserInput
-	 * @generated
-	 */
-	public Adapter createGetUserInputAdapter() {
 		return null;
 	}
 
@@ -215,6 +174,104 @@ public class MatrixengineAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTileAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link no.ntnu.matrixengine.Player <em>Player</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see no.ntnu.matrixengine.Player
+	 * @generated
+	 */
+	public Adapter createPlayerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link no.ntnu.matrixengine.GameLogic <em>Game Logic</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see no.ntnu.matrixengine.GameLogic
+	 * @generated
+	 */
+	public Adapter createGameLogicAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link no.ntnu.matrixengine.Map <em>Map</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see no.ntnu.matrixengine.Map
+	 * @generated
+	 */
+	public Adapter createMapAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link no.ntnu.matrixengine.State <em>State</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see no.ntnu.matrixengine.State
+	 * @generated
+	 */
+	public Adapter createStateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link no.ntnu.matrixengine.Action <em>Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see no.ntnu.matrixengine.Action
+	 * @generated
+	 */
+	public Adapter createActionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link no.ntnu.matrixengine.ActionType <em>Action Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see no.ntnu.matrixengine.ActionType
+	 * @generated
+	 */
+	public Adapter createActionTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link no.ntnu.matrixengine.GameMap <em>Game Map</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see no.ntnu.matrixengine.GameMap
+	 * @generated
+	 */
+	public Adapter createGameMapAdapter() {
 		return null;
 	}
 

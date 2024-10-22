@@ -22,15 +22,6 @@ public interface MatrixengineFactory extends EFactory {
 	MatrixengineFactory eINSTANCE = no.ntnu.matrixengine.impl.MatrixengineFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>main</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>main</em>'.
-	 * @generated
-	 */
-	main createmain();
-
-	/**
 	 * Returns a new object of class '<em>Setup</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -38,33 +29,6 @@ public interface MatrixengineFactory extends EFactory {
 	 * @generated
 	 */
 	Setup createSetup();
-
-	/**
-	 * Returns a new object of class '<em>Update Field</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Update Field</em>'.
-	 * @generated
-	 */
-	UpdateField createUpdateField();
-
-	/**
-	 * Returns a new object of class '<em>Game Over</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Game Over</em>'.
-	 * @generated
-	 */
-	GameOver createGameOver();
-
-	/**
-	 * Returns a new object of class '<em>Get User Input</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Get User Input</em>'.
-	 * @generated
-	 */
-	GetUserInput createGetUserInput();
 
 	/**
 	 * Returns a new object of class '<em>Field</em>'.
@@ -83,6 +47,69 @@ public interface MatrixengineFactory extends EFactory {
 	 * @generated
 	 */
 	Tile createTile();
+
+	/**
+	 * Returns a new object of class '<em>Player</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Player</em>'.
+	 * @generated
+	 */
+	Player createPlayer();
+
+	/**
+	 * Returns a new object of class '<em>Game Logic</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Game Logic</em>'.
+	 * @generated
+	 */
+	GameLogic createGameLogic();
+
+	/**
+	 * Returns a new object of class '<em>Map</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Map</em>'.
+	 * @generated
+	 */
+	Map createMap();
+
+	/**
+	 * Returns a new object of class '<em>State</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>State</em>'.
+	 * @generated
+	 */
+	State createState();
+
+	/**
+	 * Returns a new object of class '<em>Action</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Action</em>'.
+	 * @generated
+	 */
+	Action createAction();
+
+	/**
+	 * Returns a new object of class '<em>Action Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Action Type</em>'.
+	 * @generated
+	 */
+	ActionType createActionType();
+
+	/**
+	 * Returns a new object of class '<em>Game Map</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Game Map</em>'.
+	 * @generated
+	 */
+	GameMap createGameMap();
 
 	/**
 	 * Returns the package supported by this factory.

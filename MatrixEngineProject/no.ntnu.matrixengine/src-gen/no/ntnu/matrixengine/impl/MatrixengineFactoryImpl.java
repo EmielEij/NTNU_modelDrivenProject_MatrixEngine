@@ -56,20 +56,26 @@ public class MatrixengineFactoryImpl extends EFactoryImpl implements Matrixengin
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case MatrixenginePackage.MAIN:
-			return createmain();
 		case MatrixenginePackage.SETUP:
 			return createSetup();
-		case MatrixenginePackage.UPDATE_FIELD:
-			return createUpdateField();
-		case MatrixenginePackage.GAME_OVER:
-			return createGameOver();
-		case MatrixenginePackage.GET_USER_INPUT:
-			return createGetUserInput();
 		case MatrixenginePackage.FIELD:
 			return createField();
 		case MatrixenginePackage.TILE:
 			return createTile();
+		case MatrixenginePackage.PLAYER:
+			return createPlayer();
+		case MatrixenginePackage.GAME_LOGIC:
+			return createGameLogic();
+		case MatrixenginePackage.MAP:
+			return createMap();
+		case MatrixenginePackage.STATE:
+			return createState();
+		case MatrixenginePackage.ACTION:
+			return createAction();
+		case MatrixenginePackage.ACTION_TYPE:
+			return createActionType();
+		case MatrixenginePackage.GAME_MAP:
+			return createGameMap();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -81,53 +87,9 @@ public class MatrixengineFactoryImpl extends EFactoryImpl implements Matrixengin
 	 * @generated
 	 */
 	@Override
-	public main createmain() {
-		mainImpl main = new mainImpl();
-		return main;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Setup createSetup() {
 		SetupImpl setup = new SetupImpl();
 		return setup;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public UpdateField createUpdateField() {
-		UpdateFieldImpl updateField = new UpdateFieldImpl();
-		return updateField;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public GameOver createGameOver() {
-		GameOverImpl gameOver = new GameOverImpl();
-		return gameOver;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public GetUserInput createGetUserInput() {
-		GetUserInputImpl getUserInput = new GetUserInputImpl();
-		return getUserInput;
 	}
 
 	/**
@@ -150,6 +112,83 @@ public class MatrixengineFactoryImpl extends EFactoryImpl implements Matrixengin
 	public Tile createTile() {
 		TileImpl tile = new TileImpl();
 		return tile;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Player createPlayer() {
+		PlayerImpl player = new PlayerImpl();
+		return player;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public GameLogic createGameLogic() {
+		GameLogicImpl gameLogic = new GameLogicImpl();
+		return gameLogic;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Map createMap() {
+		MapImpl map = new MapImpl();
+		return map;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public State createState() {
+		StateImpl state = new StateImpl();
+		return state;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Action createAction() {
+		ActionImpl action = new ActionImpl();
+		return action;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ActionType createActionType() {
+		ActionTypeImpl actionType = new ActionTypeImpl();
+		return actionType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public GameMap createGameMap() {
+		GameMapImpl gameMap = new GameMapImpl();
+		return gameMap;
 	}
 
 	/**

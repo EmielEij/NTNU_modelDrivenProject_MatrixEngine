@@ -13,7 +13,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link no.ntnu.matrixengine.Setup#getField <em>Field</em>}</li>
+ *   <li>{@link no.ntnu.matrixengine.Setup#getGame <em>Game</em>}</li>
+ *   <li>{@link no.ntnu.matrixengine.Setup#getMap <em>Map</em>}</li>
  * </ul>
  *
  * @see no.ntnu.matrixengine.MatrixenginePackage#getSetup()
@@ -22,25 +23,62 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Setup extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Field</b></em>' reference.
+	 * Returns the value of the '<em><b>Game</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link no.ntnu.matrixengine.GameLogic#getSetup <em>Setup</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Field</em>' reference.
-	 * @see #setField(Field)
-	 * @see no.ntnu.matrixengine.MatrixenginePackage#getSetup_Field()
+	 * @return the value of the '<em>Game</em>' reference.
+	 * @see #setGame(GameLogic)
+	 * @see no.ntnu.matrixengine.MatrixenginePackage#getSetup_Game()
+	 * @see no.ntnu.matrixengine.GameLogic#getSetup
+	 * @model opposite="setup"
+	 * @generated
+	 */
+	GameLogic getGame();
+
+	/**
+	 * Sets the value of the '{@link no.ntnu.matrixengine.Setup#getGame <em>Game</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Game</em>' reference.
+	 * @see #getGame()
+	 * @generated
+	 */
+	void setGame(GameLogic value);
+
+	/**
+	 * Returns the value of the '<em><b>Map</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Map</em>' reference.
+	 * @see no.ntnu.matrixengine.MatrixenginePackage#getSetup_Map()
+	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
+	 * @generated
+	 */
+	GameMap getMap();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model
 	 * @generated
 	 */
-	Field getField();
+	void InitField();
 
 	/**
-	 * Sets the value of the '{@link no.ntnu.matrixengine.Setup#getField <em>Field</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Field</em>' reference.
-	 * @see #getField()
+	 * @model
 	 * @generated
 	 */
-	void setField(Field value);
+	GameLogic loadGame();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	Tile setStartTile();
 
 } // Setup

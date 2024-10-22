@@ -66,37 +66,9 @@ public class MatrixengineSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-		case MatrixenginePackage.MAIN: {
-			main main = (main) theEObject;
-			T result = casemain(main);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case MatrixenginePackage.SETUP: {
 			Setup setup = (Setup) theEObject;
 			T result = caseSetup(setup);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case MatrixenginePackage.UPDATE_FIELD: {
-			UpdateField updateField = (UpdateField) theEObject;
-			T result = caseUpdateField(updateField);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case MatrixenginePackage.GAME_OVER: {
-			GameOver gameOver = (GameOver) theEObject;
-			T result = caseGameOver(gameOver);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case MatrixenginePackage.GET_USER_INPUT: {
-			GetUserInput getUserInput = (GetUserInput) theEObject;
-			T result = caseGetUserInput(getUserInput);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -115,24 +87,58 @@ public class MatrixengineSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case MatrixenginePackage.PLAYER: {
+			Player player = (Player) theEObject;
+			T result = casePlayer(player);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case MatrixenginePackage.GAME_LOGIC: {
+			GameLogic gameLogic = (GameLogic) theEObject;
+			T result = caseGameLogic(gameLogic);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case MatrixenginePackage.MAP: {
+			Map map = (Map) theEObject;
+			T result = caseMap(map);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case MatrixenginePackage.STATE: {
+			State state = (State) theEObject;
+			T result = caseState(state);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case MatrixenginePackage.ACTION: {
+			Action action = (Action) theEObject;
+			T result = caseAction(action);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case MatrixenginePackage.ACTION_TYPE: {
+			ActionType actionType = (ActionType) theEObject;
+			T result = caseActionType(actionType);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case MatrixenginePackage.GAME_MAP: {
+			GameMap gameMap = (GameMap) theEObject;
+			T result = caseGameMap(gameMap);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>main</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>main</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casemain(main object) {
-		return null;
 	}
 
 	/**
@@ -147,51 +153,6 @@ public class MatrixengineSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSetup(Setup object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Update Field</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Update Field</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseUpdateField(UpdateField object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Game Over</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Game Over</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseGameOver(GameOver object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Get User Input</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Get User Input</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseGetUserInput(GetUserInput object) {
 		return null;
 	}
 
@@ -222,6 +183,111 @@ public class MatrixengineSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTile(Tile object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Player</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Player</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePlayer(Player object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Game Logic</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Game Logic</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGameLogic(GameLogic object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Map</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Map</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMap(Map object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>State</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>State</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseState(State object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Action</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Action</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAction(Action object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Action Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Action Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseActionType(ActionType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Game Map</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Game Map</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGameMap(GameMap object) {
 		return null;
 	}
 

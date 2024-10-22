@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated matrixengine -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="no.ntnu.matrixengine.presentation.MatrixengineModelWizardID"
+            name="%_UI_MatrixengineModelWizard_label"
+            class="no.ntnu.matrixengine.presentation.MatrixengineModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/MatrixengineModelFile.gif">
+         <description>%_UI_MatrixengineModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated matrixengine -->
+      <editor
+            id="no.ntnu.matrixengine.presentation.MatrixengineEditorID"
+            name="%_UI_MatrixengineEditor_label"
+            icon="icons/full/obj16/MatrixengineModelFile.gif"
+            extensions="matrixengine"
+            class="no.ntnu.matrixengine.presentation.MatrixengineEditor"
+            contributorClass="no.ntnu.matrixengine.presentation.MatrixengineActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
