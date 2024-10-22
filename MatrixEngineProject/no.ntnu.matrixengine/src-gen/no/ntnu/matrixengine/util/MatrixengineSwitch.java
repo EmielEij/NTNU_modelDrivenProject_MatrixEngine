@@ -101,13 +101,6 @@ public class MatrixengineSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case MatrixenginePackage.MAP: {
-			Map map = (Map) theEObject;
-			T result = caseMap(map);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case MatrixenginePackage.STATE: {
 			State state = (State) theEObject;
 			T result = caseState(state);
@@ -213,21 +206,6 @@ public class MatrixengineSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseGameLogic(GameLogic object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Map</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Map</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMap(Map object) {
 		return null;
 	}
 

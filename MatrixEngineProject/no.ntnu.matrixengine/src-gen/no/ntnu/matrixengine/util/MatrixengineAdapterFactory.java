@@ -92,11 +92,6 @@ public class MatrixengineAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseMap(Map object) {
-			return createMapAdapter();
-		}
-
-		@Override
 		public Adapter caseState(State object) {
 			return createStateAdapter();
 		}
@@ -202,20 +197,6 @@ public class MatrixengineAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createGameLogicAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link no.ntnu.matrixengine.Map <em>Map</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see no.ntnu.matrixengine.Map
-	 * @generated
-	 */
-	public Adapter createMapAdapter() {
 		return null;
 	}
 

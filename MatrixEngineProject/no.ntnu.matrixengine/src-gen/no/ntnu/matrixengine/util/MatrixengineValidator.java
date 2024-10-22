@@ -97,8 +97,6 @@ public class MatrixengineValidator extends EObjectValidator {
 			return validatePlayer((Player) value, diagnostics, context);
 		case MatrixenginePackage.GAME_LOGIC:
 			return validateGameLogic((GameLogic) value, diagnostics, context);
-		case MatrixenginePackage.MAP:
-			return validateMap((no.ntnu.matrixengine.Map) value, diagnostics, context);
 		case MatrixenginePackage.STATE:
 			return validateState((State) value, diagnostics, context);
 		case MatrixenginePackage.ACTION:
@@ -155,110 +153,6 @@ public class MatrixengineValidator extends EObjectValidator {
 	 */
 	public boolean validateGameLogic(GameLogic gameLogic, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(gameLogic, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateMap(no.ntnu.matrixengine.Map map, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(map, diagnostics, context))
-			return false;
-		boolean result = validate_EveryMultiplicityConforms(map, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validate_EveryDataValueConforms(map, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validate_EveryReferenceIsContained(map, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validate_EveryBidirectionalReferenceIsPaired(map, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validate_EveryProxyResolves(map, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validate_UniqueID(map, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validate_EveryKeyUnique(map, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validate_EveryMapEntryUnique(map, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validateMap_tileMustBeSquare(map, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validateMap_fieldMustBeSquare(map, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validateMap_fieldMustFitOnScreen(map, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * Validates the tileMustBeSquare constraint of '<em>Map</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateMap_tileMustBeSquare(no.ntnu.matrixengine.Map map, DiagnosticChain diagnostics,
-			Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add(
-						createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0, "_UI_GenericConstraint_diagnostic",
-								new Object[] { "tileMustBeSquare", getObjectLabel(map, context) }, new Object[] { map },
-								context));
-			}
-			return false;
-		}
-		return true;
-	}
-
-	/**
-	 * Validates the fieldMustBeSquare constraint of '<em>Map</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateMap_fieldMustBeSquare(no.ntnu.matrixengine.Map map, DiagnosticChain diagnostics,
-			Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add(
-						createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0, "_UI_GenericConstraint_diagnostic",
-								new Object[] { "fieldMustBeSquare", getObjectLabel(map, context) },
-								new Object[] { map }, context));
-			}
-			return false;
-		}
-		return true;
-	}
-
-	/**
-	 * Validates the fieldMustFitOnScreen constraint of '<em>Map</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateMap_fieldMustFitOnScreen(no.ntnu.matrixengine.Map map, DiagnosticChain diagnostics,
-			Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add(
-						createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0, "_UI_GenericConstraint_diagnostic",
-								new Object[] { "fieldMustFitOnScreen", getObjectLabel(map, context) },
-								new Object[] { map }, context));
-			}
-			return false;
-		}
-		return true;
 	}
 
 	/**
@@ -328,13 +222,13 @@ public class MatrixengineValidator extends EObjectValidator {
 	 */
 	public boolean validateGameMap_tileSizeMustBeSquare(GameMap gameMap, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
-		
+
 		boolean valid = true;
-		
-		if(gameMap.getTileSizeX() != gameMap.getMapSizeY()) {
+
+		if (gameMap.getTileSizeX() != gameMap.getMapSizeY()) {
 			valid = false;
 		}
-		
+
 		if (!valid) {
 			if (diagnostics != null) {
 				diagnostics.add(
@@ -355,14 +249,14 @@ public class MatrixengineValidator extends EObjectValidator {
 	 */
 	public boolean validateGameMap_mapSizeMustFitScreen(GameMap gameMap, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
-		
+
 		boolean valid = true;
-		
-		if(gameMap.getMapSizeX() < 3 || gameMap.getMapSizeX() > 30 || 
-				gameMap.getMapSizeY() < 3 || gameMap.getMapSizeY() > 30) {
+
+		if (gameMap.getMapSizeX() < 3 || gameMap.getMapSizeX() > 30 || gameMap.getMapSizeY() < 3
+				|| gameMap.getMapSizeY() > 30) {
 			valid = false;
 		}
-		
+
 		if (!valid) {
 			if (diagnostics != null) {
 				diagnostics.add(
@@ -383,13 +277,13 @@ public class MatrixengineValidator extends EObjectValidator {
 	 */
 	public boolean validateGameMap_mapSizeMustBeSquare(GameMap gameMap, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
-		
+
 		boolean valid = true;
-		
-		if(gameMap.getMapSizeX() != gameMap.getMapSizeY()) {
+
+		if (gameMap.getMapSizeX() != gameMap.getMapSizeY()) {
 			valid = false;
 		}
-		
+
 		if (!valid) {
 			if (diagnostics != null) {
 				diagnostics.add(

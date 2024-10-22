@@ -66,8 +66,6 @@ public class MatrixengineFactoryImpl extends EFactoryImpl implements Matrixengin
 			return createPlayer();
 		case MatrixenginePackage.GAME_LOGIC:
 			return createGameLogic();
-		case MatrixenginePackage.MAP:
-			return createMap();
 		case MatrixenginePackage.STATE:
 			return createState();
 		case MatrixenginePackage.ACTION:
@@ -134,17 +132,6 @@ public class MatrixengineFactoryImpl extends EFactoryImpl implements Matrixengin
 	public GameLogic createGameLogic() {
 		GameLogicImpl gameLogic = new GameLogicImpl();
 		return gameLogic;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Map createMap() {
-		MapImpl map = new MapImpl();
-		return map;
 	}
 
 	/**

@@ -7,7 +7,6 @@ import no.ntnu.matrixengine.ActionType;
 import no.ntnu.matrixengine.Field;
 import no.ntnu.matrixengine.GameLogic;
 import no.ntnu.matrixengine.GameMap;
-import no.ntnu.matrixengine.Map;
 import no.ntnu.matrixengine.MatrixengineFactory;
 import no.ntnu.matrixengine.MatrixenginePackage;
 import no.ntnu.matrixengine.Player;
@@ -66,13 +65,6 @@ public class MatrixenginePackageImpl extends EPackageImpl implements Matrixengin
 	 * @generated
 	 */
 	private EClass gameLogicEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass mapEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -470,86 +462,6 @@ public class MatrixenginePackageImpl extends EPackageImpl implements Matrixengin
 	 * @generated
 	 */
 	@Override
-	public EClass getMap() {
-		return mapEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getMap_Name() {
-		return (EAttribute) mapEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getMap_Tile() {
-		return (EReference) mapEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getMap_SizeY() {
-		return (EAttribute) mapEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getMap_SizeX() {
-		return (EAttribute) mapEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getMap__InitializeMap() {
-		return mapEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getMap__GetTile__int_int() {
-		return mapEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getMap__LoadMap() {
-		return mapEClass.getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getState() {
 		return stateEClass;
 	}
@@ -818,15 +730,6 @@ public class MatrixenginePackageImpl extends EPackageImpl implements Matrixengin
 		createEOperation(gameLogicEClass, GAME_LOGIC___CHECK_WIN_CONDITION);
 		createEOperation(gameLogicEClass, GAME_LOGIC___IS_GAME_OVER);
 
-		mapEClass = createEClass(MAP);
-		createEAttribute(mapEClass, MAP__NAME);
-		createEReference(mapEClass, MAP__TILE);
-		createEAttribute(mapEClass, MAP__SIZE_Y);
-		createEAttribute(mapEClass, MAP__SIZE_X);
-		createEOperation(mapEClass, MAP___INITIALIZE_MAP);
-		createEOperation(mapEClass, MAP___GET_TILE__INT_INT);
-		createEOperation(mapEClass, MAP___LOAD_MAP);
-
 		stateEClass = createEClass(STATE);
 		createEReference(stateEClass, STATE__MAP);
 		createEAttribute(stateEClass, STATE__TURNS_TAKEN);
@@ -959,24 +862,6 @@ public class MatrixenginePackageImpl extends EPackageImpl implements Matrixengin
 
 		initEOperation(getGameLogic__IsGameOver(), null, "isGameOver", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(mapEClass, Map.class, "Map", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMap_Name(), ecorePackage.getEString(), "name", null, 0, 1, Map.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMap_Tile(), this.getTile(), null, "tile", null, 1, -1, Map.class, IS_TRANSIENT, !IS_VOLATILE,
-				!IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMap_SizeY(), ecorePackage.getEInt(), "SizeY", null, 0, 1, Map.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMap_SizeX(), ecorePackage.getEInt(), "SizeX", null, 0, 1, Map.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEOperation(getMap__InitializeMap(), null, "initializeMap", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getMap__GetTile__int_int(), null, "getTile", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "x", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "y", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEOperation(getMap__LoadMap(), this.getMap(), "loadMap", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(stateEClass, State.class, "State", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getState_Map(), this.getGameMap(), null, "map", null, 0, 1, State.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
@@ -1043,8 +928,6 @@ public class MatrixenginePackageImpl extends EPackageImpl implements Matrixengin
 	 */
 	protected void createEcoreAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore";
-		addAnnotation(mapEClass, source,
-				new String[] { "constraints", "tileMustBeSquare fieldMustBeSquare fieldMustFitOnScreen" });
 		addAnnotation(gameMapEClass, source,
 				new String[] { "constraints", "tileSizeMustBeSquare mapSizeMustFitScreen mapSizeMustBeSquare" });
 	}

@@ -414,97 +414,6 @@ public interface MatrixenginePackage extends EPackage {
 	int GAME_LOGIC_OPERATION_COUNT = 3;
 
 	/**
-	 * The meta object id for the '{@link no.ntnu.matrixengine.impl.MapImpl <em>Map</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see no.ntnu.matrixengine.impl.MapImpl
-	 * @see no.ntnu.matrixengine.impl.MatrixenginePackageImpl#getMap()
-	 * @generated
-	 */
-	int MAP = 5;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAP__NAME = 0;
-
-	/**
-	 * The feature id for the '<em><b>Tile</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAP__TILE = 1;
-
-	/**
-	 * The feature id for the '<em><b>Size Y</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAP__SIZE_Y = 2;
-
-	/**
-	 * The feature id for the '<em><b>Size X</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAP__SIZE_X = 3;
-
-	/**
-	 * The number of structural features of the '<em>Map</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAP_FEATURE_COUNT = 4;
-
-	/**
-	 * The operation id for the '<em>Initialize Map</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAP___INITIALIZE_MAP = 0;
-
-	/**
-	 * The operation id for the '<em>Get Tile</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAP___GET_TILE__INT_INT = 1;
-
-	/**
-	 * The operation id for the '<em>Load Map</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAP___LOAD_MAP = 2;
-
-	/**
-	 * The number of operations of the '<em>Map</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAP_OPERATION_COUNT = 3;
-
-	/**
 	 * The meta object id for the '{@link no.ntnu.matrixengine.impl.StateImpl <em>State</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -512,7 +421,7 @@ public interface MatrixenginePackage extends EPackage {
 	 * @see no.ntnu.matrixengine.impl.MatrixenginePackageImpl#getState()
 	 * @generated
 	 */
-	int STATE = 6;
+	int STATE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Map</b></em>' reference.
@@ -594,7 +503,7 @@ public interface MatrixenginePackage extends EPackage {
 	 * @see no.ntnu.matrixengine.impl.MatrixenginePackageImpl#getAction()
 	 * @generated
 	 */
-	int ACTION = 7;
+	int ACTION = 6;
 
 	/**
 	 * The feature id for the '<em><b>Actiontype</b></em>' reference.
@@ -649,7 +558,7 @@ public interface MatrixenginePackage extends EPackage {
 	 * @see no.ntnu.matrixengine.impl.MatrixenginePackageImpl#getActionType()
 	 * @generated
 	 */
-	int ACTION_TYPE = 8;
+	int ACTION_TYPE = 7;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -695,7 +604,7 @@ public interface MatrixenginePackage extends EPackage {
 	 * @see no.ntnu.matrixengine.impl.MatrixenginePackageImpl#getGameMap()
 	 * @generated
 	 */
-	int GAME_MAP = 9;
+	int GAME_MAP = 8;
 
 	/**
 	 * The feature id for the '<em><b>State</b></em>' reference.
@@ -1074,90 +983,6 @@ public interface MatrixenginePackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getGameLogic__IsGameOver();
-
-	/**
-	 * Returns the meta object for class '{@link no.ntnu.matrixengine.Map <em>Map</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Map</em>'.
-	 * @see no.ntnu.matrixengine.Map
-	 * @generated
-	 */
-	EClass getMap();
-
-	/**
-	 * Returns the meta object for the attribute '{@link no.ntnu.matrixengine.Map#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see no.ntnu.matrixengine.Map#getName()
-	 * @see #getMap()
-	 * @generated
-	 */
-	EAttribute getMap_Name();
-
-	/**
-	 * Returns the meta object for the reference list '{@link no.ntnu.matrixengine.Map#getTile <em>Tile</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Tile</em>'.
-	 * @see no.ntnu.matrixengine.Map#getTile()
-	 * @see #getMap()
-	 * @generated
-	 */
-	EReference getMap_Tile();
-
-	/**
-	 * Returns the meta object for the attribute '{@link no.ntnu.matrixengine.Map#getSizeY <em>Size Y</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Size Y</em>'.
-	 * @see no.ntnu.matrixengine.Map#getSizeY()
-	 * @see #getMap()
-	 * @generated
-	 */
-	EAttribute getMap_SizeY();
-
-	/**
-	 * Returns the meta object for the attribute '{@link no.ntnu.matrixengine.Map#getSizeX <em>Size X</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Size X</em>'.
-	 * @see no.ntnu.matrixengine.Map#getSizeX()
-	 * @see #getMap()
-	 * @generated
-	 */
-	EAttribute getMap_SizeX();
-
-	/**
-	 * Returns the meta object for the '{@link no.ntnu.matrixengine.Map#initializeMap() <em>Initialize Map</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Initialize Map</em>' operation.
-	 * @see no.ntnu.matrixengine.Map#initializeMap()
-	 * @generated
-	 */
-	EOperation getMap__InitializeMap();
-
-	/**
-	 * Returns the meta object for the '{@link no.ntnu.matrixengine.Map#getTile(int, int) <em>Get Tile</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Tile</em>' operation.
-	 * @see no.ntnu.matrixengine.Map#getTile(int, int)
-	 * @generated
-	 */
-	EOperation getMap__GetTile__int_int();
-
-	/**
-	 * Returns the meta object for the '{@link no.ntnu.matrixengine.Map#loadMap() <em>Load Map</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Load Map</em>' operation.
-	 * @see no.ntnu.matrixengine.Map#loadMap()
-	 * @generated
-	 */
-	EOperation getMap__LoadMap();
 
 	/**
 	 * Returns the meta object for class '{@link no.ntnu.matrixengine.State <em>State</em>}'.
@@ -1647,72 +1472,6 @@ public interface MatrixenginePackage extends EPackage {
 		 * @generated
 		 */
 		EOperation GAME_LOGIC___IS_GAME_OVER = eINSTANCE.getGameLogic__IsGameOver();
-
-		/**
-		 * The meta object literal for the '{@link no.ntnu.matrixengine.impl.MapImpl <em>Map</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see no.ntnu.matrixengine.impl.MapImpl
-		 * @see no.ntnu.matrixengine.impl.MatrixenginePackageImpl#getMap()
-		 * @generated
-		 */
-		EClass MAP = eINSTANCE.getMap();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MAP__NAME = eINSTANCE.getMap_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Tile</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MAP__TILE = eINSTANCE.getMap_Tile();
-
-		/**
-		 * The meta object literal for the '<em><b>Size Y</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MAP__SIZE_Y = eINSTANCE.getMap_SizeY();
-
-		/**
-		 * The meta object literal for the '<em><b>Size X</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MAP__SIZE_X = eINSTANCE.getMap_SizeX();
-
-		/**
-		 * The meta object literal for the '<em><b>Initialize Map</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation MAP___INITIALIZE_MAP = eINSTANCE.getMap__InitializeMap();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Tile</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation MAP___GET_TILE__INT_INT = eINSTANCE.getMap__GetTile__int_int();
-
-		/**
-		 * The meta object literal for the '<em><b>Load Map</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation MAP___LOAD_MAP = eINSTANCE.getMap__LoadMap();
 
 		/**
 		 * The meta object literal for the '{@link no.ntnu.matrixengine.impl.StateImpl <em>State</em>}' class.

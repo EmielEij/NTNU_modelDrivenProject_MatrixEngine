@@ -188,29 +188,6 @@ public class MatrixengineItemProviderAdapterFactory extends MatrixengineAdapterF
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link no.ntnu.matrixengine.Map} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected MapItemProvider mapItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link no.ntnu.matrixengine.Map}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createMapAdapter() {
-		if (mapItemProvider == null) {
-			mapItemProvider = new MapItemProvider(this);
-		}
-
-		return mapItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link no.ntnu.matrixengine.State} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -417,8 +394,6 @@ public class MatrixengineItemProviderAdapterFactory extends MatrixengineAdapterF
 			playerItemProvider.dispose();
 		if (gameLogicItemProvider != null)
 			gameLogicItemProvider.dispose();
-		if (mapItemProvider != null)
-			mapItemProvider.dispose();
 		if (stateItemProvider != null)
 			stateItemProvider.dispose();
 		if (actionItemProvider != null)

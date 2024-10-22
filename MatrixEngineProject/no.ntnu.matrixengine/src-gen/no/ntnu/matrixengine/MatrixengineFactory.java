@@ -67,15 +67,6 @@ public interface MatrixengineFactory extends EFactory {
 	GameLogic createGameLogic();
 
 	/**
-	 * Returns a new object of class '<em>Map</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Map</em>'.
-	 * @generated
-	 */
-	Map createMap();
-
-	/**
 	 * Returns a new object of class '<em>State</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
