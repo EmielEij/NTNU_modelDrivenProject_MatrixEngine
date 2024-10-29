@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see matrixGameEngine.MatrixGameEnginePackage#getMap()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='mapSizeMustBeSquare mapSizeMustFitScreen tileSizeMustBeSquare'"
  * @generated
  */
 public interface Map extends EObject {

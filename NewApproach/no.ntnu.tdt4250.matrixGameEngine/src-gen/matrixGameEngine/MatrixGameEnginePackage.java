@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
  * <!-- end-user-doc -->
  * @see matrixGameEngine.MatrixGameEngineFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore"
  * @generated
  */
 public interface MatrixGameEnginePackage extends EPackage {

@@ -13,6 +13,7 @@ import matrixGameEngine.State;
 import matrixGameEngine.Tile;
 import matrixGameEngine.TileType;
 
+import matrixGameEngine.util.MatrixGameEngineValidator;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -22,6 +23,7 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -149,6 +151,14 @@ public class MatrixGameEnginePackageImpl extends EPackageImpl implements MatrixG
 
 		// Initialize created meta-data
 		theMatrixGameEnginePackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put(theMatrixGameEnginePackage, new EValidator.Descriptor() {
+			@Override
+			public EValidator getEValidator() {
+				return MatrixGameEngineValidator.INSTANCE;
+			}
+		});
 
 		// Mark meta-data to indicate it can't be changed
 		theMatrixGameEnginePackage.freeze();
@@ -779,6 +789,23 @@ public class MatrixGameEnginePackageImpl extends EPackageImpl implements MatrixG
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";
+		addAnnotation(this, source, new String[] {});
+		addAnnotation(mapEClass, source,
+				new String[] { "constraints", "mapSizeMustBeSquare mapSizeMustFitScreen tileSizeMustBeSquare" });
 	}
 
 } //MatrixGameEnginePackageImpl

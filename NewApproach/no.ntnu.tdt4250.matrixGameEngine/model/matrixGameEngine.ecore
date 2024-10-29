@@ -2,6 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="matrixGameEngine" nsURI="http://www.example.org/matrixGameEngine"
     nsPrefix="matrixGameEngine">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore"/>
   <eClassifiers xsi:type="ecore:EClass" name="Tile">
     <eOperations name="getTileType" eType="#//TileType"/>
     <eOperations name="interact">
@@ -30,6 +31,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="actionType" eType="#//ActionType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Map">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="mapSizeMustBeSquare mapSizeMustFitScreen tileSizeMustBeSquare"/>
+    </eAnnotations>
     <eOperations name="initializeMap"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tile" lowerBound="4" upperBound="-1"
         eType="#//Tile" containment="true"/>
