@@ -55,6 +55,10 @@
     <genClasses ecoreClass="matrixGameEngine.ecore#//Map">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference matrixGameEngine.ecore#//Map/tile"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixGameEngine.ecore#//Map/amountOfTiles"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixGameEngine.ecore#//Map/mapSizeX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixGameEngine.ecore#//Map/mapSizeY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixGameEngine.ecore#//Map/tileSizeY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixGameEngine.ecore#//Map/tileSizeX"/>
       <genOperations ecoreOperation="matrixGameEngine.ecore#//Map/initializeMap"/>
     </genClasses>
     <genClasses ecoreClass="matrixGameEngine.ecore#//Player">

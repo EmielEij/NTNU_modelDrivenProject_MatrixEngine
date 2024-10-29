@@ -8,6 +8,7 @@ import java.util.List;
 import matrixGameEngine.Map;
 import matrixGameEngine.MatrixGameEngineFactory;
 import matrixGameEngine.MatrixGameEnginePackage;
+import no.ntnu.tdt4250.matrixGameEngine.provider.MatrixGameEngineEditPlugin;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -56,6 +57,10 @@ public class MapItemProvider extends ItemProviderAdapter implements IEditingDoma
 			super.getPropertyDescriptors(object);
 
 			addAmountOfTilesPropertyDescriptor(object);
+			addMapSizeXPropertyDescriptor(object);
+			addMapSizeYPropertyDescriptor(object);
+			addTileSizeYPropertyDescriptor(object);
+			addTileSizeXPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -73,6 +78,66 @@ public class MapItemProvider extends ItemProviderAdapter implements IEditingDoma
 						getString("_UI_PropertyDescriptor_description", "_UI_Map_amountOfTiles_feature",
 								"_UI_Map_type"),
 						MatrixGameEnginePackage.Literals.MAP__AMOUNT_OF_TILES, true, false, false,
+						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Map Size X feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMapSizeXPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Map_mapSizeX_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Map_mapSizeX_feature", "_UI_Map_type"),
+						MatrixGameEnginePackage.Literals.MAP__MAP_SIZE_X, true, false, false,
+						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Map Size Y feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMapSizeYPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Map_mapSizeY_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Map_mapSizeY_feature", "_UI_Map_type"),
+						MatrixGameEnginePackage.Literals.MAP__MAP_SIZE_Y, true, false, false,
+						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Tile Size Y feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTileSizeYPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Map_tileSizeY_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Map_tileSizeY_feature", "_UI_Map_type"),
+						MatrixGameEnginePackage.Literals.MAP__TILE_SIZE_Y, true, false, false,
+						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Tile Size X feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTileSizeXPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Map_tileSizeX_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Map_tileSizeX_feature", "_UI_Map_type"),
+						MatrixGameEnginePackage.Literals.MAP__TILE_SIZE_X, true, false, false,
 						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
@@ -152,6 +217,10 @@ public class MapItemProvider extends ItemProviderAdapter implements IEditingDoma
 
 		switch (notification.getFeatureID(Map.class)) {
 		case MatrixGameEnginePackage.MAP__AMOUNT_OF_TILES:
+		case MatrixGameEnginePackage.MAP__MAP_SIZE_X:
+		case MatrixGameEnginePackage.MAP__MAP_SIZE_Y:
+		case MatrixGameEnginePackage.MAP__TILE_SIZE_Y:
+		case MatrixGameEnginePackage.MAP__TILE_SIZE_X:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case MatrixGameEnginePackage.MAP__TILE:

@@ -173,7 +173,7 @@ public class MatrixGameEngineValidator extends EObjectValidator {
 	 * Validates the mapSizeMustBeSquare constraint of '<em>Map</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean validateMap_mapSizeMustBeSquare(matrixGameEngine.Map map, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
@@ -181,7 +181,14 @@ public class MatrixGameEngineValidator extends EObjectValidator {
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
+
+		boolean valid = true;
+
+		if (map.getMapSizeX() != map.getMapSizeY()) {
+			valid = false;
+		}
+
+		if (!valid) {
 			if (diagnostics != null) {
 				diagnostics.add(
 						createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0, "_UI_GenericConstraint_diagnostic",
@@ -191,13 +198,14 @@ public class MatrixGameEngineValidator extends EObjectValidator {
 			return false;
 		}
 		return true;
+
 	}
 
 	/**
 	 * Validates the mapSizeMustFitScreen constraint of '<em>Map</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean validateMap_mapSizeMustFitScreen(matrixGameEngine.Map map, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
@@ -205,7 +213,14 @@ public class MatrixGameEngineValidator extends EObjectValidator {
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
+
+		boolean valid = true;
+
+		if (map.getMapSizeX() < 3 || map.getMapSizeX() > 30 || map.getMapSizeY() < 3 || map.getMapSizeY() > 30) {
+			valid = false;
+		}
+
+		if (!valid) {
 			if (diagnostics != null) {
 				diagnostics.add(
 						createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0, "_UI_GenericConstraint_diagnostic",
@@ -215,13 +230,14 @@ public class MatrixGameEngineValidator extends EObjectValidator {
 			return false;
 		}
 		return true;
+
 	}
 
 	/**
 	 * Validates the tileSizeMustBeSquare constraint of '<em>Map</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean validateMap_tileSizeMustBeSquare(matrixGameEngine.Map map, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
@@ -229,7 +245,14 @@ public class MatrixGameEngineValidator extends EObjectValidator {
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
+
+		boolean valid = true;
+
+		if (map.getTileSizeX() != map.getMapSizeY()) {
+			valid = false;
+		}
+
+		if (!valid) {
 			if (diagnostics != null) {
 				diagnostics.add(
 						createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0, "_UI_GenericConstraint_diagnostic",
@@ -239,6 +262,7 @@ public class MatrixGameEngineValidator extends EObjectValidator {
 			return false;
 		}
 		return true;
+
 	}
 
 	/**

@@ -8,6 +8,7 @@ import java.util.List;
 import matrixGameEngine.GameLogic;
 import matrixGameEngine.MatrixGameEngineFactory;
 import matrixGameEngine.MatrixGameEnginePackage;
+import no.ntnu.tdt4250.matrixGameEngine.provider.MatrixGameEngineEditPlugin;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 

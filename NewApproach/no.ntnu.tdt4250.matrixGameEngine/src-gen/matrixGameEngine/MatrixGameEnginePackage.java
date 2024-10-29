@@ -327,13 +327,49 @@ public interface MatrixGameEnginePackage extends EPackage {
 	int MAP__AMOUNT_OF_TILES = 1;
 
 	/**
+	 * The feature id for the '<em><b>Map Size X</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP__MAP_SIZE_X = 2;
+
+	/**
+	 * The feature id for the '<em><b>Map Size Y</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP__MAP_SIZE_Y = 3;
+
+	/**
+	 * The feature id for the '<em><b>Tile Size Y</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP__TILE_SIZE_Y = 4;
+
+	/**
+	 * The feature id for the '<em><b>Tile Size X</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP__TILE_SIZE_X = 5;
+
+	/**
 	 * The number of structural features of the '<em>Map</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAP_FEATURE_COUNT = 2;
+	int MAP_FEATURE_COUNT = 6;
 
 	/**
 	 * The operation id for the '<em>Initialize Map</em>' operation.
@@ -783,6 +819,50 @@ public interface MatrixGameEnginePackage extends EPackage {
 	EAttribute getMap_AmountOfTiles();
 
 	/**
+	 * Returns the meta object for the attribute '{@link matrixGameEngine.Map#getMapSizeX <em>Map Size X</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Map Size X</em>'.
+	 * @see matrixGameEngine.Map#getMapSizeX()
+	 * @see #getMap()
+	 * @generated
+	 */
+	EAttribute getMap_MapSizeX();
+
+	/**
+	 * Returns the meta object for the attribute '{@link matrixGameEngine.Map#getMapSizeY <em>Map Size Y</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Map Size Y</em>'.
+	 * @see matrixGameEngine.Map#getMapSizeY()
+	 * @see #getMap()
+	 * @generated
+	 */
+	EAttribute getMap_MapSizeY();
+
+	/**
+	 * Returns the meta object for the attribute '{@link matrixGameEngine.Map#getTileSizeY <em>Tile Size Y</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Tile Size Y</em>'.
+	 * @see matrixGameEngine.Map#getTileSizeY()
+	 * @see #getMap()
+	 * @generated
+	 */
+	EAttribute getMap_TileSizeY();
+
+	/**
+	 * Returns the meta object for the attribute '{@link matrixGameEngine.Map#getTileSizeX <em>Tile Size X</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Tile Size X</em>'.
+	 * @see matrixGameEngine.Map#getTileSizeX()
+	 * @see #getMap()
+	 * @generated
+	 */
+	EAttribute getMap_TileSizeX();
+
+	/**
 	 * Returns the meta object for the '{@link matrixGameEngine.Map#initializeMap() <em>Initialize Map</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1174,6 +1254,38 @@ public interface MatrixGameEnginePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MAP__AMOUNT_OF_TILES = eINSTANCE.getMap_AmountOfTiles();
+
+		/**
+		 * The meta object literal for the '<em><b>Map Size X</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MAP__MAP_SIZE_X = eINSTANCE.getMap_MapSizeX();
+
+		/**
+		 * The meta object literal for the '<em><b>Map Size Y</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MAP__MAP_SIZE_Y = eINSTANCE.getMap_MapSizeY();
+
+		/**
+		 * The meta object literal for the '<em><b>Tile Size Y</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MAP__TILE_SIZE_Y = eINSTANCE.getMap_TileSizeY();
+
+		/**
+		 * The meta object literal for the '<em><b>Tile Size X</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MAP__TILE_SIZE_X = eINSTANCE.getMap_TileSizeX();
 
 		/**
 		 * The meta object literal for the '<em><b>Initialize Map</b></em>' operation.

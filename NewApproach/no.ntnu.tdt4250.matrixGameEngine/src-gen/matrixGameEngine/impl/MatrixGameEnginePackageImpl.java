@@ -404,6 +404,46 @@ public class MatrixGameEnginePackageImpl extends EPackageImpl implements MatrixG
 	 * @generated
 	 */
 	@Override
+	public EAttribute getMap_MapSizeX() {
+		return (EAttribute) mapEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getMap_MapSizeY() {
+		return (EAttribute) mapEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getMap_TileSizeY() {
+		return (EAttribute) mapEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getMap_TileSizeX() {
+		return (EAttribute) mapEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EOperation getMap__InitializeMap() {
 		return mapEClass.getEOperations().get(0);
 	}
@@ -624,6 +664,10 @@ public class MatrixGameEnginePackageImpl extends EPackageImpl implements MatrixG
 		mapEClass = createEClass(MAP);
 		createEReference(mapEClass, MAP__TILE);
 		createEAttribute(mapEClass, MAP__AMOUNT_OF_TILES);
+		createEAttribute(mapEClass, MAP__MAP_SIZE_X);
+		createEAttribute(mapEClass, MAP__MAP_SIZE_Y);
+		createEAttribute(mapEClass, MAP__TILE_SIZE_Y);
+		createEAttribute(mapEClass, MAP__TILE_SIZE_X);
 		createEOperation(mapEClass, MAP___INITIALIZE_MAP);
 
 		playerEClass = createEClass(PLAYER);
@@ -727,6 +771,14 @@ public class MatrixGameEnginePackageImpl extends EPackageImpl implements MatrixG
 				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMap_AmountOfTiles(), ecorePackage.getEInt(), "amountOfTiles", null, 0, 1, Map.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMap_MapSizeX(), ecorePackage.getEInt(), "mapSizeX", null, 0, 1, Map.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMap_MapSizeY(), ecorePackage.getEInt(), "mapSizeY", null, 0, 1, Map.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMap_TileSizeY(), ecorePackage.getEInt(), "tileSizeY", null, 0, 1, Map.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMap_TileSizeX(), ecorePackage.getEInt(), "tileSizeX", null, 0, 1, Map.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getMap__InitializeMap(), null, "initializeMap", 0, 1, IS_UNIQUE, IS_ORDERED);
 
