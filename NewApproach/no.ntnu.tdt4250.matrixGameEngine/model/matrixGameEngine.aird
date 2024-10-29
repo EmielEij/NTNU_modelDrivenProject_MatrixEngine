@@ -3,9 +3,13 @@
   <viewpoint:DAnalysis uid="_L1OP0IyBEe-niZ-mZxWhjg" selectedViews="_L1ri0IyBEe-niZ-mZxWhjg" version="15.4.1.202403191723">
     <semanticResources>matrixGameEngine.ecore</semanticResources>
     <semanticResources>matrixGameEngine.genmodel</semanticResources>
+    <semanticResources>Minesweeper.xmi</semanticResources>
+    <semanticResources>GameOfLife.xmi</semanticResources>
+    <semanticResources>Snake.xmi</semanticResources>
+    <semanticResources>TicTacToe.xmi</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_L1ri0IyBEe-niZ-mZxWhjg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_L13wEIyBEe-niZ-mZxWhjg" name="matrixGameEngine" repPath="#_L10swIyBEe-niZ-mZxWhjg" changeId="1730193524712">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_L13wEIyBEe-niZ-mZxWhjg" name="matrixGameEngine" repPath="#_L10swIyBEe-niZ-mZxWhjg" changeId="1730195211412">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="matrixGameEngine.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -32,6 +36,10 @@
             <children xmi:type="notation:Node" xmi:id="_5RrKMIyCEe-niZ-mZxWhjg" type="3010" element="_5RlqoYyCEe-niZ-mZxWhjg">
               <styles xmi:type="notation:FontStyle" xmi:id="_5RrKMYyCEe-niZ-mZxWhjg" fontColor="2697711" fontName=".AppleSystemUIFont" fontHeight="8" bold="true"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_5RrKMoyCEe-niZ-mZxWhjg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_roaeoJXXEe-YNd0I_-eB1w" type="3010" element="_roSi0JXXEe-YNd0I_-eB1w">
+              <styles xmi:type="notation:FontStyle" xmi:id="_roaeoZXXEe-YNd0I_-eB1w" fontColor="2697711" fontName="Ubuntu" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_roaeopXXEe-YNd0I_-eB1w"/>
             </children>
             <children xmi:type="notation:Node" xmi:id="_WH-KoIyEEe-niZ-mZxWhjg" type="3010" element="_WH214IyEEe-niZ-mZxWhjg">
               <styles xmi:type="notation:FontStyle" xmi:id="_WH-KoYyEEe-niZ-mZxWhjg" fontName=".AppleSystemUIFont" fontHeight="8"/>
@@ -370,7 +378,7 @@
     <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_PbUMwIyBEe-niZ-mZxWhjg" name="Tile" tooltipText="" incomingEdges="_Pbkrd4yBEe-niZ-mZxWhjg _9DSauIyCEe-niZ-mZxWhjg" width="12" height="10">
       <target xmi:type="ecore:EClass" href="matrixGameEngine.ecore#//Tile"/>
       <semanticElements xmi:type="ecore:EClass" href="matrixGameEngine.ecore#//Tile"/>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_gWnv8YyEEe-niZ-mZxWhjg" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_tHfrwZXXEe-YNd0I_-eB1w" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
@@ -403,6 +411,14 @@
         <semanticElements xmi:type="ecore:EAttribute" href="matrixGameEngine.ecore#//Tile/yCoordinate"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_Ii4DcIyDEe-niZ-mZxWhjg" labelAlignment="LEFT" description="_Ii4DbIyDEe-niZ-mZxWhjg">
           <labelFormat>bold</labelFormat>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_roSi0JXXEe-YNd0I_-eB1w" name="type : TileType = BASIC" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="matrixGameEngine.ecore#//Tile/type"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="matrixGameEngine.ecore#//Tile/type"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_tHfr0pXXEe-YNd0I_-eB1w" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
@@ -579,7 +595,7 @@
     <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_PbaTYIyBEe-niZ-mZxWhjg" name="Player" tooltipText="" outgoingEdges="_PbkrgYyBEe-niZ-mZxWhjg" incomingEdges="_PblSg4yBEe-niZ-mZxWhjg" width="12" height="10">
       <target xmi:type="ecore:EClass" href="matrixGameEngine.ecore#//Player"/>
       <semanticElements xmi:type="ecore:EClass" href="matrixGameEngine.ecore#//Player"/>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_2Nh5OoyBEe-niZ-mZxWhjg" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_tqkRs5XZEe-YNd0I_-eB1w" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
@@ -661,14 +677,13 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_PbkrgYyBEe-niZ-mZxWhjg" name="[1..1] state" sourceNode="_PbaTYIyBEe-niZ-mZxWhjg" targetNode="_PbWpAIyBEe-niZ-mZxWhjg">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_PbkrgYyBEe-niZ-mZxWhjg" name="[0..1] state" sourceNode="_PbaTYIyBEe-niZ-mZxWhjg" targetNode="_PbWpAIyBEe-niZ-mZxWhjg">
       <target xmi:type="ecore:EReference" href="matrixGameEngine.ecore#//Player/state"/>
       <semanticElements xmi:type="ecore:EReference" href="matrixGameEngine.ecore#//Player/state"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" uid="__QX9QIyCEe-niZ-mZxWhjg" description="_9gpsEIyCEe-niZ-mZxWhjg" routingStyle="manhattan" strokeColor="0,0,0">
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="__QX9QoyCEe-niZ-mZxWhjg" showIcon="false">
-          <labelFormat>bold</labelFormat>
-        </centerLabelStyle>
-        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="__QX9QYyCEe-niZ-mZxWhjg" labelSize="6" showIcon="false" labelColor="39,76,114"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_uS_uNpXaEe-YNd0I_-eB1w" routingStyle="manhattan" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_uS_uOJXaEe-YNd0I_-eB1w" showIcon="false"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_uS_uN5XaEe-YNd0I_-eB1w" labelSize="6" showIcon="false" labelColor="39,76,114"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>

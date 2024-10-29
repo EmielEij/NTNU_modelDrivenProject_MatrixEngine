@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link matrixGameEngine.Tile#getColor <em>Color</em>}</li>
  *   <li>{@link matrixGameEngine.Tile#getXCoordinate <em>XCoordinate</em>}</li>
  *   <li>{@link matrixGameEngine.Tile#getYCoordinate <em>YCoordinate</em>}</li>
+ *   <li>{@link matrixGameEngine.Tile#getType <em>Type</em>}</li>
  * </ul>
  *
  * @see matrixGameEngine.MatrixGameEnginePackage#getTile()
@@ -111,6 +112,31 @@ public interface Tile extends EObject {
 	 * @generated
 	 */
 	void setYCoordinate(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Type</b></em>' attribute.
+	 * The literals are from the enumeration {@link matrixGameEngine.TileType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Type</em>' attribute.
+	 * @see matrixGameEngine.TileType
+	 * @see #setType(TileType)
+	 * @see matrixGameEngine.MatrixGameEnginePackage#getTile_Type()
+	 * @model
+	 * @generated
+	 */
+	TileType getType();
+
+	/**
+	 * Sets the value of the '{@link matrixGameEngine.Tile#getType <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Type</em>' attribute.
+	 * @see matrixGameEngine.TileType
+	 * @see #getType()
+	 * @generated
+	 */
+	void setType(TileType value);
 
 	/**
 	 * <!-- begin-user-doc -->

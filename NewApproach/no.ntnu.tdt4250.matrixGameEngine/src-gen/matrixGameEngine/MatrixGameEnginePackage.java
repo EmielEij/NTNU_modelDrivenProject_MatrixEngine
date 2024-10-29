@@ -108,13 +108,22 @@ public interface MatrixGameEnginePackage extends EPackage {
 	int TILE__YCOORDINATE = 3;
 
 	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TILE__TYPE = 4;
+
+	/**
 	 * The number of structural features of the '<em>Tile</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TILE_FEATURE_COUNT = 4;
+	int TILE_FEATURE_COUNT = 5;
 
 	/**
 	 * The operation id for the '<em>Get Tile Type</em>' operation.
@@ -631,6 +640,17 @@ public interface MatrixGameEnginePackage extends EPackage {
 	EAttribute getTile_YCoordinate();
 
 	/**
+	 * Returns the meta object for the attribute '{@link matrixGameEngine.Tile#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see matrixGameEngine.Tile#getType()
+	 * @see #getTile()
+	 * @generated
+	 */
+	EAttribute getTile_Type();
+
+	/**
 	 * Returns the meta object for the '{@link matrixGameEngine.Tile#getTileType() <em>Get Tile Type</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1104,6 +1124,14 @@ public interface MatrixGameEnginePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TILE__YCOORDINATE = eINSTANCE.getTile_YCoordinate();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TILE__TYPE = eINSTANCE.getTile_Type();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Tile Type</b></em>' operation.

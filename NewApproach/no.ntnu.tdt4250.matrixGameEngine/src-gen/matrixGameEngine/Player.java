@@ -51,7 +51,7 @@ public interface Player extends EObject {
 	 * @return the value of the '<em>State</em>' reference.
 	 * @see #setState(State)
 	 * @see matrixGameEngine.MatrixGameEnginePackage#getPlayer_State()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	State getState();

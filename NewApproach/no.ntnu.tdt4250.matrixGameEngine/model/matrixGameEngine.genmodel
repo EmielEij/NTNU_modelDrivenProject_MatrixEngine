@@ -32,6 +32,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixGameEngine.ecore#//Tile/Color"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixGameEngine.ecore#//Tile/xCoordinate"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixGameEngine.ecore#//Tile/yCoordinate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixGameEngine.ecore#//Tile/type"/>
       <genOperations ecoreOperation="matrixGameEngine.ecore#//Tile/getTileType"/>
       <genOperations ecoreOperation="matrixGameEngine.ecore#//Tile/interact">
         <genParameters ecoreParameter="matrixGameEngine.ecore#//Tile/interact/action"/>

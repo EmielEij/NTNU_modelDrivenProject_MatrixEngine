@@ -224,6 +224,16 @@ public class MatrixGameEnginePackageImpl extends EPackageImpl implements MatrixG
 	 * @generated
 	 */
 	@Override
+	public EAttribute getTile_Type() {
+		return (EAttribute) tileEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EOperation getTile__GetTileType() {
 		return tileEClass.getEOperations().get(0);
 	}
@@ -643,6 +653,7 @@ public class MatrixGameEnginePackageImpl extends EPackageImpl implements MatrixG
 		createEAttribute(tileEClass, TILE__COLOR);
 		createEAttribute(tileEClass, TILE__XCOORDINATE);
 		createEAttribute(tileEClass, TILE__YCOORDINATE);
+		createEAttribute(tileEClass, TILE__TYPE);
 		createEOperation(tileEClass, TILE___GET_TILE_TYPE);
 		createEOperation(tileEClass, TILE___INTERACT__ACTION);
 		createEOperation(tileEClass, TILE___REVEAL);
@@ -733,6 +744,8 @@ public class MatrixGameEnginePackageImpl extends EPackageImpl implements MatrixG
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTile_YCoordinate(), ecorePackage.getEInt(), "yCoordinate", null, 1, 1, Tile.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTile_Type(), this.getTileType(), "type", null, 0, 1, Tile.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getTile__GetTileType(), this.getTileType(), "getTileType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -785,7 +798,7 @@ public class MatrixGameEnginePackageImpl extends EPackageImpl implements MatrixG
 		initEClass(playerEClass, Player.class, "Player", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPlayer_Score(), ecorePackage.getEInt(), "Score", null, 0, 1, Player.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPlayer_State(), this.getState(), null, "state", null, 1, 1, Player.class, !IS_TRANSIENT,
+		initEReference(getPlayer_State(), this.getState(), null, "state", null, 0, 1, Player.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 

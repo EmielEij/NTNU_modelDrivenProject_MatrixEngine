@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<matrixGameEngine:GameLogic
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:matrixGameEngine="http://www.example.org/matrixGameEngine">
+  <player/>
+  <map amountOfTiles="9"
+      mapSizeX="3"
+      mapSizeY="3"
+      tileSizeY="10"
+      tileSizeX="10">
+    <tile Color="White"
+        type="INTERACTIVE"/>
+    <tile Color="Green"
+        xCoordinate="1"
+        type="TOGGLEABLE"/>
+    <tile Color="White"
+        xCoordinate="2"
+        type="INTERACTIVE"/>
+    <tile Color="White"
+        yCoordinate="1"
+        type="INTERACTIVE"/>
+    <tile Color="Green"
+        xCoordinate="1"
+        yCoordinate="1"
+        type="TOGGLEABLE"/>
+    <tile Color="Green"
+        xCoordinate="2"
+        yCoordinate="1"
+        type="TOGGLEABLE"/>
+    <tile Color="White"
+        yCoordinate="2"
+        type="INTERACTIVE"/>
+    <tile Color="White"
+        xCoordinate="1"
+        yCoordinate="2"
+        type="INTERACTIVE"/>
+    <tile Color="White"
+        xCoordinate="2"
+        yCoordinate="2"
+        type="INTERACTIVE"/>
+  </map>
+</matrixGameEngine:GameLogic>
