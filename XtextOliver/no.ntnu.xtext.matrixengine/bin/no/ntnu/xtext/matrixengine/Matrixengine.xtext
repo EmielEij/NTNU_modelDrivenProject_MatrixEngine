@@ -1,0 +1,9 @@
+grammar no.ntnu.xtext.matrixengine.Matrixengine with org.eclipse.xtext.common.Terminals
+
+generate matrixengine "http://www.ntnu.no/xtext/matrixengine/Matrixengine"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';
