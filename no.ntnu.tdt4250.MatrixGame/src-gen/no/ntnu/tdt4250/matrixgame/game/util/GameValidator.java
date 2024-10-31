@@ -242,7 +242,7 @@ public class GameValidator extends EObjectValidator {
 		// IMPLEMENTED
 		boolean valid = true;
 
-		if (map.getTileSizeX() != map.getMapSizeY()) {
+		if (map.getMapSizeX() != map.getMapSizeY()) {
 			valid = false;
 		}
 

@@ -8,15 +8,11 @@ import java.util.Collection;
 import no.ntnu.tdt4250.matrixgame.game.Action;
 import no.ntnu.tdt4250.matrixgame.game.GamePackage;
 import no.ntnu.tdt4250.matrixgame.game.Player;
-import no.ntnu.tdt4250.matrixgame.game.State;
-
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
@@ -30,8 +26,8 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * </p>
  * <ul>
  *   <li>{@link no.ntnu.tdt4250.matrixgame.game.impl.PlayerImpl#getScore <em>Score</em>}</li>
- *   <li>{@link no.ntnu.tdt4250.matrixgame.game.impl.PlayerImpl#getState <em>State</em>}</li>
- *   <li>{@link no.ntnu.tdt4250.matrixgame.game.impl.PlayerImpl#getAction <em>Action</em>}</li>
+ *   <li>{@link no.ntnu.tdt4250.matrixgame.game.impl.PlayerImpl#getTakes_action <em>Takes action</em>}</li>
+ *   <li>{@link no.ntnu.tdt4250.matrixgame.game.impl.PlayerImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -58,24 +54,34 @@ public class PlayerImpl extends MinimalEObjectImpl.Container implements Player {
 	protected int score = SCORE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getState() <em>State</em>}' reference.
+	 * The cached value of the '{@link #getTakes_action() <em>Takes action</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getState()
+	 * @see #getTakes_action()
 	 * @generated
 	 * @ordered
 	 */
-	protected State state;
+	protected EList<Action> takes_action;
 
 	/**
-	 * The cached value of the '{@link #getAction() <em>Action</em>}' reference list.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAction()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Action> action;
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -125,26 +131,11 @@ public class PlayerImpl extends MinimalEObjectImpl.Container implements Player {
 	 * @generated
 	 */
 	@Override
-	public State getState() {
-		if (state != null && state.eIsProxy()) {
-			InternalEObject oldState = (InternalEObject) state;
-			state = (State) eResolveProxy(oldState);
-			if (state != oldState) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GamePackage.PLAYER__STATE, oldState,
-							state));
-			}
+	public EList<Action> getTakes_action() {
+		if (takes_action == null) {
+			takes_action = new EObjectResolvingEList<Action>(Action.class, this, GamePackage.PLAYER__TAKES_ACTION);
 		}
-		return state;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public State basicGetState() {
-		return state;
+		return takes_action;
 	}
 
 	/**
@@ -153,24 +144,21 @@ public class PlayerImpl extends MinimalEObjectImpl.Container implements Player {
 	 * @generated
 	 */
 	@Override
-	public void setState(State newState) {
-		State oldState = state;
-		state = newState;
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GamePackage.PLAYER__STATE, oldState, state));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Action> getAction() {
-		if (action == null) {
-			action = new EObjectResolvingEList<Action>(Action.class, this, GamePackage.PLAYER__ACTION);
-		}
-		return action;
+			eNotify(new ENotificationImpl(this, Notification.SET, GamePackage.PLAYER__NAME, oldName, name));
 	}
 
 	/**
@@ -195,12 +183,10 @@ public class PlayerImpl extends MinimalEObjectImpl.Container implements Player {
 		switch (featureID) {
 		case GamePackage.PLAYER__SCORE:
 			return getScore();
-		case GamePackage.PLAYER__STATE:
-			if (resolve)
-				return getState();
-			return basicGetState();
-		case GamePackage.PLAYER__ACTION:
-			return getAction();
+		case GamePackage.PLAYER__TAKES_ACTION:
+			return getTakes_action();
+		case GamePackage.PLAYER__NAME:
+			return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -217,12 +203,12 @@ public class PlayerImpl extends MinimalEObjectImpl.Container implements Player {
 		case GamePackage.PLAYER__SCORE:
 			setScore((Integer) newValue);
 			return;
-		case GamePackage.PLAYER__STATE:
-			setState((State) newValue);
+		case GamePackage.PLAYER__TAKES_ACTION:
+			getTakes_action().clear();
+			getTakes_action().addAll((Collection<? extends Action>) newValue);
 			return;
-		case GamePackage.PLAYER__ACTION:
-			getAction().clear();
-			getAction().addAll((Collection<? extends Action>) newValue);
+		case GamePackage.PLAYER__NAME:
+			setName((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -239,11 +225,11 @@ public class PlayerImpl extends MinimalEObjectImpl.Container implements Player {
 		case GamePackage.PLAYER__SCORE:
 			setScore(SCORE_EDEFAULT);
 			return;
-		case GamePackage.PLAYER__STATE:
-			setState((State) null);
+		case GamePackage.PLAYER__TAKES_ACTION:
+			getTakes_action().clear();
 			return;
-		case GamePackage.PLAYER__ACTION:
-			getAction().clear();
+		case GamePackage.PLAYER__NAME:
+			setName(NAME_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -259,10 +245,10 @@ public class PlayerImpl extends MinimalEObjectImpl.Container implements Player {
 		switch (featureID) {
 		case GamePackage.PLAYER__SCORE:
 			return score != SCORE_EDEFAULT;
-		case GamePackage.PLAYER__STATE:
-			return state != null;
-		case GamePackage.PLAYER__ACTION:
-			return action != null && !action.isEmpty();
+		case GamePackage.PLAYER__TAKES_ACTION:
+			return takes_action != null && !takes_action.isEmpty();
+		case GamePackage.PLAYER__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -293,8 +279,10 @@ public class PlayerImpl extends MinimalEObjectImpl.Container implements Player {
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (Score: ");
+		result.append(" (score: ");
 		result.append(score);
+		result.append(", name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}

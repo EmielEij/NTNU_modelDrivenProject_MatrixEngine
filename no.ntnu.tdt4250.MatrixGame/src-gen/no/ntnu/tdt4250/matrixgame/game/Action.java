@@ -15,8 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link no.ntnu.tdt4250.matrixgame.game.Action#getName <em>Name</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.matrixgame.game.Action#getActionType <em>Action Type</em>}</li>
- *   <li>{@link no.ntnu.tdt4250.matrixgame.game.Action#getChange_Accessbility <em>Change Accessbility</em>}</li>
- *   <li>{@link no.ntnu.tdt4250.matrixgame.game.Action#getChange_State <em>Change State</em>}</li>
  * </ul>
  *
  * @see no.ntnu.tdt4250.matrixgame.game.GamePackage#getAction()
@@ -70,28 +68,6 @@ public interface Action extends EObject {
 	 * @generated
 	 */
 	void setActionType(ActionType value);
-
-	/**
-	 * Returns the value of the '<em><b>Change Accessbility</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Change Accessbility</em>' reference.
-	 * @see no.ntnu.tdt4250.matrixgame.game.GamePackage#getAction_Change_Accessbility()
-	 * @model transient="true" changeable="false" derived="true"
-	 * @generated
-	 */
-	Tile getChange_Accessbility();
-
-	/**
-	 * Returns the value of the '<em><b>Change State</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Change State</em>' reference.
-	 * @see no.ntnu.tdt4250.matrixgame.game.GamePackage#getAction_Change_State()
-	 * @model transient="true" changeable="false" derived="true"
-	 * @generated
-	 */
-	State getChange_State();
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -13,11 +13,12 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link no.ntnu.tdt4250.matrixgame.game.Tile#getTilePlace <em>Tile Place</em>}</li>
+ *   <li>{@link no.ntnu.tdt4250.matrixgame.game.Tile#getTileType <em>Tile Type</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.matrixgame.game.Tile#isIsAccessible <em>Is Accessible</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.matrixgame.game.Tile#getColor <em>Color</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.matrixgame.game.Tile#getXCoordinate <em>XCoordinate</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.matrixgame.game.Tile#getYCoordinate <em>YCoordinate</em>}</li>
- *   <li>{@link no.ntnu.tdt4250.matrixgame.game.Tile#getTileType <em>Tile Type</em>}</li>
  * </ul>
  *
  * @see no.ntnu.tdt4250.matrixgame.game.GamePackage#getTile()
@@ -32,7 +33,7 @@ public interface Tile extends EObject {
 	 * @return the value of the '<em>Is Accessible</em>' attribute.
 	 * @see #setIsAccessible(boolean)
 	 * @see no.ntnu.tdt4250.matrixgame.game.GamePackage#getTile_IsAccessible()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	boolean isIsAccessible();
@@ -139,27 +140,33 @@ public interface Tile extends EObject {
 	void setTileType(TileType value);
 
 	/**
+	 * Returns the value of the '<em><b>Tile Place</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Tile Place</em>' attribute.
+	 * @see #setTilePlace(String)
+	 * @see no.ntnu.tdt4250.matrixgame.game.GamePackage#getTile_TilePlace()
+	 * @model required="true"
+	 * @generated
+	 */
+	String getTilePlace();
+
+	/**
+	 * Sets the value of the '{@link no.ntnu.tdt4250.matrixgame.game.Tile#getTilePlace <em>Tile Place</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Tile Place</em>' attribute.
+	 * @see #getTilePlace()
+	 * @generated
+	 */
+	void setTilePlace(String value);
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model
 	 * @generated
 	 */
 	void interact(Action action);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void reveal();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void toggle();
 
 } // Tile

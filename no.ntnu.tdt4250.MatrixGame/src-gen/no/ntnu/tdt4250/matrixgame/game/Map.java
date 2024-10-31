@@ -19,8 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link no.ntnu.tdt4250.matrixgame.game.Map#getAmountOfTiles <em>Amount Of Tiles</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.matrixgame.game.Map#getMapSizeX <em>Map Size X</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.matrixgame.game.Map#getMapSizeY <em>Map Size Y</em>}</li>
- *   <li>{@link no.ntnu.tdt4250.matrixgame.game.Map#getTileSizeY <em>Tile Size Y</em>}</li>
- *   <li>{@link no.ntnu.tdt4250.matrixgame.game.Map#getTileSizeX <em>Tile Size X</em>}</li>
+ *   <li>{@link no.ntnu.tdt4250.matrixgame.game.Map#getMapName <em>Map Name</em>}</li>
  * </ul>
  *
  * @see no.ntnu.tdt4250.matrixgame.game.GamePackage#getMap()
@@ -107,48 +106,26 @@ public interface Map extends EObject {
 	void setMapSizeY(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Tile Size Y</b></em>' attribute.
+	 * Returns the value of the '<em><b>Map Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tile Size Y</em>' attribute.
-	 * @see #setTileSizeY(int)
-	 * @see no.ntnu.tdt4250.matrixgame.game.GamePackage#getMap_TileSizeY()
+	 * @return the value of the '<em>Map Name</em>' attribute.
+	 * @see #setMapName(String)
+	 * @see no.ntnu.tdt4250.matrixgame.game.GamePackage#getMap_MapName()
 	 * @model
 	 * @generated
 	 */
-	int getTileSizeY();
+	String getMapName();
 
 	/**
-	 * Sets the value of the '{@link no.ntnu.tdt4250.matrixgame.game.Map#getTileSizeY <em>Tile Size Y</em>}' attribute.
+	 * Sets the value of the '{@link no.ntnu.tdt4250.matrixgame.game.Map#getMapName <em>Map Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Tile Size Y</em>' attribute.
-	 * @see #getTileSizeY()
+	 * @param value the new value of the '<em>Map Name</em>' attribute.
+	 * @see #getMapName()
 	 * @generated
 	 */
-	void setTileSizeY(int value);
-
-	/**
-	 * Returns the value of the '<em><b>Tile Size X</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tile Size X</em>' attribute.
-	 * @see #setTileSizeX(int)
-	 * @see no.ntnu.tdt4250.matrixgame.game.GamePackage#getMap_TileSizeX()
-	 * @model
-	 * @generated
-	 */
-	int getTileSizeX();
-
-	/**
-	 * Sets the value of the '{@link no.ntnu.tdt4250.matrixgame.game.Map#getTileSizeX <em>Tile Size X</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Tile Size X</em>' attribute.
-	 * @see #getTileSizeX()
-	 * @generated
-	 */
-	void setTileSizeX(int value);
+	void setMapName(String value);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -7,16 +7,11 @@ import java.lang.reflect.InvocationTargetException;
 import no.ntnu.tdt4250.matrixgame.game.Action;
 import no.ntnu.tdt4250.matrixgame.game.ActionType;
 import no.ntnu.tdt4250.matrixgame.game.GamePackage;
-
-import no.ntnu.tdt4250.matrixgame.game.State;
-import no.ntnu.tdt4250.matrixgame.game.Tile;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -30,8 +25,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link no.ntnu.tdt4250.matrixgame.game.impl.ActionImpl#getName <em>Name</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.matrixgame.game.impl.ActionImpl#getActionType <em>Action Type</em>}</li>
- *   <li>{@link no.ntnu.tdt4250.matrixgame.game.impl.ActionImpl#getChange_Accessbility <em>Change Accessbility</em>}</li>
- *   <li>{@link no.ntnu.tdt4250.matrixgame.game.impl.ActionImpl#getChange_State <em>Change State</em>}</li>
  * </ul>
  *
  * @generated
@@ -76,26 +69,6 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 	 * @ordered
 	 */
 	protected ActionType actionType = ACTION_TYPE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getChange_Accessbility() <em>Change Accessbility</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getChange_Accessbility()
-	 * @generated
-	 * @ordered
-	 */
-	protected Tile change_Accessbility;
-
-	/**
-	 * The cached value of the '{@link #getChange_State() <em>Change State</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getChange_State()
-	 * @generated
-	 * @ordered
-	 */
-	protected State change_State;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -169,62 +142,6 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 	 * @generated
 	 */
 	@Override
-	public Tile getChange_Accessbility() {
-		if (change_Accessbility != null && change_Accessbility.eIsProxy()) {
-			InternalEObject oldChange_Accessbility = (InternalEObject) change_Accessbility;
-			change_Accessbility = (Tile) eResolveProxy(oldChange_Accessbility);
-			if (change_Accessbility != oldChange_Accessbility) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GamePackage.ACTION__CHANGE_ACCESSBILITY,
-							oldChange_Accessbility, change_Accessbility));
-			}
-		}
-		return change_Accessbility;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Tile basicGetChange_Accessbility() {
-		return change_Accessbility;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public State getChange_State() {
-		if (change_State != null && change_State.eIsProxy()) {
-			InternalEObject oldChange_State = (InternalEObject) change_State;
-			change_State = (State) eResolveProxy(oldChange_State);
-			if (change_State != oldChange_State) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GamePackage.ACTION__CHANGE_STATE,
-							oldChange_State, change_State));
-			}
-		}
-		return change_State;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public State basicGetChange_State() {
-		return change_State;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public void performAction() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -243,14 +160,6 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 			return getName();
 		case GamePackage.ACTION__ACTION_TYPE:
 			return getActionType();
-		case GamePackage.ACTION__CHANGE_ACCESSBILITY:
-			if (resolve)
-				return getChange_Accessbility();
-			return basicGetChange_Accessbility();
-		case GamePackage.ACTION__CHANGE_STATE:
-			if (resolve)
-				return getChange_State();
-			return basicGetChange_State();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -303,10 +212,6 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case GamePackage.ACTION__ACTION_TYPE:
 			return actionType != ACTION_TYPE_EDEFAULT;
-		case GamePackage.ACTION__CHANGE_ACCESSBILITY:
-			return change_Accessbility != null;
-		case GamePackage.ACTION__CHANGE_STATE:
-			return change_State != null;
 		}
 		return super.eIsSet(featureID);
 	}

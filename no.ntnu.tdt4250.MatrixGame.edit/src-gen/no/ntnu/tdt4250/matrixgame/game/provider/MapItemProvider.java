@@ -59,8 +59,7 @@ public class MapItemProvider extends ItemProviderAdapter implements IEditingDoma
 			addAmountOfTilesPropertyDescriptor(object);
 			addMapSizeXPropertyDescriptor(object);
 			addMapSizeYPropertyDescriptor(object);
-			addTileSizeYPropertyDescriptor(object);
-			addTileSizeXPropertyDescriptor(object);
+			addMapNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -112,33 +111,18 @@ public class MapItemProvider extends ItemProviderAdapter implements IEditingDoma
 	}
 
 	/**
-	 * This adds a property descriptor for the Tile Size Y feature.
+	 * This adds a property descriptor for the Map Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTileSizeYPropertyDescriptor(Object object) {
+	protected void addMapNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Map_tileSizeY_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Map_tileSizeY_feature", "_UI_Map_type"),
-						GamePackage.Literals.MAP__TILE_SIZE_Y, true, false, false,
-						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Tile Size X feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTileSizeXPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Map_tileSizeX_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Map_tileSizeX_feature", "_UI_Map_type"),
-						GamePackage.Literals.MAP__TILE_SIZE_X, true, false, false,
-						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+						getResourceLocator(), getString("_UI_Map_mapName_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Map_mapName_feature", "_UI_Map_type"),
+						GamePackage.Literals.MAP__MAP_NAME, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -200,8 +184,9 @@ public class MapItemProvider extends ItemProviderAdapter implements IEditingDoma
 	 */
 	@Override
 	public String getText(Object object) {
-		Map map = (Map) object;
-		return getString("_UI_Map_type") + " " + map.getAmountOfTiles();
+		String label = ((Map) object).getMapName();
+		return label == null || label.length() == 0 ? getString("_UI_Map_type")
+				: getString("_UI_Map_type") + " " + label;
 	}
 
 	/**
@@ -219,8 +204,7 @@ public class MapItemProvider extends ItemProviderAdapter implements IEditingDoma
 		case GamePackage.MAP__AMOUNT_OF_TILES:
 		case GamePackage.MAP__MAP_SIZE_X:
 		case GamePackage.MAP__MAP_SIZE_Y:
-		case GamePackage.MAP__TILE_SIZE_Y:
-		case GamePackage.MAP__TILE_SIZE_X:
+		case GamePackage.MAP__MAP_NAME:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case GamePackage.MAP__TILE:

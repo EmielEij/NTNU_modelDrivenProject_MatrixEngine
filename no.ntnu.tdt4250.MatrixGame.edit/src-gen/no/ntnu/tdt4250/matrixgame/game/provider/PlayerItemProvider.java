@@ -54,8 +54,8 @@ public class PlayerItemProvider extends ItemProviderAdapter implements IEditingD
 			super.getPropertyDescriptors(object);
 
 			addScorePropertyDescriptor(object);
-			addStatePropertyDescriptor(object);
-			addActionPropertyDescriptor(object);
+			addTakes_actionPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -69,38 +69,40 @@ public class PlayerItemProvider extends ItemProviderAdapter implements IEditingD
 	protected void addScorePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Player_Score_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Player_Score_feature", "_UI_Player_type"),
+						getResourceLocator(), getString("_UI_Player_score_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Player_score_feature", "_UI_Player_type"),
 						GamePackage.Literals.PLAYER__SCORE, true, false, false,
 						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the State feature.
+	 * This adds a property descriptor for the Takes action feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addStatePropertyDescriptor(Object object) {
+	protected void addTakes_actionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Player_state_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Player_state_feature", "_UI_Player_type"),
-						GamePackage.Literals.PLAYER__STATE, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_Player_takes_action_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Player_takes_action_feature",
+								"_UI_Player_type"),
+						GamePackage.Literals.PLAYER__TAKES_ACTION, true, false, true, null, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Action feature.
+	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addActionPropertyDescriptor(Object object) {
+	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Player_action_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Player_action_feature", "_UI_Player_type"),
-						GamePackage.Literals.PLAYER__ACTION, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_Player_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Player_name_feature", "_UI_Player_type"),
+						GamePackage.Literals.PLAYER__NAME, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -132,8 +134,9 @@ public class PlayerItemProvider extends ItemProviderAdapter implements IEditingD
 	 */
 	@Override
 	public String getText(Object object) {
-		Player player = (Player) object;
-		return getString("_UI_Player_type") + " " + player.getScore();
+		String label = ((Player) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_Player_type")
+				: getString("_UI_Player_type") + " " + label;
 	}
 
 	/**
@@ -149,6 +152,7 @@ public class PlayerItemProvider extends ItemProviderAdapter implements IEditingD
 
 		switch (notification.getFeatureID(Player.class)) {
 		case GamePackage.PLAYER__SCORE:
+		case GamePackage.PLAYER__NAME:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

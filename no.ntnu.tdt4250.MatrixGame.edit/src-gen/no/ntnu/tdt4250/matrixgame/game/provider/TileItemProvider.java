@@ -7,7 +7,6 @@ import java.util.List;
 
 import no.ntnu.tdt4250.matrixgame.game.GamePackage;
 import no.ntnu.tdt4250.matrixgame.game.Tile;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -53,11 +52,12 @@ public class TileItemProvider extends ItemProviderAdapter implements IEditingDom
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addTilePlacePropertyDescriptor(object);
+			addTileTypePropertyDescriptor(object);
 			addIsAccessiblePropertyDescriptor(object);
 			addColorPropertyDescriptor(object);
 			addXCoordinatePropertyDescriptor(object);
 			addYCoordinatePropertyDescriptor(object);
-			addTileTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -141,6 +141,21 @@ public class TileItemProvider extends ItemProviderAdapter implements IEditingDom
 	}
 
 	/**
+	 * This adds a property descriptor for the Tile Place feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTilePlacePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Tile_tilePlace_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Tile_tilePlace_feature", "_UI_Tile_type"),
+						GamePackage.Literals.TILE__TILE_PLACE, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
 	 * This returns Tile.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -169,8 +184,9 @@ public class TileItemProvider extends ItemProviderAdapter implements IEditingDom
 	 */
 	@Override
 	public String getText(Object object) {
-		Tile tile = (Tile) object;
-		return getString("_UI_Tile_type") + " " + tile.isIsAccessible();
+		String label = ((Tile) object).getTilePlace();
+		return label == null || label.length() == 0 ? getString("_UI_Tile_type")
+				: getString("_UI_Tile_type") + " " + label;
 	}
 
 	/**
@@ -185,11 +201,12 @@ public class TileItemProvider extends ItemProviderAdapter implements IEditingDom
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Tile.class)) {
+		case GamePackage.TILE__TILE_PLACE:
+		case GamePackage.TILE__TILE_TYPE:
 		case GamePackage.TILE__IS_ACCESSIBLE:
 		case GamePackage.TILE__COLOR:
 		case GamePackage.TILE__XCOORDINATE:
 		case GamePackage.TILE__YCOORDINATE:
-		case GamePackage.TILE__TILE_TYPE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

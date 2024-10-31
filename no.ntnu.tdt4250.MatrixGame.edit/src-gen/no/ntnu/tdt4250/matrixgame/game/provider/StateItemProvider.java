@@ -57,6 +57,7 @@ public class StateItemProvider extends ItemProviderAdapter implements IEditingDo
 			addFlagsPlacedPropertyDescriptor(object);
 			addIsOverPropertyDescriptor(object);
 			addTilePropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -123,6 +124,21 @@ public class StateItemProvider extends ItemProviderAdapter implements IEditingDo
 	}
 
 	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_State_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_State_name_feature", "_UI_State_type"),
+						GamePackage.Literals.STATE__NAME, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
 	 * This returns State.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -151,8 +167,9 @@ public class StateItemProvider extends ItemProviderAdapter implements IEditingDo
 	 */
 	@Override
 	public String getText(Object object) {
-		State state = (State) object;
-		return getString("_UI_State_type") + " " + state.getTurnsTaken();
+		String label = ((State) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_State_type")
+				: getString("_UI_State_type") + " " + label;
 	}
 
 	/**
@@ -170,6 +187,7 @@ public class StateItemProvider extends ItemProviderAdapter implements IEditingDo
 		case GamePackage.STATE__TURNS_TAKEN:
 		case GamePackage.STATE__FLAGS_PLACED:
 		case GamePackage.STATE__IS_OVER:
+		case GamePackage.STATE__NAME:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

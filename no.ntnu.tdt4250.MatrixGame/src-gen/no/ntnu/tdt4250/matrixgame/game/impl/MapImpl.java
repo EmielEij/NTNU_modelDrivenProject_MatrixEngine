@@ -36,8 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link no.ntnu.tdt4250.matrixgame.game.impl.MapImpl#getAmountOfTiles <em>Amount Of Tiles</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.matrixgame.game.impl.MapImpl#getMapSizeX <em>Map Size X</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.matrixgame.game.impl.MapImpl#getMapSizeY <em>Map Size Y</em>}</li>
- *   <li>{@link no.ntnu.tdt4250.matrixgame.game.impl.MapImpl#getTileSizeY <em>Tile Size Y</em>}</li>
- *   <li>{@link no.ntnu.tdt4250.matrixgame.game.impl.MapImpl#getTileSizeX <em>Tile Size X</em>}</li>
+ *   <li>{@link no.ntnu.tdt4250.matrixgame.game.impl.MapImpl#getMapName <em>Map Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -114,44 +113,24 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	protected int mapSizeY = MAP_SIZE_Y_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getTileSizeY() <em>Tile Size Y</em>}' attribute.
+	 * The default value of the '{@link #getMapName() <em>Map Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTileSizeY()
+	 * @see #getMapName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int TILE_SIZE_Y_EDEFAULT = 0;
+	protected static final String MAP_NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getTileSizeY() <em>Tile Size Y</em>}' attribute.
+	 * The cached value of the '{@link #getMapName() <em>Map Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTileSizeY()
+	 * @see #getMapName()
 	 * @generated
 	 * @ordered
 	 */
-	protected int tileSizeY = TILE_SIZE_Y_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getTileSizeX() <em>Tile Size X</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTileSizeX()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int TILE_SIZE_X_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getTileSizeX() <em>Tile Size X</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTileSizeX()
-	 * @generated
-	 * @ordered
-	 */
-	protected int tileSizeX = TILE_SIZE_X_EDEFAULT;
+	protected String mapName = MAP_NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -261,8 +240,8 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	 * @generated
 	 */
 	@Override
-	public int getTileSizeY() {
-		return tileSizeY;
+	public String getMapName() {
+		return mapName;
 	}
 
 	/**
@@ -271,36 +250,11 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	 * @generated
 	 */
 	@Override
-	public void setTileSizeY(int newTileSizeY) {
-		int oldTileSizeY = tileSizeY;
-		tileSizeY = newTileSizeY;
+	public void setMapName(String newMapName) {
+		String oldMapName = mapName;
+		mapName = newMapName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GamePackage.MAP__TILE_SIZE_Y, oldTileSizeY,
-					tileSizeY));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int getTileSizeX() {
-		return tileSizeX;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setTileSizeX(int newTileSizeX) {
-		int oldTileSizeX = tileSizeX;
-		tileSizeX = newTileSizeX;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GamePackage.MAP__TILE_SIZE_X, oldTileSizeX,
-					tileSizeX));
+			eNotify(new ENotificationImpl(this, Notification.SET, GamePackage.MAP__MAP_NAME, oldMapName, mapName));
 	}
 
 	/**
@@ -345,10 +299,8 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 			return getMapSizeX();
 		case GamePackage.MAP__MAP_SIZE_Y:
 			return getMapSizeY();
-		case GamePackage.MAP__TILE_SIZE_Y:
-			return getTileSizeY();
-		case GamePackage.MAP__TILE_SIZE_X:
-			return getTileSizeX();
+		case GamePackage.MAP__MAP_NAME:
+			return getMapName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -375,11 +327,8 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 		case GamePackage.MAP__MAP_SIZE_Y:
 			setMapSizeY((Integer) newValue);
 			return;
-		case GamePackage.MAP__TILE_SIZE_Y:
-			setTileSizeY((Integer) newValue);
-			return;
-		case GamePackage.MAP__TILE_SIZE_X:
-			setTileSizeX((Integer) newValue);
+		case GamePackage.MAP__MAP_NAME:
+			setMapName((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -405,11 +354,8 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 		case GamePackage.MAP__MAP_SIZE_Y:
 			setMapSizeY(MAP_SIZE_Y_EDEFAULT);
 			return;
-		case GamePackage.MAP__TILE_SIZE_Y:
-			setTileSizeY(TILE_SIZE_Y_EDEFAULT);
-			return;
-		case GamePackage.MAP__TILE_SIZE_X:
-			setTileSizeX(TILE_SIZE_X_EDEFAULT);
+		case GamePackage.MAP__MAP_NAME:
+			setMapName(MAP_NAME_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -431,10 +377,8 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 			return mapSizeX != MAP_SIZE_X_EDEFAULT;
 		case GamePackage.MAP__MAP_SIZE_Y:
 			return mapSizeY != MAP_SIZE_Y_EDEFAULT;
-		case GamePackage.MAP__TILE_SIZE_Y:
-			return tileSizeY != TILE_SIZE_Y_EDEFAULT;
-		case GamePackage.MAP__TILE_SIZE_X:
-			return tileSizeX != TILE_SIZE_X_EDEFAULT;
+		case GamePackage.MAP__MAP_NAME:
+			return MAP_NAME_EDEFAULT == null ? mapName != null : !MAP_NAME_EDEFAULT.equals(mapName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -471,10 +415,8 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 		result.append(mapSizeX);
 		result.append(", mapSizeY: ");
 		result.append(mapSizeY);
-		result.append(", tileSizeY: ");
-		result.append(tileSizeY);
-		result.append(", tileSizeX: ");
-		result.append(tileSizeX);
+		result.append(", mapName: ");
+		result.append(mapName);
 		result.append(')');
 		return result.toString();
 	}

@@ -19,27 +19,25 @@
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="game.ecore#//TileType">
       <genEnumLiterals ecoreEnumLiteral="game.ecore#//TileType/BASIC"/>
-      <genEnumLiterals ecoreEnumLiteral="game.ecore#//TileType/REVERALBLE"/>
-      <genEnumLiterals ecoreEnumLiteral="game.ecore#//TileType/TOGGLEABLE"/>
+      <genEnumLiterals ecoreEnumLiteral="game.ecore#//TileType/REWARD"/>
+      <genEnumLiterals ecoreEnumLiteral="game.ecore#//TileType/OBSTACLE"/>
       <genEnumLiterals ecoreEnumLiteral="game.ecore#//TileType/INTERACTIVE"/>
+      <genEnumLiterals ecoreEnumLiteral="game.ecore#//TileType/CRASH"/>
     </genEnums>
     <genClasses ecoreClass="game.ecore#//Tile">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//Tile/tilePlace"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//Tile/tileType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//Tile/isAccessible"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//Tile/Color"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//Tile/xCoordinate"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//Tile/yCoordinate"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//Tile/tileType"/>
       <genOperations ecoreOperation="game.ecore#//Tile/interact">
         <genParameters ecoreParameter="game.ecore#//Tile/interact/action"/>
       </genOperations>
-      <genOperations ecoreOperation="game.ecore#//Tile/reveal"/>
-      <genOperations ecoreOperation="game.ecore#//Tile/toggle"/>
     </genClasses>
     <genClasses ecoreClass="game.ecore#//Action">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//Action/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//Action/actionType"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference game.ecore#//Action/change_Accessbility"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference game.ecore#//Action/change_State"/>
       <genOperations ecoreOperation="game.ecore#//Action/performAction"/>
     </genClasses>
     <genClasses ecoreClass="game.ecore#//State">
@@ -47,12 +45,13 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//State/flagsPlaced"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//State/isOver"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference game.ecore#//State/tile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//State/name"/>
       <genOperations ecoreOperation="game.ecore#//State/getCurrentStatus"/>
     </genClasses>
     <genClasses ecoreClass="game.ecore#//Player">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//Player/Score"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference game.ecore#//Player/state"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference game.ecore#//Player/action"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//Player/score"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference game.ecore#//Player/takes_action"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//Player/name"/>
       <genOperations ecoreOperation="game.ecore#//Player/takeAction"/>
     </genClasses>
     <genClasses ecoreClass="game.ecore#//Map">
@@ -60,14 +59,15 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//Map/amountOfTiles"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//Map/mapSizeX"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//Map/mapSizeY"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//Map/tileSizeY"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//Map/tileSizeX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//Map/mapName"/>
       <genOperations ecoreOperation="game.ecore#//Map/initializeMap"/>
     </genClasses>
     <genClasses ecoreClass="game.ecore#//GameLogic">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference game.ecore#//GameLogic/player"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference game.ecore#//GameLogic/gameaction"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference game.ecore#//GameLogic/map"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference game.ecore#//GameLogic/actions_played"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference game.ecore#//GameLogic/has_state"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//GameLogic/gameName"/>
       <genOperations ecoreOperation="game.ecore#//GameLogic/applyAction">
         <genParameters ecoreParameter="game.ecore#//GameLogic/applyAction/action"/>
         <genParameters ecoreParameter="game.ecore#//GameLogic/applyAction/tile"/>

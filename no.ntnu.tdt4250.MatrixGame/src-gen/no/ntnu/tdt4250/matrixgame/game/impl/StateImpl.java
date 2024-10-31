@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link no.ntnu.tdt4250.matrixgame.game.impl.StateImpl#isFlagsPlaced <em>Flags Placed</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.matrixgame.game.impl.StateImpl#isIsOver <em>Is Over</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.matrixgame.game.impl.StateImpl#getTile <em>Tile</em>}</li>
+ *   <li>{@link no.ntnu.tdt4250.matrixgame.game.impl.StateImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -104,6 +105,26 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	 * @ordered
 	 */
 	protected Tile tile;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -241,6 +262,29 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	 * @generated
 	 */
 	@Override
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GamePackage.STATE__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Tile getCurrentStatus() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -265,6 +309,8 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 			if (resolve)
 				return getTile();
 			return basicGetTile();
+		case GamePackage.STATE__NAME:
+			return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -288,6 +334,9 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 			return;
 		case GamePackage.STATE__TILE:
 			setTile((Tile) newValue);
+			return;
+		case GamePackage.STATE__NAME:
+			setName((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -313,6 +362,9 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 		case GamePackage.STATE__TILE:
 			setTile((Tile) null);
 			return;
+		case GamePackage.STATE__NAME:
+			setName(NAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -333,6 +385,8 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 			return isOver != IS_OVER_EDEFAULT;
 		case GamePackage.STATE__TILE:
 			return tile != null;
+		case GamePackage.STATE__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -368,6 +422,8 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 		result.append(flagsPlaced);
 		result.append(", isOver: ");
 		result.append(isOver);
+		result.append(", name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}

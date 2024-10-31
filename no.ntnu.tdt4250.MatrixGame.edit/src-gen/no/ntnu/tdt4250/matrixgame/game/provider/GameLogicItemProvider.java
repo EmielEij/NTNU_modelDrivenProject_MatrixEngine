@@ -14,7 +14,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -22,6 +21,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -54,24 +54,25 @@ public class GameLogicItemProvider extends ItemProviderAdapter implements IEditi
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addGameactionPropertyDescriptor(object);
+			addGameNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Gameaction feature.
+	 * This adds a property descriptor for the Game Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addGameactionPropertyDescriptor(Object object) {
+	protected void addGameNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_GameLogic_gameaction_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_GameLogic_gameaction_feature",
+						getResourceLocator(), getString("_UI_GameLogic_gameName_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_GameLogic_gameName_feature",
 								"_UI_GameLogic_type"),
-						GamePackage.Literals.GAME_LOGIC__GAMEACTION, true, false, true, null, null, null));
+						GamePackage.Literals.GAME_LOGIC__GAME_NAME, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -88,6 +89,8 @@ public class GameLogicItemProvider extends ItemProviderAdapter implements IEditi
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(GamePackage.Literals.GAME_LOGIC__PLAYER);
 			childrenFeatures.add(GamePackage.Literals.GAME_LOGIC__MAP);
+			childrenFeatures.add(GamePackage.Literals.GAME_LOGIC__ACTIONS_PLAYED);
+			childrenFeatures.add(GamePackage.Literals.GAME_LOGIC__HAS_STATE);
 		}
 		return childrenFeatures;
 	}
@@ -134,7 +137,9 @@ public class GameLogicItemProvider extends ItemProviderAdapter implements IEditi
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_GameLogic_type");
+		String label = ((GameLogic) object).getGameName();
+		return label == null || label.length() == 0 ? getString("_UI_GameLogic_type")
+				: getString("_UI_GameLogic_type") + " " + label;
 	}
 
 	/**
@@ -149,8 +154,13 @@ public class GameLogicItemProvider extends ItemProviderAdapter implements IEditi
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(GameLogic.class)) {
+		case GamePackage.GAME_LOGIC__GAME_NAME:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		case GamePackage.GAME_LOGIC__PLAYER:
 		case GamePackage.GAME_LOGIC__MAP:
+		case GamePackage.GAME_LOGIC__ACTIONS_PLAYED:
+		case GamePackage.GAME_LOGIC__HAS_STATE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -173,6 +183,12 @@ public class GameLogicItemProvider extends ItemProviderAdapter implements IEditi
 
 		newChildDescriptors
 				.add(createChildParameter(GamePackage.Literals.GAME_LOGIC__MAP, GameFactory.eINSTANCE.createMap()));
+
+		newChildDescriptors.add(createChildParameter(GamePackage.Literals.GAME_LOGIC__ACTIONS_PLAYED,
+				GameFactory.eINSTANCE.createAction()));
+
+		newChildDescriptors.add(
+				createChildParameter(GamePackage.Literals.GAME_LOGIC__HAS_STATE, GameFactory.eINSTANCE.createState()));
 	}
 
 	/**

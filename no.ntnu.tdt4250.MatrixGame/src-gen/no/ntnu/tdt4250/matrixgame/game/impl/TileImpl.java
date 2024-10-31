@@ -26,16 +26,57 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link no.ntnu.tdt4250.matrixgame.game.impl.TileImpl#getTilePlace <em>Tile Place</em>}</li>
+ *   <li>{@link no.ntnu.tdt4250.matrixgame.game.impl.TileImpl#getTileType <em>Tile Type</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.matrixgame.game.impl.TileImpl#isIsAccessible <em>Is Accessible</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.matrixgame.game.impl.TileImpl#getColor <em>Color</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.matrixgame.game.impl.TileImpl#getXCoordinate <em>XCoordinate</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.matrixgame.game.impl.TileImpl#getYCoordinate <em>YCoordinate</em>}</li>
- *   <li>{@link no.ntnu.tdt4250.matrixgame.game.impl.TileImpl#getTileType <em>Tile Type</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class TileImpl extends MinimalEObjectImpl.Container implements Tile {
+	/**
+	 * The default value of the '{@link #getTilePlace() <em>Tile Place</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTilePlace()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TILE_PLACE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTilePlace() <em>Tile Place</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTilePlace()
+	 * @generated
+	 * @ordered
+	 */
+	protected String tilePlace = TILE_PLACE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTileType() <em>Tile Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTileType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final TileType TILE_TYPE_EDEFAULT = TileType.BASIC;
+
+	/**
+	 * The cached value of the '{@link #getTileType() <em>Tile Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTileType()
+	 * @generated
+	 * @ordered
+	 */
+	protected TileType tileType = TILE_TYPE_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #isIsAccessible() <em>Is Accessible</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -115,26 +156,6 @@ public class TileImpl extends MinimalEObjectImpl.Container implements Tile {
 	 * @ordered
 	 */
 	protected int yCoordinate = YCOORDINATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getTileType() <em>Tile Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTileType()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final TileType TILE_TYPE_EDEFAULT = TileType.BASIC;
-
-	/**
-	 * The cached value of the '{@link #getTileType() <em>Tile Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTileType()
-	 * @generated
-	 * @ordered
-	 */
-	protected TileType tileType = TILE_TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -279,31 +300,31 @@ public class TileImpl extends MinimalEObjectImpl.Container implements Tile {
 	 * @generated
 	 */
 	@Override
+	public String getTilePlace() {
+		return tilePlace;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTilePlace(String newTilePlace) {
+		String oldTilePlace = tilePlace;
+		tilePlace = newTilePlace;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GamePackage.TILE__TILE_PLACE, oldTilePlace,
+					tilePlace));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public void interact(Action action) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void reveal() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void toggle() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -317,6 +338,10 @@ public class TileImpl extends MinimalEObjectImpl.Container implements Tile {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case GamePackage.TILE__TILE_PLACE:
+			return getTilePlace();
+		case GamePackage.TILE__TILE_TYPE:
+			return getTileType();
 		case GamePackage.TILE__IS_ACCESSIBLE:
 			return isIsAccessible();
 		case GamePackage.TILE__COLOR:
@@ -325,8 +350,6 @@ public class TileImpl extends MinimalEObjectImpl.Container implements Tile {
 			return getXCoordinate();
 		case GamePackage.TILE__YCOORDINATE:
 			return getYCoordinate();
-		case GamePackage.TILE__TILE_TYPE:
-			return getTileType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -339,6 +362,12 @@ public class TileImpl extends MinimalEObjectImpl.Container implements Tile {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+		case GamePackage.TILE__TILE_PLACE:
+			setTilePlace((String) newValue);
+			return;
+		case GamePackage.TILE__TILE_TYPE:
+			setTileType((TileType) newValue);
+			return;
 		case GamePackage.TILE__IS_ACCESSIBLE:
 			setIsAccessible((Boolean) newValue);
 			return;
@@ -350,9 +379,6 @@ public class TileImpl extends MinimalEObjectImpl.Container implements Tile {
 			return;
 		case GamePackage.TILE__YCOORDINATE:
 			setYCoordinate((Integer) newValue);
-			return;
-		case GamePackage.TILE__TILE_TYPE:
-			setTileType((TileType) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -366,6 +392,12 @@ public class TileImpl extends MinimalEObjectImpl.Container implements Tile {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+		case GamePackage.TILE__TILE_PLACE:
+			setTilePlace(TILE_PLACE_EDEFAULT);
+			return;
+		case GamePackage.TILE__TILE_TYPE:
+			setTileType(TILE_TYPE_EDEFAULT);
+			return;
 		case GamePackage.TILE__IS_ACCESSIBLE:
 			setIsAccessible(IS_ACCESSIBLE_EDEFAULT);
 			return;
@@ -377,9 +409,6 @@ public class TileImpl extends MinimalEObjectImpl.Container implements Tile {
 			return;
 		case GamePackage.TILE__YCOORDINATE:
 			setYCoordinate(YCOORDINATE_EDEFAULT);
-			return;
-		case GamePackage.TILE__TILE_TYPE:
-			setTileType(TILE_TYPE_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -393,6 +422,10 @@ public class TileImpl extends MinimalEObjectImpl.Container implements Tile {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case GamePackage.TILE__TILE_PLACE:
+			return TILE_PLACE_EDEFAULT == null ? tilePlace != null : !TILE_PLACE_EDEFAULT.equals(tilePlace);
+		case GamePackage.TILE__TILE_TYPE:
+			return tileType != TILE_TYPE_EDEFAULT;
 		case GamePackage.TILE__IS_ACCESSIBLE:
 			return isAccessible != IS_ACCESSIBLE_EDEFAULT;
 		case GamePackage.TILE__COLOR:
@@ -401,8 +434,6 @@ public class TileImpl extends MinimalEObjectImpl.Container implements Tile {
 			return xCoordinate != XCOORDINATE_EDEFAULT;
 		case GamePackage.TILE__YCOORDINATE:
 			return yCoordinate != YCOORDINATE_EDEFAULT;
-		case GamePackage.TILE__TILE_TYPE:
-			return tileType != TILE_TYPE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -417,12 +448,6 @@ public class TileImpl extends MinimalEObjectImpl.Container implements Tile {
 		switch (operationID) {
 		case GamePackage.TILE___INTERACT__ACTION:
 			interact((Action) arguments.get(0));
-			return null;
-		case GamePackage.TILE___REVEAL:
-			reveal();
-			return null;
-		case GamePackage.TILE___TOGGLE:
-			toggle();
 			return null;
 		}
 		return super.eInvoke(operationID, arguments);
@@ -439,7 +464,11 @@ public class TileImpl extends MinimalEObjectImpl.Container implements Tile {
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (isAccessible: ");
+		result.append(" (tilePlace: ");
+		result.append(tilePlace);
+		result.append(", tileType: ");
+		result.append(tileType);
+		result.append(", isAccessible: ");
 		result.append(isAccessible);
 		result.append(", Color: ");
 		result.append(color);
@@ -447,8 +476,6 @@ public class TileImpl extends MinimalEObjectImpl.Container implements Tile {
 		result.append(xCoordinate);
 		result.append(", yCoordinate: ");
 		result.append(yCoordinate);
-		result.append(", tileType: ");
-		result.append(tileType);
 		result.append(')');
 		return result.toString();
 	}

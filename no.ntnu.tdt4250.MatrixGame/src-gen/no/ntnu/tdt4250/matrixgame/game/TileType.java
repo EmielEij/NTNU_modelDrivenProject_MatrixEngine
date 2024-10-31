@@ -29,34 +29,41 @@ public enum TileType implements Enumerator {
 	BASIC(0, "BASIC", "BASIC"),
 
 	/**
-	 * The '<em><b>REVERALBLE</b></em>' literal object.
+	 * The '<em><b>REWARD</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #REVERALBLE_VALUE
+	 * @see #REWARD_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	REVERALBLE(0, "REVERALBLE", "REVERALBLE"),
-
+	REWARD(0, "REWARD", "REWARD"),
 	/**
-	 * The '<em><b>TOGGLEABLE</b></em>' literal object.
+	 * The '<em><b>OBSTACLE</b></em>' literal object.
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #TOGGLEABLE_VALUE
+	* <!-- end-user-doc -->
+	 * @see #OBSTACLE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	TOGGLEABLE(0, "TOGGLEABLE", "TOGGLEABLE"),
-
+	OBSTACLE(0, "OBSTACLE", "OBSTACLE"),
 	/**
 	 * The '<em><b>INTERACTIVE</b></em>' literal object.
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	* <!-- end-user-doc -->
 	 * @see #INTERACTIVE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	INTERACTIVE(0, "INTERACTIVE", "INTERACTIVE");
+	INTERACTIVE(0, "INTERACTIVE", "INTERACTIVE"),
+	/**
+	 * The '<em><b>CRASH</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	 * @see #CRASH_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	CRASH(4, "CRASH", "CRASH");
 
 	/**
 	 * The '<em><b>BASIC</b></em>' literal value.
@@ -70,26 +77,26 @@ public enum TileType implements Enumerator {
 	public static final int BASIC_VALUE = 0;
 
 	/**
-	 * The '<em><b>REVERALBLE</b></em>' literal value.
+	 * The '<em><b>REWARD</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #REVERALBLE
+	 * @see #REWARD
 	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int REVERALBLE_VALUE = 0;
+	public static final int REWARD_VALUE = 0;
 
 	/**
-	 * The '<em><b>TOGGLEABLE</b></em>' literal value.
+	 * The '<em><b>OBSTACLE</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #TOGGLEABLE
+	 * @see #OBSTACLE
 	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int TOGGLEABLE_VALUE = 0;
+	public static final int OBSTACLE_VALUE = 0;
 
 	/**
 	 * The '<em><b>INTERACTIVE</b></em>' literal value.
@@ -103,12 +110,23 @@ public enum TileType implements Enumerator {
 	public static final int INTERACTIVE_VALUE = 0;
 
 	/**
+	 * The '<em><b>CRASH</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #CRASH
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int CRASH_VALUE = 4;
+
+	/**
 	 * An array of all the '<em><b>Tile Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final TileType[] VALUES_ARRAY = new TileType[] { BASIC, REVERALBLE, TOGGLEABLE, INTERACTIVE, };
+	private static final TileType[] VALUES_ARRAY = new TileType[] { BASIC, REWARD, OBSTACLE, INTERACTIVE, CRASH, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Tile Type</b></em>' enumerators.
@@ -166,6 +184,8 @@ public enum TileType implements Enumerator {
 		switch (value) {
 		case BASIC_VALUE:
 			return BASIC;
+		case CRASH_VALUE:
+			return CRASH;
 		}
 		return null;
 	}
