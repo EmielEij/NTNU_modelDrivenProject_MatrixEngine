@@ -55,6 +55,7 @@ public class PlayerItemProvider extends ItemProviderAdapter implements IEditingD
 
 			addScorePropertyDescriptor(object);
 			addStatePropertyDescriptor(object);
+			addActionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -86,6 +87,20 @@ public class PlayerItemProvider extends ItemProviderAdapter implements IEditingD
 						getResourceLocator(), getString("_UI_Player_state_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_Player_state_feature", "_UI_Player_type"),
 						GamePackage.Literals.PLAYER__STATE, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Action feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addActionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Player_action_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Player_action_feature", "_UI_Player_type"),
+						GamePackage.Literals.PLAYER__ACTION, true, false, true, null, null, null));
 	}
 
 	/**

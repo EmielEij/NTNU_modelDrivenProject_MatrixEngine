@@ -28,7 +28,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//Tile/Color"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//Tile/xCoordinate"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//Tile/yCoordinate"/>
-      <genOperations ecoreOperation="game.ecore#//Tile/getTileType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//Tile/tileType"/>
       <genOperations ecoreOperation="game.ecore#//Tile/interact">
         <genParameters ecoreParameter="game.ecore#//Tile/interact/action"/>
       </genOperations>
@@ -38,6 +38,8 @@
     <genClasses ecoreClass="game.ecore#//Action">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//Action/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//Action/actionType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference game.ecore#//Action/change_Accessbility"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference game.ecore#//Action/change_State"/>
       <genOperations ecoreOperation="game.ecore#//Action/performAction"/>
     </genClasses>
     <genClasses ecoreClass="game.ecore#//State">
@@ -46,11 +48,11 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//State/isOver"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference game.ecore#//State/tile"/>
       <genOperations ecoreOperation="game.ecore#//State/getCurrentStatus"/>
-      <genOperations ecoreOperation="game.ecore#//State/getPlayersTurn"/>
     </genClasses>
     <genClasses ecoreClass="game.ecore#//Player">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//Player/Score"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference game.ecore#//Player/state"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference game.ecore#//Player/action"/>
       <genOperations ecoreOperation="game.ecore#//Player/takeAction"/>
     </genClasses>
     <genClasses ecoreClass="game.ecore#//Map">
@@ -63,7 +65,6 @@
       <genOperations ecoreOperation="game.ecore#//Map/initializeMap"/>
     </genClasses>
     <genClasses ecoreClass="game.ecore#//GameLogic">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//GameLogic/multiplayer"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference game.ecore#//GameLogic/player"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference game.ecore#//GameLogic/gameaction"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference game.ecore#//GameLogic/map"/>

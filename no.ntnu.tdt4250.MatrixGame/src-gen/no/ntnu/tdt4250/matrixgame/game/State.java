@@ -120,12 +120,4 @@ public interface State extends EObject {
 	 */
 	Tile getCurrentStatus();
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 * @generated
-	 */
-	Player getPlayersTurn();
-
 } // State

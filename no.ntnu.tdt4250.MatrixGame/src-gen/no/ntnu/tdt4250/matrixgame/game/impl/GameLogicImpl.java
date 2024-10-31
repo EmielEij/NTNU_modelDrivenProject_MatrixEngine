@@ -7,7 +7,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import no.ntnu.tdt4250.matrixgame.game.Action;
-import no.ntnu.tdt4250.matrixgame.game.ActionType;
 import no.ntnu.tdt4250.matrixgame.game.GameLogic;
 import no.ntnu.tdt4250.matrixgame.game.GamePackage;
 import no.ntnu.tdt4250.matrixgame.game.Map;
@@ -25,10 +24,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,7 +34,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link no.ntnu.tdt4250.matrixgame.game.impl.GameLogicImpl#getMultiplayer <em>Multiplayer</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.matrixgame.game.impl.GameLogicImpl#getPlayer <em>Player</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.matrixgame.game.impl.GameLogicImpl#getGameaction <em>Gameaction</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.matrixgame.game.impl.GameLogicImpl#getMap <em>Map</em>}</li>
@@ -48,34 +43,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class GameLogicImpl extends MinimalEObjectImpl.Container implements GameLogic {
 	/**
-	 * The default value of the '{@link #getMultiplayer() <em>Multiplayer</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMultiplayer()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final ActionType MULTIPLAYER_EDEFAULT = ActionType.NONE;
-
-	/**
-	 * The cached value of the '{@link #getMultiplayer() <em>Multiplayer</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMultiplayer()
-	 * @generated
-	 * @ordered
-	 */
-	protected ActionType multiplayer = MULTIPLAYER_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getPlayer() <em>Player</em>}' containment reference list.
+	 * The cached value of the '{@link #getPlayer() <em>Player</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPlayer()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Player> player;
+	protected Player player;
 
 	/**
 	 * The cached value of the '{@link #getGameaction() <em>Gameaction</em>}' reference list.
@@ -122,35 +97,50 @@ public class GameLogicImpl extends MinimalEObjectImpl.Container implements GameL
 	 * @generated
 	 */
 	@Override
-	public ActionType getMultiplayer() {
-		return multiplayer;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setMultiplayer(ActionType newMultiplayer) {
-		ActionType oldMultiplayer = multiplayer;
-		multiplayer = newMultiplayer == null ? MULTIPLAYER_EDEFAULT : newMultiplayer;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GamePackage.GAME_LOGIC__MULTIPLAYER, oldMultiplayer,
-					multiplayer));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Player> getPlayer() {
-		if (player == null) {
-			player = new EObjectContainmentEList<Player>(Player.class, this, GamePackage.GAME_LOGIC__PLAYER);
-		}
+	public Player getPlayer() {
 		return player;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetPlayer(Player newPlayer, NotificationChain msgs) {
+		Player oldPlayer = player;
+		player = newPlayer;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					GamePackage.GAME_LOGIC__PLAYER, oldPlayer, newPlayer);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPlayer(Player newPlayer) {
+		if (newPlayer != player) {
+			NotificationChain msgs = null;
+			if (player != null)
+				msgs = ((InternalEObject) player).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - GamePackage.GAME_LOGIC__PLAYER, null, msgs);
+			if (newPlayer != null)
+				msgs = ((InternalEObject) newPlayer).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - GamePackage.GAME_LOGIC__PLAYER, null, msgs);
+			msgs = basicSetPlayer(newPlayer, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GamePackage.GAME_LOGIC__PLAYER, newPlayer,
+					newPlayer));
 	}
 
 	/**
@@ -262,7 +252,7 @@ public class GameLogicImpl extends MinimalEObjectImpl.Container implements GameL
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case GamePackage.GAME_LOGIC__PLAYER:
-			return ((InternalEList<?>) getPlayer()).basicRemove(otherEnd, msgs);
+			return basicSetPlayer(null, msgs);
 		case GamePackage.GAME_LOGIC__MAP:
 			return basicSetMap(null, msgs);
 		}
@@ -277,8 +267,6 @@ public class GameLogicImpl extends MinimalEObjectImpl.Container implements GameL
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case GamePackage.GAME_LOGIC__MULTIPLAYER:
-			return getMultiplayer();
 		case GamePackage.GAME_LOGIC__PLAYER:
 			return getPlayer();
 		case GamePackage.GAME_LOGIC__GAMEACTION:
@@ -298,12 +286,8 @@ public class GameLogicImpl extends MinimalEObjectImpl.Container implements GameL
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case GamePackage.GAME_LOGIC__MULTIPLAYER:
-			setMultiplayer((ActionType) newValue);
-			return;
 		case GamePackage.GAME_LOGIC__PLAYER:
-			getPlayer().clear();
-			getPlayer().addAll((Collection<? extends Player>) newValue);
+			setPlayer((Player) newValue);
 			return;
 		case GamePackage.GAME_LOGIC__GAMEACTION:
 			getGameaction().clear();
@@ -324,11 +308,8 @@ public class GameLogicImpl extends MinimalEObjectImpl.Container implements GameL
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case GamePackage.GAME_LOGIC__MULTIPLAYER:
-			setMultiplayer(MULTIPLAYER_EDEFAULT);
-			return;
 		case GamePackage.GAME_LOGIC__PLAYER:
-			getPlayer().clear();
+			setPlayer((Player) null);
 			return;
 		case GamePackage.GAME_LOGIC__GAMEACTION:
 			getGameaction().clear();
@@ -348,10 +329,8 @@ public class GameLogicImpl extends MinimalEObjectImpl.Container implements GameL
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case GamePackage.GAME_LOGIC__MULTIPLAYER:
-			return multiplayer != MULTIPLAYER_EDEFAULT;
 		case GamePackage.GAME_LOGIC__PLAYER:
-			return player != null && !player.isEmpty();
+			return player != null;
 		case GamePackage.GAME_LOGIC__GAMEACTION:
 			return gameaction != null && !gameaction.isEmpty();
 		case GamePackage.GAME_LOGIC__MAP:
@@ -377,23 +356,6 @@ public class GameLogicImpl extends MinimalEObjectImpl.Container implements GameL
 			return generateStartingPosition();
 		}
 		return super.eInvoke(operationID, arguments);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy())
-			return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (multiplayer: ");
-		result.append(multiplayer);
-		result.append(')');
-		return result.toString();
 	}
 
 } //GameLogicImpl

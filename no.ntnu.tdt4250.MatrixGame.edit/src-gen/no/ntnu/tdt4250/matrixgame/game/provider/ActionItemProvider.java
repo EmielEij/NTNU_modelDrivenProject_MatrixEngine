@@ -55,6 +55,8 @@ public class ActionItemProvider extends ItemProviderAdapter implements IEditingD
 
 			addNamePropertyDescriptor(object);
 			addActionTypePropertyDescriptor(object);
+			addChange_AccessbilityPropertyDescriptor(object);
+			addChange_StatePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -88,6 +90,36 @@ public class ActionItemProvider extends ItemProviderAdapter implements IEditingD
 								"_UI_Action_type"),
 						GamePackage.Literals.ACTION__ACTION_TYPE, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Change Accessbility feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addChange_AccessbilityPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Action_change_Accessbility_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Action_change_Accessbility_feature",
+								"_UI_Action_type"),
+						GamePackage.Literals.ACTION__CHANGE_ACCESSBILITY, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Change State feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addChange_StatePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Action_change_State_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Action_change_State_feature",
+								"_UI_Action_type"),
+						GamePackage.Literals.ACTION__CHANGE_STATE, true, false, true, null, null, null));
 	}
 
 	/**

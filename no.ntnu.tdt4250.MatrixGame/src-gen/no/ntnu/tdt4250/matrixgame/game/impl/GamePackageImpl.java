@@ -216,8 +216,8 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getTile__GetTileType() {
-		return tileEClass.getEOperations().get(0);
+	public EAttribute getTile_TileType() {
+		return (EAttribute) tileEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -227,7 +227,7 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 	 */
 	@Override
 	public EOperation getTile__Interact__Action() {
-		return tileEClass.getEOperations().get(1);
+		return tileEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -237,7 +237,7 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 	 */
 	@Override
 	public EOperation getTile__Reveal() {
-		return tileEClass.getEOperations().get(2);
+		return tileEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -247,7 +247,7 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 	 */
 	@Override
 	public EOperation getTile__Toggle() {
-		return tileEClass.getEOperations().get(3);
+		return tileEClass.getEOperations().get(2);
 	}
 
 	/**
@@ -278,6 +278,26 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 	@Override
 	public EAttribute getAction_ActionType() {
 		return (EAttribute) actionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAction_Change_Accessbility() {
+		return (EReference) actionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAction_Change_State() {
+		return (EReference) actionEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -356,16 +376,6 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getState__GetPlayersTurn() {
-		return stateEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getPlayer() {
 		return playerEClass;
 	}
@@ -388,6 +398,16 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 	@Override
 	public EReference getPlayer_State() {
 		return (EReference) playerEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getPlayer_Action() {
+		return (EReference) playerEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -496,18 +516,8 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getGameLogic_Multiplayer() {
-		return (EAttribute) gameLogicEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getGameLogic_Player() {
-		return (EReference) gameLogicEClass.getEStructuralFeatures().get(1);
+		return (EReference) gameLogicEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -517,7 +527,7 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 	 */
 	@Override
 	public EReference getGameLogic_Gameaction() {
-		return (EReference) gameLogicEClass.getEStructuralFeatures().get(2);
+		return (EReference) gameLogicEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -527,7 +537,7 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 	 */
 	@Override
 	public EReference getGameLogic_Map() {
-		return (EReference) gameLogicEClass.getEStructuralFeatures().get(3);
+		return (EReference) gameLogicEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -615,7 +625,7 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 		createEAttribute(tileEClass, TILE__COLOR);
 		createEAttribute(tileEClass, TILE__XCOORDINATE);
 		createEAttribute(tileEClass, TILE__YCOORDINATE);
-		createEOperation(tileEClass, TILE___GET_TILE_TYPE);
+		createEAttribute(tileEClass, TILE__TILE_TYPE);
 		createEOperation(tileEClass, TILE___INTERACT__ACTION);
 		createEOperation(tileEClass, TILE___REVEAL);
 		createEOperation(tileEClass, TILE___TOGGLE);
@@ -623,6 +633,8 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 		actionEClass = createEClass(ACTION);
 		createEAttribute(actionEClass, ACTION__NAME);
 		createEAttribute(actionEClass, ACTION__ACTION_TYPE);
+		createEReference(actionEClass, ACTION__CHANGE_ACCESSBILITY);
+		createEReference(actionEClass, ACTION__CHANGE_STATE);
 		createEOperation(actionEClass, ACTION___PERFORM_ACTION);
 
 		stateEClass = createEClass(STATE);
@@ -631,11 +643,11 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 		createEAttribute(stateEClass, STATE__IS_OVER);
 		createEReference(stateEClass, STATE__TILE);
 		createEOperation(stateEClass, STATE___GET_CURRENT_STATUS);
-		createEOperation(stateEClass, STATE___GET_PLAYERS_TURN);
 
 		playerEClass = createEClass(PLAYER);
 		createEAttribute(playerEClass, PLAYER__SCORE);
 		createEReference(playerEClass, PLAYER__STATE);
+		createEReference(playerEClass, PLAYER__ACTION);
 		createEOperation(playerEClass, PLAYER___TAKE_ACTION);
 
 		mapEClass = createEClass(MAP);
@@ -648,7 +660,6 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 		createEOperation(mapEClass, MAP___INITIALIZE_MAP);
 
 		gameLogicEClass = createEClass(GAME_LOGIC);
-		createEAttribute(gameLogicEClass, GAME_LOGIC__MULTIPLAYER);
 		createEReference(gameLogicEClass, GAME_LOGIC__PLAYER);
 		createEReference(gameLogicEClass, GAME_LOGIC__GAMEACTION);
 		createEReference(gameLogicEClass, GAME_LOGIC__MAP);
@@ -701,8 +712,8 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTile_YCoordinate(), ecorePackage.getEInt(), "yCoordinate", null, 1, 1, Tile.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEOperation(getTile__GetTileType(), this.getTileType(), "getTileType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEAttribute(getTile_TileType(), this.getTileType(), "tileType", null, 1, 1, Tile.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = initEOperation(getTile__Interact__Action(), null, "interact", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getAction(), "action", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -716,6 +727,12 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAction_ActionType(), this.getActionType(), "actionType", null, 0, 1, Action.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAction_Change_Accessbility(), this.getTile(), null, "change_Accessbility", null, 0, 1,
+				Action.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getAction_Change_State(), this.getState(), null, "change_State", null, 0, 1, Action.class,
+				IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getAction__PerformAction(), null, "performAction", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -732,12 +749,13 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 
 		initEOperation(getState__GetCurrentStatus(), this.getTile(), "getCurrentStatus", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getState__GetPlayersTurn(), this.getPlayer(), "getPlayersTurn", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(playerEClass, Player.class, "Player", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPlayer_Score(), ecorePackage.getEInt(), "Score", null, 0, 1, Player.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPlayer_State(), this.getState(), null, "state", null, 1, 1, Player.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getPlayer_Action(), this.getAction(), null, "action", null, 0, -1, Player.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 
@@ -761,9 +779,7 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 
 		initEClass(gameLogicEClass, GameLogic.class, "GameLogic", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getGameLogic_Multiplayer(), this.getActionType(), "multiplayer", null, 0, 1, GameLogic.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getGameLogic_Player(), this.getPlayer(), null, "player", null, 1, -1, GameLogic.class,
+		initEReference(getGameLogic_Player(), this.getPlayer(), null, "player", null, 1, 1, GameLogic.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGameLogic_Gameaction(), this.getAction(), null, "gameaction", null, 0, -1, GameLogic.class,

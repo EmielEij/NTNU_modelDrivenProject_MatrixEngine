@@ -5,7 +5,6 @@ package no.ntnu.tdt4250.matrixgame.game.impl;
 import java.lang.reflect.InvocationTargetException;
 
 import no.ntnu.tdt4250.matrixgame.game.GamePackage;
-import no.ntnu.tdt4250.matrixgame.game.Player;
 import no.ntnu.tdt4250.matrixgame.game.State;
 import no.ntnu.tdt4250.matrixgame.game.Tile;
 
@@ -254,18 +253,6 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	 * @generated
 	 */
 	@Override
-	public Player getPlayersTurn() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case GamePackage.STATE__TURNS_TAKEN:
@@ -360,8 +347,6 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 		switch (operationID) {
 		case GamePackage.STATE___GET_CURRENT_STATUS:
 			return getCurrentStatus();
-		case GamePackage.STATE___GET_PLAYERS_TURN:
-			return getPlayersTurn();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

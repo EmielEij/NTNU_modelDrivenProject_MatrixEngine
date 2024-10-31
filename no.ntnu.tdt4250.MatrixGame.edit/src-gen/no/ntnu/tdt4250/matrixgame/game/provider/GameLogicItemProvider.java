@@ -4,8 +4,6 @@ package no.ntnu.tdt4250.matrixgame.game.provider;
 
 import java.util.Collection;
 import java.util.List;
-
-import no.ntnu.tdt4250.matrixgame.game.ActionType;
 import no.ntnu.tdt4250.matrixgame.game.GameFactory;
 import no.ntnu.tdt4250.matrixgame.game.GameLogic;
 import no.ntnu.tdt4250.matrixgame.game.GamePackage;
@@ -24,7 +22,6 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -57,26 +54,9 @@ public class GameLogicItemProvider extends ItemProviderAdapter implements IEditi
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addMultiplayerPropertyDescriptor(object);
 			addGameactionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Multiplayer feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addMultiplayerPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_GameLogic_multiplayer_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_GameLogic_multiplayer_feature",
-								"_UI_GameLogic_type"),
-						GamePackage.Literals.GAME_LOGIC__MULTIPLAYER, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -154,10 +134,7 @@ public class GameLogicItemProvider extends ItemProviderAdapter implements IEditi
 	 */
 	@Override
 	public String getText(Object object) {
-		ActionType labelValue = ((GameLogic) object).getMultiplayer();
-		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ? getString("_UI_GameLogic_type")
-				: getString("_UI_GameLogic_type") + " " + label;
+		return getString("_UI_GameLogic_type");
 	}
 
 	/**
@@ -172,9 +149,6 @@ public class GameLogicItemProvider extends ItemProviderAdapter implements IEditi
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(GameLogic.class)) {
-		case GamePackage.GAME_LOGIC__MULTIPLAYER:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
 		case GamePackage.GAME_LOGIC__PLAYER:
 		case GamePackage.GAME_LOGIC__MAP:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));

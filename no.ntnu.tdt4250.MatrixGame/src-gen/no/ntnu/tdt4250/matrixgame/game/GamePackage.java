@@ -105,22 +105,22 @@ public interface GamePackage extends EPackage {
 	int TILE__YCOORDINATE = 3;
 
 	/**
+	 * The feature id for the '<em><b>Tile Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TILE__TILE_TYPE = 4;
+
+	/**
 	 * The number of structural features of the '<em>Tile</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TILE_FEATURE_COUNT = 4;
-
-	/**
-	 * The operation id for the '<em>Get Tile Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TILE___GET_TILE_TYPE = 0;
+	int TILE_FEATURE_COUNT = 5;
 
 	/**
 	 * The operation id for the '<em>Interact</em>' operation.
@@ -129,7 +129,7 @@ public interface GamePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TILE___INTERACT__ACTION = 1;
+	int TILE___INTERACT__ACTION = 0;
 
 	/**
 	 * The operation id for the '<em>Reveal</em>' operation.
@@ -138,7 +138,7 @@ public interface GamePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TILE___REVEAL = 2;
+	int TILE___REVEAL = 1;
 
 	/**
 	 * The operation id for the '<em>Toggle</em>' operation.
@@ -147,7 +147,7 @@ public interface GamePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TILE___TOGGLE = 3;
+	int TILE___TOGGLE = 2;
 
 	/**
 	 * The number of operations of the '<em>Tile</em>' class.
@@ -156,7 +156,7 @@ public interface GamePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TILE_OPERATION_COUNT = 4;
+	int TILE_OPERATION_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link no.ntnu.tdt4250.matrixgame.game.impl.ActionImpl <em>Action</em>}' class.
@@ -187,13 +187,31 @@ public interface GamePackage extends EPackage {
 	int ACTION__ACTION_TYPE = 1;
 
 	/**
+	 * The feature id for the '<em><b>Change Accessbility</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION__CHANGE_ACCESSBILITY = 2;
+
+	/**
+	 * The feature id for the '<em><b>Change State</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION__CHANGE_STATE = 3;
+
+	/**
 	 * The number of structural features of the '<em>Action</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_FEATURE_COUNT = 2;
+	int ACTION_FEATURE_COUNT = 4;
 
 	/**
 	 * The operation id for the '<em>Perform Action</em>' operation.
@@ -278,22 +296,13 @@ public interface GamePackage extends EPackage {
 	int STATE___GET_CURRENT_STATUS = 0;
 
 	/**
-	 * The operation id for the '<em>Get Players Turn</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE___GET_PLAYERS_TURN = 1;
-
-	/**
 	 * The number of operations of the '<em>State</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_OPERATION_COUNT = 2;
+	int STATE_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link no.ntnu.tdt4250.matrixgame.game.impl.PlayerImpl <em>Player</em>}' class.
@@ -324,13 +333,22 @@ public interface GamePackage extends EPackage {
 	int PLAYER__STATE = 1;
 
 	/**
+	 * The feature id for the '<em><b>Action</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLAYER__ACTION = 2;
+
+	/**
 	 * The number of structural features of the '<em>Player</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PLAYER_FEATURE_COUNT = 2;
+	int PLAYER_FEATURE_COUNT = 3;
 
 	/**
 	 * The operation id for the '<em>Take Action</em>' operation.
@@ -452,22 +470,13 @@ public interface GamePackage extends EPackage {
 	int GAME_LOGIC = 5;
 
 	/**
-	 * The feature id for the '<em><b>Multiplayer</b></em>' attribute.
+	 * The feature id for the '<em><b>Player</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GAME_LOGIC__MULTIPLAYER = 0;
-
-	/**
-	 * The feature id for the '<em><b>Player</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GAME_LOGIC__PLAYER = 1;
+	int GAME_LOGIC__PLAYER = 0;
 
 	/**
 	 * The feature id for the '<em><b>Gameaction</b></em>' reference list.
@@ -476,7 +485,7 @@ public interface GamePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GAME_LOGIC__GAMEACTION = 2;
+	int GAME_LOGIC__GAMEACTION = 1;
 
 	/**
 	 * The feature id for the '<em><b>Map</b></em>' containment reference.
@@ -485,7 +494,7 @@ public interface GamePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GAME_LOGIC__MAP = 3;
+	int GAME_LOGIC__MAP = 2;
 
 	/**
 	 * The number of structural features of the '<em>Logic</em>' class.
@@ -494,7 +503,7 @@ public interface GamePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GAME_LOGIC_FEATURE_COUNT = 4;
+	int GAME_LOGIC_FEATURE_COUNT = 3;
 
 	/**
 	 * The operation id for the '<em>Apply Action</em>' operation.
@@ -607,14 +616,15 @@ public interface GamePackage extends EPackage {
 	EAttribute getTile_YCoordinate();
 
 	/**
-	 * Returns the meta object for the '{@link no.ntnu.tdt4250.matrixgame.game.Tile#getTileType() <em>Get Tile Type</em>}' operation.
+	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.matrixgame.game.Tile#getTileType <em>Tile Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Tile Type</em>' operation.
+	 * @return the meta object for the attribute '<em>Tile Type</em>'.
 	 * @see no.ntnu.tdt4250.matrixgame.game.Tile#getTileType()
+	 * @see #getTile()
 	 * @generated
 	 */
-	EOperation getTile__GetTileType();
+	EAttribute getTile_TileType();
 
 	/**
 	 * Returns the meta object for the '{@link no.ntnu.tdt4250.matrixgame.game.Tile#interact(no.ntnu.tdt4250.matrixgame.game.Action) <em>Interact</em>}' operation.
@@ -677,6 +687,28 @@ public interface GamePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getAction_ActionType();
+
+	/**
+	 * Returns the meta object for the reference '{@link no.ntnu.tdt4250.matrixgame.game.Action#getChange_Accessbility <em>Change Accessbility</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Change Accessbility</em>'.
+	 * @see no.ntnu.tdt4250.matrixgame.game.Action#getChange_Accessbility()
+	 * @see #getAction()
+	 * @generated
+	 */
+	EReference getAction_Change_Accessbility();
+
+	/**
+	 * Returns the meta object for the reference '{@link no.ntnu.tdt4250.matrixgame.game.Action#getChange_State <em>Change State</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Change State</em>'.
+	 * @see no.ntnu.tdt4250.matrixgame.game.Action#getChange_State()
+	 * @see #getAction()
+	 * @generated
+	 */
+	EReference getAction_Change_State();
 
 	/**
 	 * Returns the meta object for the '{@link no.ntnu.tdt4250.matrixgame.game.Action#performAction() <em>Perform Action</em>}' operation.
@@ -753,16 +785,6 @@ public interface GamePackage extends EPackage {
 	EOperation getState__GetCurrentStatus();
 
 	/**
-	 * Returns the meta object for the '{@link no.ntnu.tdt4250.matrixgame.game.State#getPlayersTurn() <em>Get Players Turn</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Players Turn</em>' operation.
-	 * @see no.ntnu.tdt4250.matrixgame.game.State#getPlayersTurn()
-	 * @generated
-	 */
-	EOperation getState__GetPlayersTurn();
-
-	/**
 	 * Returns the meta object for class '{@link no.ntnu.tdt4250.matrixgame.game.Player <em>Player</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -793,6 +815,17 @@ public interface GamePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPlayer_State();
+
+	/**
+	 * Returns the meta object for the reference list '{@link no.ntnu.tdt4250.matrixgame.game.Player#getAction <em>Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Action</em>'.
+	 * @see no.ntnu.tdt4250.matrixgame.game.Player#getAction()
+	 * @see #getPlayer()
+	 * @generated
+	 */
+	EReference getPlayer_Action();
 
 	/**
 	 * Returns the meta object for the '{@link no.ntnu.tdt4250.matrixgame.game.Player#takeAction() <em>Take Action</em>}' operation.
@@ -901,21 +934,10 @@ public interface GamePackage extends EPackage {
 	EClass getGameLogic();
 
 	/**
-	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.matrixgame.game.GameLogic#getMultiplayer <em>Multiplayer</em>}'.
+	 * Returns the meta object for the containment reference '{@link no.ntnu.tdt4250.matrixgame.game.GameLogic#getPlayer <em>Player</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Multiplayer</em>'.
-	 * @see no.ntnu.tdt4250.matrixgame.game.GameLogic#getMultiplayer()
-	 * @see #getGameLogic()
-	 * @generated
-	 */
-	EAttribute getGameLogic_Multiplayer();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link no.ntnu.tdt4250.matrixgame.game.GameLogic#getPlayer <em>Player</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Player</em>'.
+	 * @return the meta object for the containment reference '<em>Player</em>'.
 	 * @see no.ntnu.tdt4250.matrixgame.game.GameLogic#getPlayer()
 	 * @see #getGameLogic()
 	 * @generated
@@ -1060,12 +1082,12 @@ public interface GamePackage extends EPackage {
 		EAttribute TILE__YCOORDINATE = eINSTANCE.getTile_YCoordinate();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Tile Type</b></em>' operation.
+		 * The meta object literal for the '<em><b>Tile Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation TILE___GET_TILE_TYPE = eINSTANCE.getTile__GetTileType();
+		EAttribute TILE__TILE_TYPE = eINSTANCE.getTile_TileType();
 
 		/**
 		 * The meta object literal for the '<em><b>Interact</b></em>' operation.
@@ -1116,6 +1138,22 @@ public interface GamePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ACTION__ACTION_TYPE = eINSTANCE.getAction_ActionType();
+
+		/**
+		 * The meta object literal for the '<em><b>Change Accessbility</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTION__CHANGE_ACCESSBILITY = eINSTANCE.getAction_Change_Accessbility();
+
+		/**
+		 * The meta object literal for the '<em><b>Change State</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTION__CHANGE_STATE = eINSTANCE.getAction_Change_State();
 
 		/**
 		 * The meta object literal for the '<em><b>Perform Action</b></em>' operation.
@@ -1176,14 +1214,6 @@ public interface GamePackage extends EPackage {
 		EOperation STATE___GET_CURRENT_STATUS = eINSTANCE.getState__GetCurrentStatus();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Players Turn</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation STATE___GET_PLAYERS_TURN = eINSTANCE.getState__GetPlayersTurn();
-
-		/**
 		 * The meta object literal for the '{@link no.ntnu.tdt4250.matrixgame.game.impl.PlayerImpl <em>Player</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1208,6 +1238,14 @@ public interface GamePackage extends EPackage {
 		 * @generated
 		 */
 		EReference PLAYER__STATE = eINSTANCE.getPlayer_State();
+
+		/**
+		 * The meta object literal for the '<em><b>Action</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PLAYER__ACTION = eINSTANCE.getPlayer_Action();
 
 		/**
 		 * The meta object literal for the '<em><b>Take Action</b></em>' operation.
@@ -1294,15 +1332,7 @@ public interface GamePackage extends EPackage {
 		EClass GAME_LOGIC = eINSTANCE.getGameLogic();
 
 		/**
-		 * The meta object literal for the '<em><b>Multiplayer</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute GAME_LOGIC__MULTIPLAYER = eINSTANCE.getGameLogic_Multiplayer();
-
-		/**
-		 * The meta object literal for the '<em><b>Player</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Player</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

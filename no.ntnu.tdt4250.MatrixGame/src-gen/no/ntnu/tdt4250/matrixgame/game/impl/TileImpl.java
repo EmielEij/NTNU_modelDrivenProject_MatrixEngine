@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link no.ntnu.tdt4250.matrixgame.game.impl.TileImpl#getColor <em>Color</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.matrixgame.game.impl.TileImpl#getXCoordinate <em>XCoordinate</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.matrixgame.game.impl.TileImpl#getYCoordinate <em>YCoordinate</em>}</li>
+ *   <li>{@link no.ntnu.tdt4250.matrixgame.game.impl.TileImpl#getTileType <em>Tile Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -114,6 +115,26 @@ public class TileImpl extends MinimalEObjectImpl.Container implements Tile {
 	 * @ordered
 	 */
 	protected int yCoordinate = YCOORDINATE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTileType() <em>Tile Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTileType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final TileType TILE_TYPE_EDEFAULT = TileType.BASIC;
+
+	/**
+	 * The cached value of the '{@link #getTileType() <em>Tile Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTileType()
+	 * @generated
+	 * @ordered
+	 */
+	protected TileType tileType = TILE_TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -236,9 +257,20 @@ public class TileImpl extends MinimalEObjectImpl.Container implements Tile {
 	 */
 	@Override
 	public TileType getTileType() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return tileType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTileType(TileType newTileType) {
+		TileType oldTileType = tileType;
+		tileType = newTileType == null ? TILE_TYPE_EDEFAULT : newTileType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GamePackage.TILE__TILE_TYPE, oldTileType, tileType));
 	}
 
 	/**
@@ -293,6 +325,8 @@ public class TileImpl extends MinimalEObjectImpl.Container implements Tile {
 			return getXCoordinate();
 		case GamePackage.TILE__YCOORDINATE:
 			return getYCoordinate();
+		case GamePackage.TILE__TILE_TYPE:
+			return getTileType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -316,6 +350,9 @@ public class TileImpl extends MinimalEObjectImpl.Container implements Tile {
 			return;
 		case GamePackage.TILE__YCOORDINATE:
 			setYCoordinate((Integer) newValue);
+			return;
+		case GamePackage.TILE__TILE_TYPE:
+			setTileType((TileType) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -341,6 +378,9 @@ public class TileImpl extends MinimalEObjectImpl.Container implements Tile {
 		case GamePackage.TILE__YCOORDINATE:
 			setYCoordinate(YCOORDINATE_EDEFAULT);
 			return;
+		case GamePackage.TILE__TILE_TYPE:
+			setTileType(TILE_TYPE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -361,6 +401,8 @@ public class TileImpl extends MinimalEObjectImpl.Container implements Tile {
 			return xCoordinate != XCOORDINATE_EDEFAULT;
 		case GamePackage.TILE__YCOORDINATE:
 			return yCoordinate != YCOORDINATE_EDEFAULT;
+		case GamePackage.TILE__TILE_TYPE:
+			return tileType != TILE_TYPE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -373,8 +415,6 @@ public class TileImpl extends MinimalEObjectImpl.Container implements Tile {
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case GamePackage.TILE___GET_TILE_TYPE:
-			return getTileType();
 		case GamePackage.TILE___INTERACT__ACTION:
 			interact((Action) arguments.get(0));
 			return null;
@@ -407,6 +447,8 @@ public class TileImpl extends MinimalEObjectImpl.Container implements Tile {
 		result.append(xCoordinate);
 		result.append(", yCoordinate: ");
 		result.append(yCoordinate);
+		result.append(", tileType: ");
+		result.append(tileType);
 		result.append(')');
 		return result.toString();
 	}

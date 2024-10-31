@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link no.ntnu.tdt4250.matrixgame.game.Tile#getColor <em>Color</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.matrixgame.game.Tile#getXCoordinate <em>XCoordinate</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.matrixgame.game.Tile#getYCoordinate <em>YCoordinate</em>}</li>
+ *   <li>{@link no.ntnu.tdt4250.matrixgame.game.Tile#getTileType <em>Tile Type</em>}</li>
  * </ul>
  *
  * @see no.ntnu.tdt4250.matrixgame.game.GamePackage#getTile()
@@ -113,12 +114,29 @@ public interface Tile extends EObject {
 	void setYCoordinate(int value);
 
 	/**
+	 * Returns the value of the '<em><b>Tile Type</b></em>' attribute.
+	 * The literals are from the enumeration {@link no.ntnu.tdt4250.matrixgame.game.TileType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
+	 * @return the value of the '<em>Tile Type</em>' attribute.
+	 * @see no.ntnu.tdt4250.matrixgame.game.TileType
+	 * @see #setTileType(TileType)
+	 * @see no.ntnu.tdt4250.matrixgame.game.GamePackage#getTile_TileType()
+	 * @model required="true"
 	 * @generated
 	 */
 	TileType getTileType();
+
+	/**
+	 * Sets the value of the '{@link no.ntnu.tdt4250.matrixgame.game.Tile#getTileType <em>Tile Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Tile Type</em>' attribute.
+	 * @see no.ntnu.tdt4250.matrixgame.game.TileType
+	 * @see #getTileType()
+	 * @generated
+	 */
+	void setTileType(TileType value);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -2,7 +2,6 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="game" nsURI="http://www.ntnu.no/tdt4250/MatrixGame" nsPrefix="game">
   <eClassifiers xsi:type="ecore:EClass" name="Tile">
-    <eOperations name="getTileType" eType="#//TileType"/>
     <eOperations name="interact">
       <eParameters name="action" eType="#//Action"/>
     </eOperations>
@@ -14,15 +13,20 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="yCoordinate" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tileType" lowerBound="1"
+        eType="#//TileType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Action">
     <eOperations name="performAction"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="actionType" eType="#//ActionType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="change_Accessbility" eType="#//Tile"
+        changeable="false" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="change_State" eType="#//State"
+        changeable="false" transient="true" derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="State">
     <eOperations name="getCurrentStatus" eType="#//Tile"/>
-    <eOperations name="getPlayersTurn" eType="#//Player"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="turnsTaken" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="flagsPlaced" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isOver" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -32,6 +36,8 @@
     <eOperations name="takeAction" lowerBound="1"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Score" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1" eType="#//State"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="action" upperBound="-1"
+        eType="#//Action"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ActionType">
     <eLiterals name="NONE"/>
@@ -68,9 +74,8 @@
     </eOperations>
     <eOperations name="isGameOver"/>
     <eOperations name="generateStartingPosition" eType="#//Tile"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplayer" eType="#//ActionType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="player" lowerBound="1"
-        upperBound="-1" eType="#//Player" containment="true"/>
+        eType="#//Player" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="gameaction" upperBound="-1"
         eType="#//Action"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="map" lowerBound="1" eType="#//Map"

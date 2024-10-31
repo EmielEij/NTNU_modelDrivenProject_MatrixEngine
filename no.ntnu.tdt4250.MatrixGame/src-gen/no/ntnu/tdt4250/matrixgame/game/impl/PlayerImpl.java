@@ -4,6 +4,8 @@ package no.ntnu.tdt4250.matrixgame.game.impl;
 
 import java.lang.reflect.InvocationTargetException;
 
+import java.util.Collection;
+import no.ntnu.tdt4250.matrixgame.game.Action;
 import no.ntnu.tdt4250.matrixgame.game.GamePackage;
 import no.ntnu.tdt4250.matrixgame.game.Player;
 import no.ntnu.tdt4250.matrixgame.game.State;
@@ -17,6 +19,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,6 +31,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link no.ntnu.tdt4250.matrixgame.game.impl.PlayerImpl#getScore <em>Score</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.matrixgame.game.impl.PlayerImpl#getState <em>State</em>}</li>
+ *   <li>{@link no.ntnu.tdt4250.matrixgame.game.impl.PlayerImpl#getAction <em>Action</em>}</li>
  * </ul>
  *
  * @generated
@@ -62,6 +66,16 @@ public class PlayerImpl extends MinimalEObjectImpl.Container implements Player {
 	 * @ordered
 	 */
 	protected State state;
+
+	/**
+	 * The cached value of the '{@link #getAction() <em>Action</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAction()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Action> action;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -152,6 +166,19 @@ public class PlayerImpl extends MinimalEObjectImpl.Container implements Player {
 	 * @generated
 	 */
 	@Override
+	public EList<Action> getAction() {
+		if (action == null) {
+			action = new EObjectResolvingEList<Action>(Action.class, this, GamePackage.PLAYER__ACTION);
+		}
+		return action;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public void takeAction() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -172,6 +199,8 @@ public class PlayerImpl extends MinimalEObjectImpl.Container implements Player {
 			if (resolve)
 				return getState();
 			return basicGetState();
+		case GamePackage.PLAYER__ACTION:
+			return getAction();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -181,6 +210,7 @@ public class PlayerImpl extends MinimalEObjectImpl.Container implements Player {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -189,6 +219,10 @@ public class PlayerImpl extends MinimalEObjectImpl.Container implements Player {
 			return;
 		case GamePackage.PLAYER__STATE:
 			setState((State) newValue);
+			return;
+		case GamePackage.PLAYER__ACTION:
+			getAction().clear();
+			getAction().addAll((Collection<? extends Action>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -208,6 +242,9 @@ public class PlayerImpl extends MinimalEObjectImpl.Container implements Player {
 		case GamePackage.PLAYER__STATE:
 			setState((State) null);
 			return;
+		case GamePackage.PLAYER__ACTION:
+			getAction().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -224,6 +261,8 @@ public class PlayerImpl extends MinimalEObjectImpl.Container implements Player {
 			return score != SCORE_EDEFAULT;
 		case GamePackage.PLAYER__STATE:
 			return state != null;
+		case GamePackage.PLAYER__ACTION:
+			return action != null && !action.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

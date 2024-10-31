@@ -2,6 +2,7 @@
  */
 package no.ntnu.tdt4250.matrixgame.game;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link no.ntnu.tdt4250.matrixgame.game.Player#getScore <em>Score</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.matrixgame.game.Player#getState <em>State</em>}</li>
+ *   <li>{@link no.ntnu.tdt4250.matrixgame.game.Player#getAction <em>Action</em>}</li>
  * </ul>
  *
  * @see no.ntnu.tdt4250.matrixgame.game.GamePackage#getPlayer()
@@ -65,6 +67,18 @@ public interface Player extends EObject {
 	 * @generated
 	 */
 	void setState(State value);
+
+	/**
+	 * Returns the value of the '<em><b>Action</b></em>' reference list.
+	 * The list contents are of type {@link no.ntnu.tdt4250.matrixgame.game.Action}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Action</em>' reference list.
+	 * @see no.ntnu.tdt4250.matrixgame.game.GamePackage#getPlayer_Action()
+	 * @model
+	 * @generated
+	 */
+	EList<Action> getAction();
 
 	/**
 	 * <!-- begin-user-doc -->
