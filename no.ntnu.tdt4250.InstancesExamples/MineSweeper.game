@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <game:GameLogic xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:game="http://www.ntnu.no/tdt4250/MatrixGame">
-  <player name="Leo"/>
-  <map amountOfTiles="10" mapSizeX="5" mapSizeY="5" mapName="Minefield">
+  <player name="Anton"/>
+  <map amountOfTiles="10" mapSizeX="5" mapSizeY="5" mapName="SnakeField">
     <tile tilePlace="1,1" isAccessible="true" Color="Grey" xCoordinate="1" yCoordinate="1"/>
     <tile tilePlace="1,2" isAccessible="true" Color="Grey" xCoordinate="1" yCoordinate="1"/>
     <tile tilePlace="1,3" isAccessible="true" Color="Grey" xCoordinate="1" yCoordinate="1"/>
@@ -28,9 +28,10 @@
     <tile tilePlace="5,4" Color="Grey"/>
     <tile tilePlace="5,5" Color="Grey" xCoordinate="5" yCoordinate="5"/>
   </map>
-  <actions_played name="Hide"/>
-  <actions_played name="Open" actionType="MOVE"/>
-  <has_state turnsTaken="3" isOver="true" name="Hidden"/>
-  <has_state turnsTaken="2" flagsPlaced="true" name="Revealed"/>
-  <has_state name="Bombed"/>
+  <actions_played name="Right" actionType="MOVE"/>
+  <actions_played name="Straight"/>
+  <actions_played name="Left" actionType="MOVE"/>
+  <has_state turnsTaken="3" isOver="true" name="Crashed"/>
+  <has_state turnsTaken="2" flagsPlaced="true" name="Rewarded"/>
+  <has_state name="Blanc"/>
 </game:GameLogic>
