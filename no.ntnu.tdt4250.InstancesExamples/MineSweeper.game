@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<game:GameLogic xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:game="http://www.ntnu.no/tdt4250/MatrixGame">
+<game:GameLogic xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:game="http://www.ntnu.no/tdt4250/MatrixGame" gameName="TicTacToe">
   <player name="Anton"/>
   <map amountOfTiles="10" mapSizeX="5" mapSizeY="5" mapName="SnakeField">
     <tile tilePlace="1,1" isAccessible="true" Color="Grey" xCoordinate="1" yCoordinate="1"/>
