@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: tdt4250.matrixgame.xtext
+Bundle-ManifestVersion: 2
+Bundle-Name: tdt4250.matrixgame.xtext
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: tdt4250.matrixgame.xtext; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: no.ntnu.tdt4250.MatrixGame,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.16.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.36.0",
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Export-Package: tdt4250.matrixgame.parser.antlr.internal,
+ tdt4250.matrixgame.serializer,
+ tdt4250.matrixgame.services,
+ tdt4250.matrixgame.scoping,
+ tdt4250.matrixgame.generator,
+ tdt4250.matrixgame.parser.antlr,
+ tdt4250.matrixgame,
+ tdt4250.matrixgame.validation,
+ tdt4250.matrixgame.formatting2
+Import-Package: org.apache.log4j
