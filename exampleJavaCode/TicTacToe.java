@@ -1,4 +1,5 @@
 public class TicTacToe extends Game {
+  Grid grid = new Grid(3, 3);
 
   public TicTacToe() {
     super(3, 3); // Tic-Tac-Toe is a 3x3 grid
@@ -38,5 +39,10 @@ public class TicTacToe extends Game {
       return true;
     }
     return false;
+  }
+
+  // getCurrentPlayer
+  public char getCurrentPlayer() {
+    return currentPlayer;
   }
 }
