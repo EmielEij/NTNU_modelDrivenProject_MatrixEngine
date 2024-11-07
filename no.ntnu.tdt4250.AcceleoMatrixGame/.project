@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>no.ntnu.tdt4250.MatrixGame.editor</name>
+	<name>no.ntnu.tdt4250.AcceleoMatrixGame</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -20,14 +20,36 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.acceleo.ide.ui.acceleoBuilder</name>
+			<arguments>
+				<dictionary>
+					<key>compilation.kind</key>
+					<value>compilation.platform.resource</value>
+				</dictionary>
+				<dictionary>
+					<key>compliance</key>
+					<value>pragmatic</value>
+				</dictionary>
+				<dictionary>
+					<key>resource.kind</key>
+					<value>xmi</value>
+				</dictionary>
+				<dictionary>
+					<key>trim-position</key>
+					<value>false</value>
+				</dictionary>
+			</arguments>
+		</buildCommand>
 	</buildSpec>
 	<natures>
+		<nature>org.eclipse.acceleo.ide.ui.acceleoNature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.pde.PluginNature</nature>
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1730824844768</id>
+			<id>1730824844762</id>
 			<name></name>
 			<type>30</type>
 			<matcher>

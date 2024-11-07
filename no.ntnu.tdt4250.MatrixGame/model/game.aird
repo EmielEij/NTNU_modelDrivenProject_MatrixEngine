@@ -5,7 +5,7 @@
     <semanticResources>game.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_ErbL0JdnEe-8eoD3vb13GA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_EroAIJdnEe-8eoD3vb13GA" name="game" repPath="#_ErmK8JdnEe-8eoD3vb13GA" changeId="1730371695759">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_EroAIJdnEe-8eoD3vb13GA" name="game" repPath="#_ErmK8JdnEe-8eoD3vb13GA" changeId="1730928561405">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="game.ecore#/"/>
       </ownedRepresentationDescriptors>
