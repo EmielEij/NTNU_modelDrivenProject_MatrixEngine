@@ -22,7 +22,10 @@ import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.Monitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+
+import no.ntnu.tdt4250.matrixgame.game.GamePackage;
 
 /**
  * Entry point of the 'MyGenerator' generation module.
@@ -335,15 +338,12 @@ public class MyGenerator extends AbstractAcceleoGenerator {
      * 
      * @param resourceSet
      *            The resource set which registry has to be updated.
-     * @generated
+     * @generated NOT
      */
     @Override
     public void registerPackages(ResourceSet resourceSet) {
-        super.registerPackages(resourceSet);
-        if (!isInWorkspace(org.eclipse.uml2.uml.UMLPackage.class)) {
-            resourceSet.getPackageRegistry().put(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getNsURI(), org.eclipse.uml2.uml.UMLPackage.eINSTANCE);
-        }
-        
+        EPackage myPackage = GamePackage.eINSTANCE;
+        EPackage.Registry.INSTANCE.put(myPackage.getNsURI(), myPackage);
         /*
          * If you want to change the content of this method, do NOT forget to change the "@generated"
          * tag in the Javadoc of this method to "@generated NOT". Without this new tag, any compilation

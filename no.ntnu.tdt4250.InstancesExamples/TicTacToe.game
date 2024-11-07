@@ -1,20 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <game:GameLogic xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:game="http://www.ntnu.no/tdt4250/MatrixGame" gameName="TicTacToe">
   <player name="Leo"/>
-  <map amountOfTiles="9" mapSizeX="5" mapSizeY="5" mapName="TicTacToeField">
+  <map amountOfTiles="10" mapSizeX="5" mapSizeY="5" mapName="Minefield">
     <tile tilePlace="1,1" isAccessible="true" Color="Grey" xCoordinate="1" yCoordinate="1"/>
-    <tile tilePlace="1,2" isAccessible="true" Color="Grey" xCoordinate="1" yCoordinate="2"/>
-    <tile tilePlace="1,3" isAccessible="true" Color="Grey" xCoordinate="1" yCoordinate="3"/>
-    <tile tilePlace="2,1" isAccessible="true" Color="Grey" xCoordinate="2" yCoordinate="1"/>
-    <tile tilePlace="2,2" isAccessible="true" Color="Grey" xCoordinate="2" yCoordinate="2"/>
-    <tile tilePlace="2,3" isAccessible="true" Color="Grey" xCoordinate="2" yCoordinate="3"/>
-    <tile tilePlace="3,1" isAccessible="true" Color="Grey" xCoordinate="3" yCoordinate="1"/>
-    <tile tilePlace="3,2" isAccessible="true" Color="Grey" xCoordinate="3" yCoordinate="2"/>
-    <tile tilePlace="3,3" isAccessible="true" Color="Grey" xCoordinate="3" yCoordinate="3"/>
+    <tile tilePlace="1,2" isAccessible="true" Color="Grey" xCoordinate="1" yCoordinate="1"/>
+    <tile tilePlace="1,3" isAccessible="true" Color="Grey" xCoordinate="1" yCoordinate="1"/>
+    <tile tilePlace="1,4" isAccessible="true" Color="Grey" xCoordinate="1" yCoordinate="1"/>
+    <tile tilePlace="1,5" tileType="OBSTACLE" isAccessible="true" Color="Grey" xCoordinate="1" yCoordinate="1"/>
+    <tile tilePlace="2,1" isAccessible="true" Color="Grey" xCoordinate="1" yCoordinate="1"/>
+    <tile tilePlace="2,2" tileType="OBSTACLE" isAccessible="true" Color="Grey" xCoordinate="1" yCoordinate="1"/>
+    <tile tilePlace="2,3" tileType="REWARD" isAccessible="true" Color="Grey" xCoordinate="2" yCoordinate="3"/>
+    <tile tilePlace="2,4" isAccessible="true" Color="Grey" xCoordinate="1" yCoordinate="1"/>
+    <tile tilePlace="2,5" isAccessible="true" Color="Grey" xCoordinate="1" yCoordinate="1"/>
+    <tile tilePlace="3,1" tileType="REWARD" isAccessible="true" Color="Grey" xCoordinate="1" yCoordinate="1"/>
+    <tile tilePlace="3,2" isAccessible="true" Color="Grey" xCoordinate="1" yCoordinate="1"/>
+    <tile tilePlace="3,3" isAccessible="true" Color="Grey" xCoordinate="1" yCoordinate="1"/>
+    <tile tilePlace="3,4" isAccessible="true" Color="Grey" xCoordinate="1" yCoordinate="1"/>
+    <tile tilePlace="3,5" isAccessible="true" Color="Grey" xCoordinate="1" yCoordinate="1"/>
+    <tile tilePlace="4,1" Color="Grey"/>
+    <tile tilePlace="4,2" Color="Grey"/>
+    <tile tilePlace="4,3" Color="Grey"/>
+    <tile tilePlace="4,4" Color="Grey"/>
+    <tile tilePlace="4,5" Color="Grey"/>
+    <tile tilePlace="4,5" Color="Grey"/>
+    <tile tilePlace="5,2" Color="Grey"/>
+    <tile tilePlace="5,3" Color="Grey"/>
+    <tile tilePlace="5,4" Color="Grey"/>
+    <tile tilePlace="5,5" Color="Grey" xCoordinate="5" yCoordinate="5"/>
   </map>
-  <actions_played name="PutCross" actionType="MOVE"/>
-  <actions_played name="PutCircle" actionType="MOVE"/>
-  <has_state name="EMPTY"/>
-  <has_state name="X"/>
-  <has_state name="O"/>
+  <actions_played name="Hide"/>
+  <actions_played name="Open" actionType="MOVE"/>
+  <has_state turnsTaken="3" isOver="true" name="Hidden"/>
+  <has_state turnsTaken="2" flagsPlaced="true" name="Revealed"/>
+  <has_state name="Bombed"/>
 </game:GameLogic>
