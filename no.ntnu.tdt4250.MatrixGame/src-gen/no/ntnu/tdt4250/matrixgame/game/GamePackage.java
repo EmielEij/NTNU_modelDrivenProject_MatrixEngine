@@ -4,7 +4,6 @@ package no.ntnu.tdt4250.matrixgame.game;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -59,380 +58,6 @@ public interface GamePackage extends EPackage {
 	GamePackage eINSTANCE = no.ntnu.tdt4250.matrixgame.game.impl.GamePackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link no.ntnu.tdt4250.matrixgame.game.impl.TileImpl <em>Tile</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see no.ntnu.tdt4250.matrixgame.game.impl.TileImpl
-	 * @see no.ntnu.tdt4250.matrixgame.game.impl.GamePackageImpl#getTile()
-	 * @generated
-	 */
-	int TILE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Tile Place</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TILE__TILE_PLACE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Tile Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TILE__TILE_TYPE = 1;
-
-	/**
-	 * The feature id for the '<em><b>Is Accessible</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TILE__IS_ACCESSIBLE = 2;
-
-	/**
-	 * The feature id for the '<em><b>Color</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TILE__COLOR = 3;
-
-	/**
-	 * The feature id for the '<em><b>XCoordinate</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TILE__XCOORDINATE = 4;
-
-	/**
-	 * The feature id for the '<em><b>YCoordinate</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TILE__YCOORDINATE = 5;
-
-	/**
-	 * The number of structural features of the '<em>Tile</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TILE_FEATURE_COUNT = 6;
-
-	/**
-	 * The operation id for the '<em>Interact</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TILE___INTERACT__ACTION = 0;
-
-	/**
-	 * The number of operations of the '<em>Tile</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TILE_OPERATION_COUNT = 1;
-
-	/**
-	 * The meta object id for the '{@link no.ntnu.tdt4250.matrixgame.game.impl.ActionImpl <em>Action</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see no.ntnu.tdt4250.matrixgame.game.impl.ActionImpl
-	 * @see no.ntnu.tdt4250.matrixgame.game.impl.GamePackageImpl#getAction()
-	 * @generated
-	 */
-	int ACTION = 1;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION__NAME = 0;
-
-	/**
-	 * The feature id for the '<em><b>Action Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION__ACTION_TYPE = 1;
-
-	/**
-	 * The number of structural features of the '<em>Action</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION_FEATURE_COUNT = 2;
-
-	/**
-	 * The operation id for the '<em>Perform Action</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION___PERFORM_ACTION = 0;
-
-	/**
-	 * The number of operations of the '<em>Action</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION_OPERATION_COUNT = 1;
-
-	/**
-	 * The meta object id for the '{@link no.ntnu.tdt4250.matrixgame.game.impl.StateImpl <em>State</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see no.ntnu.tdt4250.matrixgame.game.impl.StateImpl
-	 * @see no.ntnu.tdt4250.matrixgame.game.impl.GamePackageImpl#getState()
-	 * @generated
-	 */
-	int STATE = 2;
-
-	/**
-	 * The feature id for the '<em><b>Turns Taken</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE__TURNS_TAKEN = 0;
-
-	/**
-	 * The feature id for the '<em><b>Flags Placed</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE__FLAGS_PLACED = 1;
-
-	/**
-	 * The feature id for the '<em><b>Is Over</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE__IS_OVER = 2;
-
-	/**
-	 * The feature id for the '<em><b>Tile</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE__TILE = 3;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE__NAME = 4;
-
-	/**
-	 * The number of structural features of the '<em>State</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE_FEATURE_COUNT = 5;
-
-	/**
-	 * The operation id for the '<em>Get Current Status</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE___GET_CURRENT_STATUS = 0;
-
-	/**
-	 * The number of operations of the '<em>State</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE_OPERATION_COUNT = 1;
-
-	/**
-	 * The meta object id for the '{@link no.ntnu.tdt4250.matrixgame.game.impl.PlayerImpl <em>Player</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see no.ntnu.tdt4250.matrixgame.game.impl.PlayerImpl
-	 * @see no.ntnu.tdt4250.matrixgame.game.impl.GamePackageImpl#getPlayer()
-	 * @generated
-	 */
-	int PLAYER = 3;
-
-	/**
-	 * The feature id for the '<em><b>Score</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PLAYER__SCORE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Takes action</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PLAYER__TAKES_ACTION = 1;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PLAYER__NAME = 2;
-
-	/**
-	 * The number of structural features of the '<em>Player</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PLAYER_FEATURE_COUNT = 3;
-
-	/**
-	 * The operation id for the '<em>Take Action</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PLAYER___TAKE_ACTION = 0;
-
-	/**
-	 * The number of operations of the '<em>Player</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PLAYER_OPERATION_COUNT = 1;
-
-	/**
-	 * The meta object id for the '{@link no.ntnu.tdt4250.matrixgame.game.impl.MapImpl <em>Map</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see no.ntnu.tdt4250.matrixgame.game.impl.MapImpl
-	 * @see no.ntnu.tdt4250.matrixgame.game.impl.GamePackageImpl#getMap()
-	 * @generated
-	 */
-	int MAP = 4;
-
-	/**
-	 * The feature id for the '<em><b>Tile</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAP__TILE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Amount Of Tiles</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAP__AMOUNT_OF_TILES = 1;
-
-	/**
-	 * The feature id for the '<em><b>Map Size X</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAP__MAP_SIZE_X = 2;
-
-	/**
-	 * The feature id for the '<em><b>Map Size Y</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAP__MAP_SIZE_Y = 3;
-
-	/**
-	 * The feature id for the '<em><b>Map Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAP__MAP_NAME = 4;
-
-	/**
-	 * The number of structural features of the '<em>Map</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAP_FEATURE_COUNT = 5;
-
-	/**
-	 * The operation id for the '<em>Initialize Map</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAP___INITIALIZE_MAP = 0;
-
-	/**
-	 * The number of operations of the '<em>Map</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAP_OPERATION_COUNT = 1;
-
-	/**
 	 * The meta object id for the '{@link no.ntnu.tdt4250.matrixgame.game.impl.GameLogicImpl <em>Logic</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -440,43 +65,7 @@ public interface GamePackage extends EPackage {
 	 * @see no.ntnu.tdt4250.matrixgame.game.impl.GamePackageImpl#getGameLogic()
 	 * @generated
 	 */
-	int GAME_LOGIC = 5;
-
-	/**
-	 * The feature id for the '<em><b>Player</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GAME_LOGIC__PLAYER = 0;
-
-	/**
-	 * The feature id for the '<em><b>Map</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GAME_LOGIC__MAP = 1;
-
-	/**
-	 * The feature id for the '<em><b>Actions played</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GAME_LOGIC__ACTIONS_PLAYED = 2;
-
-	/**
-	 * The feature id for the '<em><b>Has state</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GAME_LOGIC__HAS_STATE = 3;
+	int GAME_LOGIC = 0;
 
 	/**
 	 * The feature id for the '<em><b>Game Name</b></em>' attribute.
@@ -485,7 +74,52 @@ public interface GamePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GAME_LOGIC__GAME_NAME = 4;
+	int GAME_LOGIC__GAME_NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Player X</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GAME_LOGIC__PLAYER_X = 1;
+
+	/**
+	 * The feature id for the '<em><b>Player O</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GAME_LOGIC__PLAYER_O = 2;
+
+	/**
+	 * The feature id for the '<em><b>Map Length</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GAME_LOGIC__MAP_LENGTH = 3;
+
+	/**
+	 * The feature id for the '<em><b>Grid</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GAME_LOGIC__GRID = 4;
+
+	/**
+	 * The feature id for the '<em><b>Current Player</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GAME_LOGIC__CURRENT_PLAYER = 5;
 
 	/**
 	 * The number of structural features of the '<em>Logic</em>' class.
@@ -494,16 +128,16 @@ public interface GamePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GAME_LOGIC_FEATURE_COUNT = 5;
+	int GAME_LOGIC_FEATURE_COUNT = 6;
 
 	/**
-	 * The operation id for the '<em>Apply Action</em>' operation.
+	 * The operation id for the '<em>Switch Player</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GAME_LOGIC___APPLY_ACTION__ACTION_TILE = 0;
+	int GAME_LOGIC___SWITCH_PLAYER = 0;
 
 	/**
 	 * The operation id for the '<em>Is Game Over</em>' operation.
@@ -515,13 +149,22 @@ public interface GamePackage extends EPackage {
 	int GAME_LOGIC___IS_GAME_OVER = 1;
 
 	/**
-	 * The operation id for the '<em>Generate Starting Position</em>' operation.
+	 * The operation id for the '<em>Check Win</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GAME_LOGIC___GENERATE_STARTING_POSITION = 2;
+	int GAME_LOGIC___CHECK_WIN = 2;
+
+	/**
+	 * The operation id for the '<em>Make Move</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GAME_LOGIC___MAKE_MOVE__INT_INT = 3;
 
 	/**
 	 * The number of operations of the '<em>Logic</em>' class.
@@ -530,358 +173,191 @@ public interface GamePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GAME_LOGIC_OPERATION_COUNT = 3;
+	int GAME_LOGIC_OPERATION_COUNT = 4;
 
 	/**
-	 * The meta object id for the '{@link no.ntnu.tdt4250.matrixgame.game.ActionType <em>Action Type</em>}' enum.
+	 * The meta object id for the '{@link no.ntnu.tdt4250.matrixgame.game.impl.CellImpl <em>Cell</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see no.ntnu.tdt4250.matrixgame.game.ActionType
-	 * @see no.ntnu.tdt4250.matrixgame.game.impl.GamePackageImpl#getActionType()
+	 * @see no.ntnu.tdt4250.matrixgame.game.impl.CellImpl
+	 * @see no.ntnu.tdt4250.matrixgame.game.impl.GamePackageImpl#getCell()
 	 * @generated
 	 */
-	int ACTION_TYPE = 6;
+	int CELL = 1;
 
 	/**
-	 * The meta object id for the '{@link no.ntnu.tdt4250.matrixgame.game.TileType <em>Tile Type</em>}' enum.
+	 * The feature id for the '<em><b>Character</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see no.ntnu.tdt4250.matrixgame.game.TileType
-	 * @see no.ntnu.tdt4250.matrixgame.game.impl.GamePackageImpl#getTileType()
 	 * @generated
+	 * @ordered
 	 */
-	int TILE_TYPE = 7;
+	int CELL__CHARACTER = 0;
 
 	/**
-	 * Returns the meta object for class '{@link no.ntnu.tdt4250.matrixgame.game.Tile <em>Tile</em>}'.
+	 * The number of structural features of the '<em>Cell</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Tile</em>'.
-	 * @see no.ntnu.tdt4250.matrixgame.game.Tile
 	 * @generated
+	 * @ordered
 	 */
-	EClass getTile();
+	int CELL_FEATURE_COUNT = 1;
 
 	/**
-	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.matrixgame.game.Tile#isIsAccessible <em>Is Accessible</em>}'.
+	 * The number of operations of the '<em>Cell</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Accessible</em>'.
-	 * @see no.ntnu.tdt4250.matrixgame.game.Tile#isIsAccessible()
-	 * @see #getTile()
 	 * @generated
+	 * @ordered
 	 */
-	EAttribute getTile_IsAccessible();
+	int CELL_OPERATION_COUNT = 0;
 
 	/**
-	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.matrixgame.game.Tile#getColor <em>Color</em>}'.
+	 * The meta object id for the '{@link no.ntnu.tdt4250.matrixgame.game.impl.RowImpl <em>Row</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Color</em>'.
-	 * @see no.ntnu.tdt4250.matrixgame.game.Tile#getColor()
-	 * @see #getTile()
+	 * @see no.ntnu.tdt4250.matrixgame.game.impl.RowImpl
+	 * @see no.ntnu.tdt4250.matrixgame.game.impl.GamePackageImpl#getRow()
 	 * @generated
 	 */
-	EAttribute getTile_Color();
+	int ROW = 2;
 
 	/**
-	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.matrixgame.game.Tile#getXCoordinate <em>XCoordinate</em>}'.
+	 * The feature id for the '<em><b>Cells</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>XCoordinate</em>'.
-	 * @see no.ntnu.tdt4250.matrixgame.game.Tile#getXCoordinate()
-	 * @see #getTile()
 	 * @generated
+	 * @ordered
 	 */
-	EAttribute getTile_XCoordinate();
+	int ROW__CELLS = 0;
 
 	/**
-	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.matrixgame.game.Tile#getYCoordinate <em>YCoordinate</em>}'.
+	 * The feature id for the '<em><b>Cell</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>YCoordinate</em>'.
-	 * @see no.ntnu.tdt4250.matrixgame.game.Tile#getYCoordinate()
-	 * @see #getTile()
 	 * @generated
+	 * @ordered
 	 */
-	EAttribute getTile_YCoordinate();
+	int ROW__CELL = 1;
 
 	/**
-	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.matrixgame.game.Tile#getTileType <em>Tile Type</em>}'.
+	 * The number of structural features of the '<em>Row</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Tile Type</em>'.
-	 * @see no.ntnu.tdt4250.matrixgame.game.Tile#getTileType()
-	 * @see #getTile()
 	 * @generated
+	 * @ordered
 	 */
-	EAttribute getTile_TileType();
+	int ROW_FEATURE_COUNT = 2;
 
 	/**
-	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.matrixgame.game.Tile#getTilePlace <em>Tile Place</em>}'.
+	 * The number of operations of the '<em>Row</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Tile Place</em>'.
-	 * @see no.ntnu.tdt4250.matrixgame.game.Tile#getTilePlace()
-	 * @see #getTile()
 	 * @generated
+	 * @ordered
 	 */
-	EAttribute getTile_TilePlace();
+	int ROW_OPERATION_COUNT = 0;
 
 	/**
-	 * Returns the meta object for the '{@link no.ntnu.tdt4250.matrixgame.game.Tile#interact(no.ntnu.tdt4250.matrixgame.game.Action) <em>Interact</em>}' operation.
+	 * The meta object id for the '{@link no.ntnu.tdt4250.matrixgame.game.impl.GridImpl <em>Grid</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Interact</em>' operation.
-	 * @see no.ntnu.tdt4250.matrixgame.game.Tile#interact(no.ntnu.tdt4250.matrixgame.game.Action)
+	 * @see no.ntnu.tdt4250.matrixgame.game.impl.GridImpl
+	 * @see no.ntnu.tdt4250.matrixgame.game.impl.GamePackageImpl#getGrid()
 	 * @generated
 	 */
-	EOperation getTile__Interact__Action();
+	int GRID = 3;
 
 	/**
-	 * Returns the meta object for class '{@link no.ntnu.tdt4250.matrixgame.game.Action <em>Action</em>}'.
+	 * The feature id for the '<em><b>Row</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Action</em>'.
-	 * @see no.ntnu.tdt4250.matrixgame.game.Action
 	 * @generated
+	 * @ordered
 	 */
-	EClass getAction();
+	int GRID__ROW = 0;
 
 	/**
-	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.matrixgame.game.Action#getName <em>Name</em>}'.
+	 * The feature id for the '<em><b>Map</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see no.ntnu.tdt4250.matrixgame.game.Action#getName()
-	 * @see #getAction()
 	 * @generated
+	 * @ordered
 	 */
-	EAttribute getAction_Name();
+	int GRID__MAP = 1;
 
 	/**
-	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.matrixgame.game.Action#getActionType <em>Action Type</em>}'.
+	 * The number of structural features of the '<em>Grid</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Action Type</em>'.
-	 * @see no.ntnu.tdt4250.matrixgame.game.Action#getActionType()
-	 * @see #getAction()
 	 * @generated
+	 * @ordered
 	 */
-	EAttribute getAction_ActionType();
+	int GRID_FEATURE_COUNT = 2;
 
 	/**
-	 * Returns the meta object for the '{@link no.ntnu.tdt4250.matrixgame.game.Action#performAction() <em>Perform Action</em>}' operation.
+	 * The operation id for the '<em>Get Cell</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Perform Action</em>' operation.
-	 * @see no.ntnu.tdt4250.matrixgame.game.Action#performAction()
 	 * @generated
+	 * @ordered
 	 */
-	EOperation getAction__PerformAction();
+	int GRID___GET_CELL__INT_INT = 0;
 
 	/**
-	 * Returns the meta object for class '{@link no.ntnu.tdt4250.matrixgame.game.State <em>State</em>}'.
+	 * The operation id for the '<em>Set Cell</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>State</em>'.
-	 * @see no.ntnu.tdt4250.matrixgame.game.State
 	 * @generated
+	 * @ordered
 	 */
-	EClass getState();
+	int GRID___SET_CELL__INT_INT_CHAR = 1;
 
 	/**
-	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.matrixgame.game.State#getTurnsTaken <em>Turns Taken</em>}'.
+	 * The operation id for the '<em>Is Full</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Turns Taken</em>'.
-	 * @see no.ntnu.tdt4250.matrixgame.game.State#getTurnsTaken()
-	 * @see #getState()
 	 * @generated
+	 * @ordered
 	 */
-	EAttribute getState_TurnsTaken();
+	int GRID___IS_FULL = 2;
 
 	/**
-	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.matrixgame.game.State#isFlagsPlaced <em>Flags Placed</em>}'.
+	 * The number of operations of the '<em>Grid</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Flags Placed</em>'.
-	 * @see no.ntnu.tdt4250.matrixgame.game.State#isFlagsPlaced()
-	 * @see #getState()
 	 * @generated
+	 * @ordered
 	 */
-	EAttribute getState_FlagsPlaced();
+	int GRID_OPERATION_COUNT = 3;
 
 	/**
-	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.matrixgame.game.State#isIsOver <em>Is Over</em>}'.
+	 * The meta object id for the '{@link no.ntnu.tdt4250.matrixgame.game.impl.GameImpl <em>Game</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Over</em>'.
-	 * @see no.ntnu.tdt4250.matrixgame.game.State#isIsOver()
-	 * @see #getState()
+	 * @see no.ntnu.tdt4250.matrixgame.game.impl.GameImpl
+	 * @see no.ntnu.tdt4250.matrixgame.game.impl.GamePackageImpl#getGame()
 	 * @generated
 	 */
-	EAttribute getState_IsOver();
+	int GAME = 4;
 
 	/**
-	 * Returns the meta object for the reference '{@link no.ntnu.tdt4250.matrixgame.game.State#getTile <em>Tile</em>}'.
+	 * The number of structural features of the '<em>Game</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Tile</em>'.
-	 * @see no.ntnu.tdt4250.matrixgame.game.State#getTile()
-	 * @see #getState()
 	 * @generated
+	 * @ordered
 	 */
-	EReference getState_Tile();
+	int GAME_FEATURE_COUNT = 0;
 
 	/**
-	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.matrixgame.game.State#getName <em>Name</em>}'.
+	 * The number of operations of the '<em>Game</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see no.ntnu.tdt4250.matrixgame.game.State#getName()
-	 * @see #getState()
 	 * @generated
+	 * @ordered
 	 */
-	EAttribute getState_Name();
-
-	/**
-	 * Returns the meta object for the '{@link no.ntnu.tdt4250.matrixgame.game.State#getCurrentStatus() <em>Get Current Status</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Current Status</em>' operation.
-	 * @see no.ntnu.tdt4250.matrixgame.game.State#getCurrentStatus()
-	 * @generated
-	 */
-	EOperation getState__GetCurrentStatus();
-
-	/**
-	 * Returns the meta object for class '{@link no.ntnu.tdt4250.matrixgame.game.Player <em>Player</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Player</em>'.
-	 * @see no.ntnu.tdt4250.matrixgame.game.Player
-	 * @generated
-	 */
-	EClass getPlayer();
-
-	/**
-	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.matrixgame.game.Player#getScore <em>Score</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Score</em>'.
-	 * @see no.ntnu.tdt4250.matrixgame.game.Player#getScore()
-	 * @see #getPlayer()
-	 * @generated
-	 */
-	EAttribute getPlayer_Score();
-
-	/**
-	 * Returns the meta object for the reference list '{@link no.ntnu.tdt4250.matrixgame.game.Player#getTakes_action <em>Takes action</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Takes action</em>'.
-	 * @see no.ntnu.tdt4250.matrixgame.game.Player#getTakes_action()
-	 * @see #getPlayer()
-	 * @generated
-	 */
-	EReference getPlayer_Takes_action();
-
-	/**
-	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.matrixgame.game.Player#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see no.ntnu.tdt4250.matrixgame.game.Player#getName()
-	 * @see #getPlayer()
-	 * @generated
-	 */
-	EAttribute getPlayer_Name();
-
-	/**
-	 * Returns the meta object for the '{@link no.ntnu.tdt4250.matrixgame.game.Player#takeAction() <em>Take Action</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Take Action</em>' operation.
-	 * @see no.ntnu.tdt4250.matrixgame.game.Player#takeAction()
-	 * @generated
-	 */
-	EOperation getPlayer__TakeAction();
-
-	/**
-	 * Returns the meta object for class '{@link no.ntnu.tdt4250.matrixgame.game.Map <em>Map</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Map</em>'.
-	 * @see no.ntnu.tdt4250.matrixgame.game.Map
-	 * @generated
-	 */
-	EClass getMap();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link no.ntnu.tdt4250.matrixgame.game.Map#getTile <em>Tile</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Tile</em>'.
-	 * @see no.ntnu.tdt4250.matrixgame.game.Map#getTile()
-	 * @see #getMap()
-	 * @generated
-	 */
-	EReference getMap_Tile();
-
-	/**
-	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.matrixgame.game.Map#getAmountOfTiles <em>Amount Of Tiles</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Amount Of Tiles</em>'.
-	 * @see no.ntnu.tdt4250.matrixgame.game.Map#getAmountOfTiles()
-	 * @see #getMap()
-	 * @generated
-	 */
-	EAttribute getMap_AmountOfTiles();
-
-	/**
-	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.matrixgame.game.Map#getMapSizeX <em>Map Size X</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Map Size X</em>'.
-	 * @see no.ntnu.tdt4250.matrixgame.game.Map#getMapSizeX()
-	 * @see #getMap()
-	 * @generated
-	 */
-	EAttribute getMap_MapSizeX();
-
-	/**
-	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.matrixgame.game.Map#getMapSizeY <em>Map Size Y</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Map Size Y</em>'.
-	 * @see no.ntnu.tdt4250.matrixgame.game.Map#getMapSizeY()
-	 * @see #getMap()
-	 * @generated
-	 */
-	EAttribute getMap_MapSizeY();
-
-	/**
-	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.matrixgame.game.Map#getMapName <em>Map Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Map Name</em>'.
-	 * @see no.ntnu.tdt4250.matrixgame.game.Map#getMapName()
-	 * @see #getMap()
-	 * @generated
-	 */
-	EAttribute getMap_MapName();
-
-	/**
-	 * Returns the meta object for the '{@link no.ntnu.tdt4250.matrixgame.game.Map#initializeMap() <em>Initialize Map</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Initialize Map</em>' operation.
-	 * @see no.ntnu.tdt4250.matrixgame.game.Map#initializeMap()
-	 * @generated
-	 */
-	EOperation getMap__InitializeMap();
+	int GAME_OPERATION_COUNT = 0;
 
 	/**
 	 * Returns the meta object for class '{@link no.ntnu.tdt4250.matrixgame.game.GameLogic <em>Logic</em>}'.
@@ -892,50 +368,6 @@ public interface GamePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getGameLogic();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link no.ntnu.tdt4250.matrixgame.game.GameLogic#getPlayer <em>Player</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Player</em>'.
-	 * @see no.ntnu.tdt4250.matrixgame.game.GameLogic#getPlayer()
-	 * @see #getGameLogic()
-	 * @generated
-	 */
-	EReference getGameLogic_Player();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link no.ntnu.tdt4250.matrixgame.game.GameLogic#getMap <em>Map</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Map</em>'.
-	 * @see no.ntnu.tdt4250.matrixgame.game.GameLogic#getMap()
-	 * @see #getGameLogic()
-	 * @generated
-	 */
-	EReference getGameLogic_Map();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link no.ntnu.tdt4250.matrixgame.game.GameLogic#getActions_played <em>Actions played</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Actions played</em>'.
-	 * @see no.ntnu.tdt4250.matrixgame.game.GameLogic#getActions_played()
-	 * @see #getGameLogic()
-	 * @generated
-	 */
-	EReference getGameLogic_Actions_played();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link no.ntnu.tdt4250.matrixgame.game.GameLogic#getHas_state <em>Has state</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Has state</em>'.
-	 * @see no.ntnu.tdt4250.matrixgame.game.GameLogic#getHas_state()
-	 * @see #getGameLogic()
-	 * @generated
-	 */
-	EReference getGameLogic_Has_state();
 
 	/**
 	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.matrixgame.game.GameLogic#getGameName <em>Game Name</em>}'.
@@ -949,14 +381,69 @@ public interface GamePackage extends EPackage {
 	EAttribute getGameLogic_GameName();
 
 	/**
-	 * Returns the meta object for the '{@link no.ntnu.tdt4250.matrixgame.game.GameLogic#applyAction(no.ntnu.tdt4250.matrixgame.game.Action, no.ntnu.tdt4250.matrixgame.game.Tile) <em>Apply Action</em>}' operation.
+	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.matrixgame.game.GameLogic#getPlayerX <em>Player X</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Apply Action</em>' operation.
-	 * @see no.ntnu.tdt4250.matrixgame.game.GameLogic#applyAction(no.ntnu.tdt4250.matrixgame.game.Action, no.ntnu.tdt4250.matrixgame.game.Tile)
+	 * @return the meta object for the attribute '<em>Player X</em>'.
+	 * @see no.ntnu.tdt4250.matrixgame.game.GameLogic#getPlayerX()
+	 * @see #getGameLogic()
 	 * @generated
 	 */
-	EOperation getGameLogic__ApplyAction__Action_Tile();
+	EAttribute getGameLogic_PlayerX();
+
+	/**
+	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.matrixgame.game.GameLogic#getPlayerO <em>Player O</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Player O</em>'.
+	 * @see no.ntnu.tdt4250.matrixgame.game.GameLogic#getPlayerO()
+	 * @see #getGameLogic()
+	 * @generated
+	 */
+	EAttribute getGameLogic_PlayerO();
+
+	/**
+	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.matrixgame.game.GameLogic#getMapLength <em>Map Length</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Map Length</em>'.
+	 * @see no.ntnu.tdt4250.matrixgame.game.GameLogic#getMapLength()
+	 * @see #getGameLogic()
+	 * @generated
+	 */
+	EAttribute getGameLogic_MapLength();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link no.ntnu.tdt4250.matrixgame.game.GameLogic#getGrid <em>Grid</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Grid</em>'.
+	 * @see no.ntnu.tdt4250.matrixgame.game.GameLogic#getGrid()
+	 * @see #getGameLogic()
+	 * @generated
+	 */
+	EReference getGameLogic_Grid();
+
+	/**
+	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.matrixgame.game.GameLogic#getCurrentPlayer <em>Current Player</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Current Player</em>'.
+	 * @see no.ntnu.tdt4250.matrixgame.game.GameLogic#getCurrentPlayer()
+	 * @see #getGameLogic()
+	 * @generated
+	 */
+	EAttribute getGameLogic_CurrentPlayer();
+
+	/**
+	 * Returns the meta object for the '{@link no.ntnu.tdt4250.matrixgame.game.GameLogic#switchPlayer() <em>Switch Player</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Switch Player</em>' operation.
+	 * @see no.ntnu.tdt4250.matrixgame.game.GameLogic#switchPlayer()
+	 * @generated
+	 */
+	EOperation getGameLogic__SwitchPlayer();
 
 	/**
 	 * Returns the meta object for the '{@link no.ntnu.tdt4250.matrixgame.game.GameLogic#isGameOver() <em>Is Game Over</em>}' operation.
@@ -969,34 +456,149 @@ public interface GamePackage extends EPackage {
 	EOperation getGameLogic__IsGameOver();
 
 	/**
-	 * Returns the meta object for the '{@link no.ntnu.tdt4250.matrixgame.game.GameLogic#generateStartingPosition() <em>Generate Starting Position</em>}' operation.
+	 * Returns the meta object for the '{@link no.ntnu.tdt4250.matrixgame.game.GameLogic#checkWin() <em>Check Win</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Generate Starting Position</em>' operation.
-	 * @see no.ntnu.tdt4250.matrixgame.game.GameLogic#generateStartingPosition()
+	 * @return the meta object for the '<em>Check Win</em>' operation.
+	 * @see no.ntnu.tdt4250.matrixgame.game.GameLogic#checkWin()
 	 * @generated
 	 */
-	EOperation getGameLogic__GenerateStartingPosition();
+	EOperation getGameLogic__CheckWin();
 
 	/**
-	 * Returns the meta object for enum '{@link no.ntnu.tdt4250.matrixgame.game.ActionType <em>Action Type</em>}'.
+	 * Returns the meta object for the '{@link no.ntnu.tdt4250.matrixgame.game.GameLogic#makeMove(int, int) <em>Make Move</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Action Type</em>'.
-	 * @see no.ntnu.tdt4250.matrixgame.game.ActionType
+	 * @return the meta object for the '<em>Make Move</em>' operation.
+	 * @see no.ntnu.tdt4250.matrixgame.game.GameLogic#makeMove(int, int)
 	 * @generated
 	 */
-	EEnum getActionType();
+	EOperation getGameLogic__MakeMove__int_int();
 
 	/**
-	 * Returns the meta object for enum '{@link no.ntnu.tdt4250.matrixgame.game.TileType <em>Tile Type</em>}'.
+	 * Returns the meta object for class '{@link no.ntnu.tdt4250.matrixgame.game.Cell <em>Cell</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Tile Type</em>'.
-	 * @see no.ntnu.tdt4250.matrixgame.game.TileType
+	 * @return the meta object for class '<em>Cell</em>'.
+	 * @see no.ntnu.tdt4250.matrixgame.game.Cell
 	 * @generated
 	 */
-	EEnum getTileType();
+	EClass getCell();
+
+	/**
+	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.matrixgame.game.Cell#getCharacter <em>Character</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Character</em>'.
+	 * @see no.ntnu.tdt4250.matrixgame.game.Cell#getCharacter()
+	 * @see #getCell()
+	 * @generated
+	 */
+	EAttribute getCell_Character();
+
+	/**
+	 * Returns the meta object for class '{@link no.ntnu.tdt4250.matrixgame.game.Row <em>Row</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Row</em>'.
+	 * @see no.ntnu.tdt4250.matrixgame.game.Row
+	 * @generated
+	 */
+	EClass getRow();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link no.ntnu.tdt4250.matrixgame.game.Row#getCells <em>Cells</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Cells</em>'.
+	 * @see no.ntnu.tdt4250.matrixgame.game.Row#getCells()
+	 * @see #getRow()
+	 * @generated
+	 */
+	EAttribute getRow_Cells();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link no.ntnu.tdt4250.matrixgame.game.Row#getCell <em>Cell</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Cell</em>'.
+	 * @see no.ntnu.tdt4250.matrixgame.game.Row#getCell()
+	 * @see #getRow()
+	 * @generated
+	 */
+	EReference getRow_Cell();
+
+	/**
+	 * Returns the meta object for class '{@link no.ntnu.tdt4250.matrixgame.game.Grid <em>Grid</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Grid</em>'.
+	 * @see no.ntnu.tdt4250.matrixgame.game.Grid
+	 * @generated
+	 */
+	EClass getGrid();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link no.ntnu.tdt4250.matrixgame.game.Grid#getRow <em>Row</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Row</em>'.
+	 * @see no.ntnu.tdt4250.matrixgame.game.Grid#getRow()
+	 * @see #getGrid()
+	 * @generated
+	 */
+	EReference getGrid_Row();
+
+	/**
+	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.matrixgame.game.Grid#getMap <em>Map</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Map</em>'.
+	 * @see no.ntnu.tdt4250.matrixgame.game.Grid#getMap()
+	 * @see #getGrid()
+	 * @generated
+	 */
+	EAttribute getGrid_Map();
+
+	/**
+	 * Returns the meta object for the '{@link no.ntnu.tdt4250.matrixgame.game.Grid#getCell(int, int) <em>Get Cell</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Cell</em>' operation.
+	 * @see no.ntnu.tdt4250.matrixgame.game.Grid#getCell(int, int)
+	 * @generated
+	 */
+	EOperation getGrid__GetCell__int_int();
+
+	/**
+	 * Returns the meta object for the '{@link no.ntnu.tdt4250.matrixgame.game.Grid#setCell(int, int, char) <em>Set Cell</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Set Cell</em>' operation.
+	 * @see no.ntnu.tdt4250.matrixgame.game.Grid#setCell(int, int, char)
+	 * @generated
+	 */
+	EOperation getGrid__SetCell__int_int_char();
+
+	/**
+	 * Returns the meta object for the '{@link no.ntnu.tdt4250.matrixgame.game.Grid#isFull() <em>Is Full</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Is Full</em>' operation.
+	 * @see no.ntnu.tdt4250.matrixgame.game.Grid#isFull()
+	 * @generated
+	 */
+	EOperation getGrid__IsFull();
+
+	/**
+	 * Returns the meta object for class '{@link no.ntnu.tdt4250.matrixgame.game.Game <em>Game</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Game</em>'.
+	 * @see no.ntnu.tdt4250.matrixgame.game.Game
+	 * @generated
+	 */
+	EClass getGame();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1022,264 +624,6 @@ public interface GamePackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link no.ntnu.tdt4250.matrixgame.game.impl.TileImpl <em>Tile</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see no.ntnu.tdt4250.matrixgame.game.impl.TileImpl
-		 * @see no.ntnu.tdt4250.matrixgame.game.impl.GamePackageImpl#getTile()
-		 * @generated
-		 */
-		EClass TILE = eINSTANCE.getTile();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Accessible</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TILE__IS_ACCESSIBLE = eINSTANCE.getTile_IsAccessible();
-
-		/**
-		 * The meta object literal for the '<em><b>Color</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TILE__COLOR = eINSTANCE.getTile_Color();
-
-		/**
-		 * The meta object literal for the '<em><b>XCoordinate</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TILE__XCOORDINATE = eINSTANCE.getTile_XCoordinate();
-
-		/**
-		 * The meta object literal for the '<em><b>YCoordinate</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TILE__YCOORDINATE = eINSTANCE.getTile_YCoordinate();
-
-		/**
-		 * The meta object literal for the '<em><b>Tile Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TILE__TILE_TYPE = eINSTANCE.getTile_TileType();
-
-		/**
-		 * The meta object literal for the '<em><b>Tile Place</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TILE__TILE_PLACE = eINSTANCE.getTile_TilePlace();
-
-		/**
-		 * The meta object literal for the '<em><b>Interact</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation TILE___INTERACT__ACTION = eINSTANCE.getTile__Interact__Action();
-
-		/**
-		 * The meta object literal for the '{@link no.ntnu.tdt4250.matrixgame.game.impl.ActionImpl <em>Action</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see no.ntnu.tdt4250.matrixgame.game.impl.ActionImpl
-		 * @see no.ntnu.tdt4250.matrixgame.game.impl.GamePackageImpl#getAction()
-		 * @generated
-		 */
-		EClass ACTION = eINSTANCE.getAction();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ACTION__NAME = eINSTANCE.getAction_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Action Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ACTION__ACTION_TYPE = eINSTANCE.getAction_ActionType();
-
-		/**
-		 * The meta object literal for the '<em><b>Perform Action</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ACTION___PERFORM_ACTION = eINSTANCE.getAction__PerformAction();
-
-		/**
-		 * The meta object literal for the '{@link no.ntnu.tdt4250.matrixgame.game.impl.StateImpl <em>State</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see no.ntnu.tdt4250.matrixgame.game.impl.StateImpl
-		 * @see no.ntnu.tdt4250.matrixgame.game.impl.GamePackageImpl#getState()
-		 * @generated
-		 */
-		EClass STATE = eINSTANCE.getState();
-
-		/**
-		 * The meta object literal for the '<em><b>Turns Taken</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute STATE__TURNS_TAKEN = eINSTANCE.getState_TurnsTaken();
-
-		/**
-		 * The meta object literal for the '<em><b>Flags Placed</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute STATE__FLAGS_PLACED = eINSTANCE.getState_FlagsPlaced();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Over</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute STATE__IS_OVER = eINSTANCE.getState_IsOver();
-
-		/**
-		 * The meta object literal for the '<em><b>Tile</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference STATE__TILE = eINSTANCE.getState_Tile();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute STATE__NAME = eINSTANCE.getState_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Current Status</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation STATE___GET_CURRENT_STATUS = eINSTANCE.getState__GetCurrentStatus();
-
-		/**
-		 * The meta object literal for the '{@link no.ntnu.tdt4250.matrixgame.game.impl.PlayerImpl <em>Player</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see no.ntnu.tdt4250.matrixgame.game.impl.PlayerImpl
-		 * @see no.ntnu.tdt4250.matrixgame.game.impl.GamePackageImpl#getPlayer()
-		 * @generated
-		 */
-		EClass PLAYER = eINSTANCE.getPlayer();
-
-		/**
-		 * The meta object literal for the '<em><b>Score</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PLAYER__SCORE = eINSTANCE.getPlayer_Score();
-
-		/**
-		 * The meta object literal for the '<em><b>Takes action</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PLAYER__TAKES_ACTION = eINSTANCE.getPlayer_Takes_action();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PLAYER__NAME = eINSTANCE.getPlayer_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Take Action</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation PLAYER___TAKE_ACTION = eINSTANCE.getPlayer__TakeAction();
-
-		/**
-		 * The meta object literal for the '{@link no.ntnu.tdt4250.matrixgame.game.impl.MapImpl <em>Map</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see no.ntnu.tdt4250.matrixgame.game.impl.MapImpl
-		 * @see no.ntnu.tdt4250.matrixgame.game.impl.GamePackageImpl#getMap()
-		 * @generated
-		 */
-		EClass MAP = eINSTANCE.getMap();
-
-		/**
-		 * The meta object literal for the '<em><b>Tile</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MAP__TILE = eINSTANCE.getMap_Tile();
-
-		/**
-		 * The meta object literal for the '<em><b>Amount Of Tiles</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MAP__AMOUNT_OF_TILES = eINSTANCE.getMap_AmountOfTiles();
-
-		/**
-		 * The meta object literal for the '<em><b>Map Size X</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MAP__MAP_SIZE_X = eINSTANCE.getMap_MapSizeX();
-
-		/**
-		 * The meta object literal for the '<em><b>Map Size Y</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MAP__MAP_SIZE_Y = eINSTANCE.getMap_MapSizeY();
-
-		/**
-		 * The meta object literal for the '<em><b>Map Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MAP__MAP_NAME = eINSTANCE.getMap_MapName();
-
-		/**
-		 * The meta object literal for the '<em><b>Initialize Map</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation MAP___INITIALIZE_MAP = eINSTANCE.getMap__InitializeMap();
-
-		/**
 		 * The meta object literal for the '{@link no.ntnu.tdt4250.matrixgame.game.impl.GameLogicImpl <em>Logic</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1290,38 +634,6 @@ public interface GamePackage extends EPackage {
 		EClass GAME_LOGIC = eINSTANCE.getGameLogic();
 
 		/**
-		 * The meta object literal for the '<em><b>Player</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference GAME_LOGIC__PLAYER = eINSTANCE.getGameLogic_Player();
-
-		/**
-		 * The meta object literal for the '<em><b>Map</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference GAME_LOGIC__MAP = eINSTANCE.getGameLogic_Map();
-
-		/**
-		 * The meta object literal for the '<em><b>Actions played</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference GAME_LOGIC__ACTIONS_PLAYED = eINSTANCE.getGameLogic_Actions_played();
-
-		/**
-		 * The meta object literal for the '<em><b>Has state</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference GAME_LOGIC__HAS_STATE = eINSTANCE.getGameLogic_Has_state();
-
-		/**
 		 * The meta object literal for the '<em><b>Game Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1330,12 +642,52 @@ public interface GamePackage extends EPackage {
 		EAttribute GAME_LOGIC__GAME_NAME = eINSTANCE.getGameLogic_GameName();
 
 		/**
-		 * The meta object literal for the '<em><b>Apply Action</b></em>' operation.
+		 * The meta object literal for the '<em><b>Player X</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation GAME_LOGIC___APPLY_ACTION__ACTION_TILE = eINSTANCE.getGameLogic__ApplyAction__Action_Tile();
+		EAttribute GAME_LOGIC__PLAYER_X = eINSTANCE.getGameLogic_PlayerX();
+
+		/**
+		 * The meta object literal for the '<em><b>Player O</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GAME_LOGIC__PLAYER_O = eINSTANCE.getGameLogic_PlayerO();
+
+		/**
+		 * The meta object literal for the '<em><b>Map Length</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GAME_LOGIC__MAP_LENGTH = eINSTANCE.getGameLogic_MapLength();
+
+		/**
+		 * The meta object literal for the '<em><b>Grid</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GAME_LOGIC__GRID = eINSTANCE.getGameLogic_Grid();
+
+		/**
+		 * The meta object literal for the '<em><b>Current Player</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GAME_LOGIC__CURRENT_PLAYER = eINSTANCE.getGameLogic_CurrentPlayer();
+
+		/**
+		 * The meta object literal for the '<em><b>Switch Player</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GAME_LOGIC___SWITCH_PLAYER = eINSTANCE.getGameLogic__SwitchPlayer();
 
 		/**
 		 * The meta object literal for the '<em><b>Is Game Over</b></em>' operation.
@@ -1346,32 +698,124 @@ public interface GamePackage extends EPackage {
 		EOperation GAME_LOGIC___IS_GAME_OVER = eINSTANCE.getGameLogic__IsGameOver();
 
 		/**
-		 * The meta object literal for the '<em><b>Generate Starting Position</b></em>' operation.
+		 * The meta object literal for the '<em><b>Check Win</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation GAME_LOGIC___GENERATE_STARTING_POSITION = eINSTANCE.getGameLogic__GenerateStartingPosition();
+		EOperation GAME_LOGIC___CHECK_WIN = eINSTANCE.getGameLogic__CheckWin();
 
 		/**
-		 * The meta object literal for the '{@link no.ntnu.tdt4250.matrixgame.game.ActionType <em>Action Type</em>}' enum.
+		 * The meta object literal for the '<em><b>Make Move</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see no.ntnu.tdt4250.matrixgame.game.ActionType
-		 * @see no.ntnu.tdt4250.matrixgame.game.impl.GamePackageImpl#getActionType()
 		 * @generated
 		 */
-		EEnum ACTION_TYPE = eINSTANCE.getActionType();
+		EOperation GAME_LOGIC___MAKE_MOVE__INT_INT = eINSTANCE.getGameLogic__MakeMove__int_int();
 
 		/**
-		 * The meta object literal for the '{@link no.ntnu.tdt4250.matrixgame.game.TileType <em>Tile Type</em>}' enum.
+		 * The meta object literal for the '{@link no.ntnu.tdt4250.matrixgame.game.impl.CellImpl <em>Cell</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see no.ntnu.tdt4250.matrixgame.game.TileType
-		 * @see no.ntnu.tdt4250.matrixgame.game.impl.GamePackageImpl#getTileType()
+		 * @see no.ntnu.tdt4250.matrixgame.game.impl.CellImpl
+		 * @see no.ntnu.tdt4250.matrixgame.game.impl.GamePackageImpl#getCell()
 		 * @generated
 		 */
-		EEnum TILE_TYPE = eINSTANCE.getTileType();
+		EClass CELL = eINSTANCE.getCell();
+
+		/**
+		 * The meta object literal for the '<em><b>Character</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CELL__CHARACTER = eINSTANCE.getCell_Character();
+
+		/**
+		 * The meta object literal for the '{@link no.ntnu.tdt4250.matrixgame.game.impl.RowImpl <em>Row</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see no.ntnu.tdt4250.matrixgame.game.impl.RowImpl
+		 * @see no.ntnu.tdt4250.matrixgame.game.impl.GamePackageImpl#getRow()
+		 * @generated
+		 */
+		EClass ROW = eINSTANCE.getRow();
+
+		/**
+		 * The meta object literal for the '<em><b>Cells</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROW__CELLS = eINSTANCE.getRow_Cells();
+
+		/**
+		 * The meta object literal for the '<em><b>Cell</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROW__CELL = eINSTANCE.getRow_Cell();
+
+		/**
+		 * The meta object literal for the '{@link no.ntnu.tdt4250.matrixgame.game.impl.GridImpl <em>Grid</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see no.ntnu.tdt4250.matrixgame.game.impl.GridImpl
+		 * @see no.ntnu.tdt4250.matrixgame.game.impl.GamePackageImpl#getGrid()
+		 * @generated
+		 */
+		EClass GRID = eINSTANCE.getGrid();
+
+		/**
+		 * The meta object literal for the '<em><b>Row</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GRID__ROW = eINSTANCE.getGrid_Row();
+
+		/**
+		 * The meta object literal for the '<em><b>Map</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GRID__MAP = eINSTANCE.getGrid_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Cell</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GRID___GET_CELL__INT_INT = eINSTANCE.getGrid__GetCell__int_int();
+
+		/**
+		 * The meta object literal for the '<em><b>Set Cell</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GRID___SET_CELL__INT_INT_CHAR = eINSTANCE.getGrid__SetCell__int_int_char();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Full</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GRID___IS_FULL = eINSTANCE.getGrid__IsFull();
+
+		/**
+		 * The meta object literal for the '{@link no.ntnu.tdt4250.matrixgame.game.impl.GameImpl <em>Game</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see no.ntnu.tdt4250.matrixgame.game.impl.GameImpl
+		 * @see no.ntnu.tdt4250.matrixgame.game.impl.GamePackageImpl#getGame()
+		 * @generated
+		 */
+		EClass GAME = eINSTANCE.getGame();
 
 	}
 

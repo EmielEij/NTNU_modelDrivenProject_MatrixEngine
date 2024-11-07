@@ -73,121 +73,6 @@ public class GameItemProviderAdapterFactory extends GameAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link no.ntnu.tdt4250.matrixgame.game.Tile} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected TileItemProvider tileItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link no.ntnu.tdt4250.matrixgame.game.Tile}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createTileAdapter() {
-		if (tileItemProvider == null) {
-			tileItemProvider = new TileItemProvider(this);
-		}
-
-		return tileItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link no.ntnu.tdt4250.matrixgame.game.Action} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ActionItemProvider actionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link no.ntnu.tdt4250.matrixgame.game.Action}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createActionAdapter() {
-		if (actionItemProvider == null) {
-			actionItemProvider = new ActionItemProvider(this);
-		}
-
-		return actionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link no.ntnu.tdt4250.matrixgame.game.State} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected StateItemProvider stateItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link no.ntnu.tdt4250.matrixgame.game.State}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createStateAdapter() {
-		if (stateItemProvider == null) {
-			stateItemProvider = new StateItemProvider(this);
-		}
-
-		return stateItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link no.ntnu.tdt4250.matrixgame.game.Player} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PlayerItemProvider playerItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link no.ntnu.tdt4250.matrixgame.game.Player}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createPlayerAdapter() {
-		if (playerItemProvider == null) {
-			playerItemProvider = new PlayerItemProvider(this);
-		}
-
-		return playerItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link no.ntnu.tdt4250.matrixgame.game.Map} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected MapItemProvider mapItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link no.ntnu.tdt4250.matrixgame.game.Map}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createMapAdapter() {
-		if (mapItemProvider == null) {
-			mapItemProvider = new MapItemProvider(this);
-		}
-
-		return mapItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link no.ntnu.tdt4250.matrixgame.game.GameLogic} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -208,6 +93,75 @@ public class GameItemProviderAdapterFactory extends GameAdapterFactory
 		}
 
 		return gameLogicItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link no.ntnu.tdt4250.matrixgame.game.Cell} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CellItemProvider cellItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link no.ntnu.tdt4250.matrixgame.game.Cell}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCellAdapter() {
+		if (cellItemProvider == null) {
+			cellItemProvider = new CellItemProvider(this);
+		}
+
+		return cellItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link no.ntnu.tdt4250.matrixgame.game.Row} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RowItemProvider rowItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link no.ntnu.tdt4250.matrixgame.game.Row}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRowAdapter() {
+		if (rowItemProvider == null) {
+			rowItemProvider = new RowItemProvider(this);
+		}
+
+		return rowItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link no.ntnu.tdt4250.matrixgame.game.Grid} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected GridItemProvider gridItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link no.ntnu.tdt4250.matrixgame.game.Grid}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createGridAdapter() {
+		if (gridItemProvider == null) {
+			gridItemProvider = new GridItemProvider(this);
+		}
+
+		return gridItemProvider;
 	}
 
 	/**
@@ -315,18 +269,14 @@ public class GameItemProviderAdapterFactory extends GameAdapterFactory
 	 */
 	@Override
 	public void dispose() {
-		if (tileItemProvider != null)
-			tileItemProvider.dispose();
-		if (actionItemProvider != null)
-			actionItemProvider.dispose();
-		if (stateItemProvider != null)
-			stateItemProvider.dispose();
-		if (playerItemProvider != null)
-			playerItemProvider.dispose();
-		if (mapItemProvider != null)
-			mapItemProvider.dispose();
 		if (gameLogicItemProvider != null)
 			gameLogicItemProvider.dispose();
+		if (cellItemProvider != null)
+			cellItemProvider.dispose();
+		if (rowItemProvider != null)
+			rowItemProvider.dispose();
+		if (gridItemProvider != null)
+			gridItemProvider.dispose();
 	}
 
 }

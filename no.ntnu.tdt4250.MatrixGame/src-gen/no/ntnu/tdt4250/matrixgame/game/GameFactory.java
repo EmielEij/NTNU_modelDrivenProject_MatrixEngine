@@ -22,51 +22,6 @@ public interface GameFactory extends EFactory {
 	GameFactory eINSTANCE = no.ntnu.tdt4250.matrixgame.game.impl.GameFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Tile</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Tile</em>'.
-	 * @generated
-	 */
-	Tile createTile();
-
-	/**
-	 * Returns a new object of class '<em>Action</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Action</em>'.
-	 * @generated
-	 */
-	Action createAction();
-
-	/**
-	 * Returns a new object of class '<em>State</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>State</em>'.
-	 * @generated
-	 */
-	State createState();
-
-	/**
-	 * Returns a new object of class '<em>Player</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Player</em>'.
-	 * @generated
-	 */
-	Player createPlayer();
-
-	/**
-	 * Returns a new object of class '<em>Map</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Map</em>'.
-	 * @generated
-	 */
-	Map createMap();
-
-	/**
 	 * Returns a new object of class '<em>Logic</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -74,6 +29,33 @@ public interface GameFactory extends EFactory {
 	 * @generated
 	 */
 	GameLogic createGameLogic();
+
+	/**
+	 * Returns a new object of class '<em>Cell</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Cell</em>'.
+	 * @generated
+	 */
+	Cell createCell();
+
+	/**
+	 * Returns a new object of class '<em>Row</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Row</em>'.
+	 * @generated
+	 */
+	Row createRow();
+
+	/**
+	 * Returns a new object of class '<em>Grid</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Grid</em>'.
+	 * @generated
+	 */
+	Grid createGrid();
 
 	/**
 	 * Returns the package supported by this factory.

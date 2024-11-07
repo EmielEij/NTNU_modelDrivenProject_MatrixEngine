@@ -4,6 +4,7 @@ package no.ntnu.tdt4250.matrixgame.game.provider;
 
 import java.util.Collection;
 import java.util.List;
+
 import no.ntnu.tdt4250.matrixgame.game.GameFactory;
 import no.ntnu.tdt4250.matrixgame.game.GameLogic;
 import no.ntnu.tdt4250.matrixgame.game.GamePackage;
@@ -14,6 +15,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -55,6 +57,10 @@ public class GameLogicItemProvider extends ItemProviderAdapter implements IEditi
 			super.getPropertyDescriptors(object);
 
 			addGameNamePropertyDescriptor(object);
+			addPlayerXPropertyDescriptor(object);
+			addPlayerOPropertyDescriptor(object);
+			addMapLengthPropertyDescriptor(object);
+			addCurrentPlayerPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -76,6 +82,70 @@ public class GameLogicItemProvider extends ItemProviderAdapter implements IEditi
 	}
 
 	/**
+	 * This adds a property descriptor for the Player X feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPlayerXPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_GameLogic_playerX_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_GameLogic_playerX_feature",
+								"_UI_GameLogic_type"),
+						GamePackage.Literals.GAME_LOGIC__PLAYER_X, true, false, false,
+						ItemPropertyDescriptor.TEXT_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Player O feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPlayerOPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_GameLogic_playerO_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_GameLogic_playerO_feature",
+								"_UI_GameLogic_type"),
+						GamePackage.Literals.GAME_LOGIC__PLAYER_O, true, false, false,
+						ItemPropertyDescriptor.TEXT_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Map Length feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMapLengthPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_GameLogic_mapLength_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_GameLogic_mapLength_feature",
+								"_UI_GameLogic_type"),
+						GamePackage.Literals.GAME_LOGIC__MAP_LENGTH, true, false, false,
+						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Current Player feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCurrentPlayerPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_GameLogic_currentPlayer_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_GameLogic_currentPlayer_feature",
+								"_UI_GameLogic_type"),
+						GamePackage.Literals.GAME_LOGIC__CURRENT_PLAYER, true, false, false,
+						ItemPropertyDescriptor.TEXT_VALUE_IMAGE, null, null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -87,10 +157,7 @@ public class GameLogicItemProvider extends ItemProviderAdapter implements IEditi
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(GamePackage.Literals.GAME_LOGIC__PLAYER);
-			childrenFeatures.add(GamePackage.Literals.GAME_LOGIC__MAP);
-			childrenFeatures.add(GamePackage.Literals.GAME_LOGIC__ACTIONS_PLAYED);
-			childrenFeatures.add(GamePackage.Literals.GAME_LOGIC__HAS_STATE);
+			childrenFeatures.add(GamePackage.Literals.GAME_LOGIC__GRID);
 		}
 		return childrenFeatures;
 	}
@@ -155,12 +222,13 @@ public class GameLogicItemProvider extends ItemProviderAdapter implements IEditi
 
 		switch (notification.getFeatureID(GameLogic.class)) {
 		case GamePackage.GAME_LOGIC__GAME_NAME:
+		case GamePackage.GAME_LOGIC__PLAYER_X:
+		case GamePackage.GAME_LOGIC__PLAYER_O:
+		case GamePackage.GAME_LOGIC__MAP_LENGTH:
+		case GamePackage.GAME_LOGIC__CURRENT_PLAYER:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case GamePackage.GAME_LOGIC__PLAYER:
-		case GamePackage.GAME_LOGIC__MAP:
-		case GamePackage.GAME_LOGIC__ACTIONS_PLAYED:
-		case GamePackage.GAME_LOGIC__HAS_STATE:
+		case GamePackage.GAME_LOGIC__GRID:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -178,17 +246,8 @@ public class GameLogicItemProvider extends ItemProviderAdapter implements IEditi
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(
-				createChildParameter(GamePackage.Literals.GAME_LOGIC__PLAYER, GameFactory.eINSTANCE.createPlayer()));
-
 		newChildDescriptors
-				.add(createChildParameter(GamePackage.Literals.GAME_LOGIC__MAP, GameFactory.eINSTANCE.createMap()));
-
-		newChildDescriptors.add(createChildParameter(GamePackage.Literals.GAME_LOGIC__ACTIONS_PLAYED,
-				GameFactory.eINSTANCE.createAction()));
-
-		newChildDescriptors.add(
-				createChildParameter(GamePackage.Literals.GAME_LOGIC__HAS_STATE, GameFactory.eINSTANCE.createState()));
+				.add(createChildParameter(GamePackage.Literals.GAME_LOGIC__GRID, GameFactory.eINSTANCE.createGrid()));
 	}
 
 	/**
