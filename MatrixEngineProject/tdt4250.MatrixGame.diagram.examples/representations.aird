@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:game="http://www.ntnu.no/tdt4250/MatrixGame" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.ntnu.no/tdt4250/MatrixGame platform:/resource/no.ntnu.tdt4250.MatrixGame/model/game.ecore http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/tree/description/1.0.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:game="http://www.ntnu.no/tdt4250/MatrixGame" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tree="http://www.eclipse.org/sirius/tree/1.0.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/tree/description/1.0.0 http://www.eclipse.org/sirius/tree/1.0.0#//description http://www.ntnu.no/tdt4250/MatrixGame platform:/resource/no.ntnu.tdt4250.MatrixGame/model/game.ecore http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
   <viewpoint:DAnalysis uid="_4TaLkJ0fEe-SJv2RMQ1e3Q" selectedViews="_7zY5cJ0fEe-SJv2RMQ1e3Q" version="15.4.1.202403191723">
     <semanticResources>platform:/resource/no.ntnu.tdt4250.MatrixGame/model/TicTacToe.xmi</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_7zY5cJ0fEe-SJv2RMQ1e3Q">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/tdt4250.MatrixGame.diagram/description/diagram.odesign#//@ownedViewpoints[name='MatrixGameViewpoint']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_D21ygJ0gEe-SJv2RMQ1e3Q" name="new MatrixGameDiagram" repPath="#_D21LcJ0gEe-SJv2RMQ1e3Q" changeId="1730995351460">
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/tdt4250.MatrixGame.diagram/description/diagram.odesign#//@ownedViewpoints[name='MatrixGameViewpoint']/@ownedRepresentations[name='MatrixGameDiagram']"/>
+        <target xmi:type="game:GameLogic" href="platform:/resource/no.ntnu.tdt4250.MatrixGame/model/TicTacToe.xmi#/"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_cJq84p0jEe-SJv2RMQ1e3Q" name="new MatrixGameTree" repPath="#_cJWMwJ0jEe-SJv2RMQ1e3Q" changeId="1730996106516">
+        <description xmi:type="description_2:TreeDescription" href="platform:/resource/tdt4250.MatrixGame.diagram/description/diagram.odesign#//@ownedViewpoints[name='MatrixGameViewpoint']/@ownedRepresentations[name='MatrixGameTree']"/>
         <target xmi:type="game:GameLogic" href="platform:/resource/no.ntnu.tdt4250.MatrixGame/model/TicTacToe.xmi#/"/>
       </ownedRepresentationDescriptors>
     </ownedViews>
@@ -200,4 +204,86 @@
     <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/tdt4250.MatrixGame.diagram/description/diagram.odesign#//@ownedViewpoints[name='MatrixGameViewpoint']/@ownedRepresentations[name='MatrixGameDiagram']/@defaultLayer"/>
     <target xmi:type="game:GameLogic" href="platform:/resource/no.ntnu.tdt4250.MatrixGame/model/TicTacToe.xmi#/"/>
   </diagram:DSemanticDiagram>
+  <tree:DTree uid="_cJWMwJ0jEe-SJv2RMQ1e3Q">
+    <target xmi:type="game:GameLogic" href="platform:/resource/no.ntnu.tdt4250.MatrixGame/model/TicTacToe.xmi#/"/>
+    <ownedTreeItems xmi:type="tree:DTreeItem" uid="_cJldUJ0jEe-SJv2RMQ1e3Q" expanded="true">
+      <target xmi:type="game:Grid" href="platform:/resource/no.ntnu.tdt4250.MatrixGame/model/TicTacToe.xmi#//@grid"/>
+      <ownedTreeItems xmi:type="tree:DTreeItem" uid="_cJq84J0jEe-SJv2RMQ1e3Q" name="[]" expanded="true">
+        <target xmi:type="game:Row" href="platform:/resource/no.ntnu.tdt4250.MatrixGame/model/TicTacToe.xmi#//@grid/@row.0"/>
+        <ownedTreeItems xmi:type="tree:DTreeItem" uid="_cjOsZp0jEe-SJv2RMQ1e3Q" name="X">
+          <target xmi:type="game:Cell" href="platform:/resource/no.ntnu.tdt4250.MatrixGame/model/TicTacToe.xmi#//@grid/@row.0/@cell.0"/>
+          <semanticElements xmi:type="game:Cell" href="platform:/resource/no.ntnu.tdt4250.MatrixGame/model/TicTacToe.xmi#//@grid/@row.0/@cell.0"/>
+          <ownedStyle xmi:type="tree:TreeItemStyle" uid="_cjOsZ50jEe-SJv2RMQ1e3Q"/>
+          <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/tdt4250.MatrixGame.diagram/description/diagram.odesign#//@ownedViewpoints[name='MatrixGameViewpoint']/@ownedRepresentations[name='MatrixGameTree']/@subItemMappings[name='GridTreeNode']/@subItemMappings[name='RowTreeNode']/@subItemMappings[name='CellTreeNode']"/>
+        </ownedTreeItems>
+        <ownedTreeItems xmi:type="tree:DTreeItem" uid="_cqwQsJ0jEe-SJv2RMQ1e3Q" name="O">
+          <target xmi:type="game:Cell" href="platform:/resource/no.ntnu.tdt4250.MatrixGame/model/TicTacToe.xmi#//@grid/@row.0/@cell.1"/>
+          <semanticElements xmi:type="game:Cell" href="platform:/resource/no.ntnu.tdt4250.MatrixGame/model/TicTacToe.xmi#//@grid/@row.0/@cell.1"/>
+          <ownedStyle xmi:type="tree:TreeItemStyle" uid="_cqwQsZ0jEe-SJv2RMQ1e3Q"/>
+          <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/tdt4250.MatrixGame.diagram/description/diagram.odesign#//@ownedViewpoints[name='MatrixGameViewpoint']/@ownedRepresentations[name='MatrixGameTree']/@subItemMappings[name='GridTreeNode']/@subItemMappings[name='RowTreeNode']/@subItemMappings[name='CellTreeNode']"/>
+        </ownedTreeItems>
+        <ownedTreeItems xmi:type="tree:DTreeItem" uid="_cqwQs50jEe-SJv2RMQ1e3Q" name="-">
+          <target xmi:type="game:Cell" href="platform:/resource/no.ntnu.tdt4250.MatrixGame/model/TicTacToe.xmi#//@grid/@row.0/@cell.2"/>
+          <semanticElements xmi:type="game:Cell" href="platform:/resource/no.ntnu.tdt4250.MatrixGame/model/TicTacToe.xmi#//@grid/@row.0/@cell.2"/>
+          <ownedStyle xmi:type="tree:TreeItemStyle" uid="_cqwQtJ0jEe-SJv2RMQ1e3Q"/>
+          <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/tdt4250.MatrixGame.diagram/description/diagram.odesign#//@ownedViewpoints[name='MatrixGameViewpoint']/@ownedRepresentations[name='MatrixGameTree']/@subItemMappings[name='GridTreeNode']/@subItemMappings[name='RowTreeNode']/@subItemMappings[name='CellTreeNode']"/>
+        </ownedTreeItems>
+        <semanticElements xmi:type="game:Row" href="platform:/resource/no.ntnu.tdt4250.MatrixGame/model/TicTacToe.xmi#//@grid/@row.0"/>
+        <ownedStyle xmi:type="tree:TreeItemStyle" uid="_cJq84Z0jEe-SJv2RMQ1e3Q"/>
+        <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/tdt4250.MatrixGame.diagram/description/diagram.odesign#//@ownedViewpoints[name='MatrixGameViewpoint']/@ownedRepresentations[name='MatrixGameTree']/@subItemMappings[name='GridTreeNode']/@subItemMappings[name='RowTreeNode']"/>
+      </ownedTreeItems>
+      <ownedTreeItems xmi:type="tree:DTreeItem" uid="_cjOsYJ0jEe-SJv2RMQ1e3Q" name="[]" expanded="true">
+        <target xmi:type="game:Row" href="platform:/resource/no.ntnu.tdt4250.MatrixGame/model/TicTacToe.xmi#//@grid/@row.1"/>
+        <ownedTreeItems xmi:type="tree:DTreeItem" uid="_cjPTcJ0jEe-SJv2RMQ1e3Q" name="-">
+          <target xmi:type="game:Cell" href="platform:/resource/no.ntnu.tdt4250.MatrixGame/model/TicTacToe.xmi#//@grid/@row.1/@cell.0"/>
+          <semanticElements xmi:type="game:Cell" href="platform:/resource/no.ntnu.tdt4250.MatrixGame/model/TicTacToe.xmi#//@grid/@row.1/@cell.0"/>
+          <ownedStyle xmi:type="tree:TreeItemStyle" uid="_cjPTcZ0jEe-SJv2RMQ1e3Q"/>
+          <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/tdt4250.MatrixGame.diagram/description/diagram.odesign#//@ownedViewpoints[name='MatrixGameViewpoint']/@ownedRepresentations[name='MatrixGameTree']/@subItemMappings[name='GridTreeNode']/@subItemMappings[name='RowTreeNode']/@subItemMappings[name='CellTreeNode']"/>
+        </ownedTreeItems>
+        <ownedTreeItems xmi:type="tree:DTreeItem" uid="_c0olcJ0jEe-SJv2RMQ1e3Q" name="O">
+          <target xmi:type="game:Cell" href="platform:/resource/no.ntnu.tdt4250.MatrixGame/model/TicTacToe.xmi#//@grid/@row.1/@cell.1"/>
+          <semanticElements xmi:type="game:Cell" href="platform:/resource/no.ntnu.tdt4250.MatrixGame/model/TicTacToe.xmi#//@grid/@row.1/@cell.1"/>
+          <ownedStyle xmi:type="tree:TreeItemStyle" uid="_c0olcZ0jEe-SJv2RMQ1e3Q"/>
+          <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/tdt4250.MatrixGame.diagram/description/diagram.odesign#//@ownedViewpoints[name='MatrixGameViewpoint']/@ownedRepresentations[name='MatrixGameTree']/@subItemMappings[name='GridTreeNode']/@subItemMappings[name='RowTreeNode']/@subItemMappings[name='CellTreeNode']"/>
+        </ownedTreeItems>
+        <ownedTreeItems xmi:type="tree:DTreeItem" uid="_c0olc50jEe-SJv2RMQ1e3Q" name="-">
+          <target xmi:type="game:Cell" href="platform:/resource/no.ntnu.tdt4250.MatrixGame/model/TicTacToe.xmi#//@grid/@row.1/@cell.2"/>
+          <semanticElements xmi:type="game:Cell" href="platform:/resource/no.ntnu.tdt4250.MatrixGame/model/TicTacToe.xmi#//@grid/@row.1/@cell.2"/>
+          <ownedStyle xmi:type="tree:TreeItemStyle" uid="_c0oldJ0jEe-SJv2RMQ1e3Q"/>
+          <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/tdt4250.MatrixGame.diagram/description/diagram.odesign#//@ownedViewpoints[name='MatrixGameViewpoint']/@ownedRepresentations[name='MatrixGameTree']/@subItemMappings[name='GridTreeNode']/@subItemMappings[name='RowTreeNode']/@subItemMappings[name='CellTreeNode']"/>
+        </ownedTreeItems>
+        <semanticElements xmi:type="game:Row" href="platform:/resource/no.ntnu.tdt4250.MatrixGame/model/TicTacToe.xmi#//@grid/@row.1"/>
+        <ownedStyle xmi:type="tree:TreeItemStyle" uid="_cjOsYZ0jEe-SJv2RMQ1e3Q"/>
+        <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/tdt4250.MatrixGame.diagram/description/diagram.odesign#//@ownedViewpoints[name='MatrixGameViewpoint']/@ownedRepresentations[name='MatrixGameTree']/@subItemMappings[name='GridTreeNode']/@subItemMappings[name='RowTreeNode']"/>
+      </ownedTreeItems>
+      <ownedTreeItems xmi:type="tree:DTreeItem" uid="_cjOsY50jEe-SJv2RMQ1e3Q" name="[]" expanded="true">
+        <target xmi:type="game:Row" href="platform:/resource/no.ntnu.tdt4250.MatrixGame/model/TicTacToe.xmi#//@grid/@row.2"/>
+        <ownedTreeItems xmi:type="tree:DTreeItem" uid="_cjPTcp0jEe-SJv2RMQ1e3Q" name="X">
+          <target xmi:type="game:Cell" href="platform:/resource/no.ntnu.tdt4250.MatrixGame/model/TicTacToe.xmi#//@grid/@row.2/@cell.0"/>
+          <semanticElements xmi:type="game:Cell" href="platform:/resource/no.ntnu.tdt4250.MatrixGame/model/TicTacToe.xmi#//@grid/@row.2/@cell.0"/>
+          <ownedStyle xmi:type="tree:TreeItemStyle" uid="_cjPTc50jEe-SJv2RMQ1e3Q"/>
+          <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/tdt4250.MatrixGame.diagram/description/diagram.odesign#//@ownedViewpoints[name='MatrixGameViewpoint']/@ownedRepresentations[name='MatrixGameTree']/@subItemMappings[name='GridTreeNode']/@subItemMappings[name='RowTreeNode']/@subItemMappings[name='CellTreeNode']"/>
+        </ownedTreeItems>
+        <ownedTreeItems xmi:type="tree:DTreeItem" uid="_c952MJ0jEe-SJv2RMQ1e3Q" name="O">
+          <target xmi:type="game:Cell" href="platform:/resource/no.ntnu.tdt4250.MatrixGame/model/TicTacToe.xmi#//@grid/@row.2/@cell.1"/>
+          <semanticElements xmi:type="game:Cell" href="platform:/resource/no.ntnu.tdt4250.MatrixGame/model/TicTacToe.xmi#//@grid/@row.2/@cell.1"/>
+          <ownedStyle xmi:type="tree:TreeItemStyle" uid="_c952MZ0jEe-SJv2RMQ1e3Q"/>
+          <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/tdt4250.MatrixGame.diagram/description/diagram.odesign#//@ownedViewpoints[name='MatrixGameViewpoint']/@ownedRepresentations[name='MatrixGameTree']/@subItemMappings[name='GridTreeNode']/@subItemMappings[name='RowTreeNode']/@subItemMappings[name='CellTreeNode']"/>
+        </ownedTreeItems>
+        <ownedTreeItems xmi:type="tree:DTreeItem" uid="_c96dQZ0jEe-SJv2RMQ1e3Q" name="X">
+          <target xmi:type="game:Cell" href="platform:/resource/no.ntnu.tdt4250.MatrixGame/model/TicTacToe.xmi#//@grid/@row.2/@cell.2"/>
+          <semanticElements xmi:type="game:Cell" href="platform:/resource/no.ntnu.tdt4250.MatrixGame/model/TicTacToe.xmi#//@grid/@row.2/@cell.2"/>
+          <ownedStyle xmi:type="tree:TreeItemStyle" uid="_c96dQp0jEe-SJv2RMQ1e3Q"/>
+          <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/tdt4250.MatrixGame.diagram/description/diagram.odesign#//@ownedViewpoints[name='MatrixGameViewpoint']/@ownedRepresentations[name='MatrixGameTree']/@subItemMappings[name='GridTreeNode']/@subItemMappings[name='RowTreeNode']/@subItemMappings[name='CellTreeNode']"/>
+        </ownedTreeItems>
+        <semanticElements xmi:type="game:Row" href="platform:/resource/no.ntnu.tdt4250.MatrixGame/model/TicTacToe.xmi#//@grid/@row.2"/>
+        <ownedStyle xmi:type="tree:TreeItemStyle" uid="_cjOsZJ0jEe-SJv2RMQ1e3Q"/>
+        <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/tdt4250.MatrixGame.diagram/description/diagram.odesign#//@ownedViewpoints[name='MatrixGameViewpoint']/@ownedRepresentations[name='MatrixGameTree']/@subItemMappings[name='GridTreeNode']/@subItemMappings[name='RowTreeNode']"/>
+      </ownedTreeItems>
+      <semanticElements xmi:type="game:Grid" href="platform:/resource/no.ntnu.tdt4250.MatrixGame/model/TicTacToe.xmi#//@grid"/>
+      <ownedStyle xmi:type="tree:TreeItemStyle" uid="_cJogoJ0jEe-SJv2RMQ1e3Q"/>
+      <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/tdt4250.MatrixGame.diagram/description/diagram.odesign#//@ownedViewpoints[name='MatrixGameViewpoint']/@ownedRepresentations[name='MatrixGameTree']/@subItemMappings[name='GridTreeNode']"/>
+    </ownedTreeItems>
+    <description xmi:type="description_2:TreeDescription" href="platform:/resource/tdt4250.MatrixGame.diagram/description/diagram.odesign#//@ownedViewpoints[name='MatrixGameViewpoint']/@ownedRepresentations[name='MatrixGameTree']"/>
+  </tree:DTree>
 </xmi:XMI>
