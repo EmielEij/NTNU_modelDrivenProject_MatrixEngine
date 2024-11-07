@@ -93,7 +93,7 @@ public class GameLogicItemProvider extends ItemProviderAdapter implements IEditi
 						getResourceLocator(), getString("_UI_GameLogic_playerX_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_GameLogic_playerX_feature",
 								"_UI_GameLogic_type"),
-						GamePackage.Literals.GAME_LOGIC__PLAYER_X, true, false, false,
+						GamePackage.Literals.GAME_LOGIC__PLAYER_X, false, false, false,
 						ItemPropertyDescriptor.TEXT_VALUE_IMAGE, null, null));
 	}
 
@@ -109,7 +109,7 @@ public class GameLogicItemProvider extends ItemProviderAdapter implements IEditi
 						getResourceLocator(), getString("_UI_GameLogic_playerO_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_GameLogic_playerO_feature",
 								"_UI_GameLogic_type"),
-						GamePackage.Literals.GAME_LOGIC__PLAYER_O, true, false, false,
+						GamePackage.Literals.GAME_LOGIC__PLAYER_O, false, false, false,
 						ItemPropertyDescriptor.TEXT_VALUE_IMAGE, null, null));
 	}
 
@@ -141,7 +141,7 @@ public class GameLogicItemProvider extends ItemProviderAdapter implements IEditi
 						getResourceLocator(), getString("_UI_GameLogic_currentPlayer_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_GameLogic_currentPlayer_feature",
 								"_UI_GameLogic_type"),
-						GamePackage.Literals.GAME_LOGIC__CURRENT_PLAYER, true, false, false,
+						GamePackage.Literals.GAME_LOGIC__CURRENT_PLAYER, false, false, false,
 						ItemPropertyDescriptor.TEXT_VALUE_IMAGE, null, null));
 	}
 

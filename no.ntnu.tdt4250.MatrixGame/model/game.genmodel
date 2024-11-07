@@ -12,11 +12,11 @@
       ecorePackage="game.ecore#/">
     <genClasses ecoreClass="game.ecore#//GameLogic">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//GameLogic/gameName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//GameLogic/playerX"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//GameLogic/playerO"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//GameLogic/playerX"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//GameLogic/playerO"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//GameLogic/mapLength"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference game.ecore#//GameLogic/grid"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//GameLogic/currentPlayer"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute game.ecore#//GameLogic/currentPlayer"/>
       <genOperations ecoreOperation="game.ecore#//GameLogic/switchPlayer"/>
       <genOperations ecoreOperation="game.ecore#//GameLogic/isGameOver"/>
       <genOperations ecoreOperation="game.ecore#//GameLogic/checkWin"/>
@@ -46,6 +46,5 @@
       </genOperations>
       <genOperations ecoreOperation="game.ecore#//Grid/isFull"/>
     </genClasses>
-    <genClasses ecoreClass="game.ecore#//Game"/>
   </genPackages>
 </genmodel:GenModel>

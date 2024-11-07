@@ -3,7 +3,6 @@
 package no.ntnu.tdt4250.matrixgame.game.impl;
 
 import no.ntnu.tdt4250.matrixgame.game.Cell;
-import no.ntnu.tdt4250.matrixgame.game.Game;
 import no.ntnu.tdt4250.matrixgame.game.GameFactory;
 import no.ntnu.tdt4250.matrixgame.game.GameLogic;
 import no.ntnu.tdt4250.matrixgame.game.GamePackage;
@@ -55,13 +54,6 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 	 * @generated
 	 */
 	private EClass gridEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass gameEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -356,16 +348,6 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getGame() {
-		return gameEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public GameFactory getGameFactory() {
 		return (GameFactory) getEFactoryInstance();
 	}
@@ -415,8 +397,6 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 		createEOperation(gridEClass, GRID___GET_CELL__INT_INT);
 		createEOperation(gridEClass, GRID___SET_CELL__INT_INT_CHAR);
 		createEOperation(gridEClass, GRID___IS_FULL);
-
-		gameEClass = createEClass(GAME);
 	}
 
 	/**
@@ -514,8 +494,6 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 		addEParameter(op, ecorePackage.getEChar(), "symbol", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEOperation(getGrid__IsFull(), ecorePackage.getEBoolean(), "isFull", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEClass(gameEClass, Game.class, "Game", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

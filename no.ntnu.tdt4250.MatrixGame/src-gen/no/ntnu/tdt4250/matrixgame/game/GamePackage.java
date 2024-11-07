@@ -332,34 +332,6 @@ public interface GamePackage extends EPackage {
 	int GRID_OPERATION_COUNT = 3;
 
 	/**
-	 * The meta object id for the '{@link no.ntnu.tdt4250.matrixgame.game.impl.GameImpl <em>Game</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see no.ntnu.tdt4250.matrixgame.game.impl.GameImpl
-	 * @see no.ntnu.tdt4250.matrixgame.game.impl.GamePackageImpl#getGame()
-	 * @generated
-	 */
-	int GAME = 4;
-
-	/**
-	 * The number of structural features of the '<em>Game</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GAME_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Game</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GAME_OPERATION_COUNT = 0;
-
-	/**
 	 * Returns the meta object for class '{@link no.ntnu.tdt4250.matrixgame.game.GameLogic <em>Logic</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -591,16 +563,6 @@ public interface GamePackage extends EPackage {
 	EOperation getGrid__IsFull();
 
 	/**
-	 * Returns the meta object for class '{@link no.ntnu.tdt4250.matrixgame.game.Game <em>Game</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Game</em>'.
-	 * @see no.ntnu.tdt4250.matrixgame.game.Game
-	 * @generated
-	 */
-	EClass getGame();
-
-	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -806,16 +768,6 @@ public interface GamePackage extends EPackage {
 		 * @generated
 		 */
 		EOperation GRID___IS_FULL = eINSTANCE.getGrid__IsFull();
-
-		/**
-		 * The meta object literal for the '{@link no.ntnu.tdt4250.matrixgame.game.impl.GameImpl <em>Game</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see no.ntnu.tdt4250.matrixgame.game.impl.GameImpl
-		 * @see no.ntnu.tdt4250.matrixgame.game.impl.GamePackageImpl#getGame()
-		 * @generated
-		 */
-		EClass GAME = eINSTANCE.getGame();
 
 	}
 
