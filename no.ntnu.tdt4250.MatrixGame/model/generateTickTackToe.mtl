@@ -1,0 +1,10 @@
+[comment encoding = UTF-8 /]
+[module generateTickTackToe('http://www.ntnu.no/tdt4250/MatrixGame')]
+
+
+[template public generateGameLogic(aGameLogic : GameLogic)]
+[comment @main/]
+[file (aGameLogic.name, false, 'UTF-8')]
+
+[/file]
+[/template]
