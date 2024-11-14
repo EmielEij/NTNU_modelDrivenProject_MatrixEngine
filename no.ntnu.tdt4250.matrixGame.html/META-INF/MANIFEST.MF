@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Html
+Bundle-SymbolicName: no.ntnu.tdt4250.matrixGame.html
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: no.ntnu.tdt4250.matrixGame.html
+Bundle-RequiredExecutionEnvironment: JavaSE-21
