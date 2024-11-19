@@ -9,7 +9,7 @@ public class GameBoard {
   }
 
   // Initialize board with empty cells
-  public void initializeBoard() {
+  public void å() {
     for (int i = 0; i < rows; i++) {
       for (int j = 0; j < columns; j++) {
         board[i][j] = '.';

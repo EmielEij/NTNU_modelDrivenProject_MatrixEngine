@@ -1,0 +1,78 @@
+[comment encoding = UTF-8 /]
+[module generate('http:/ntnu.tdt4250/matrixGames')]
+
+
+[template public generateElement(logic : Logic)]
+[comment @main/]
+[file (logic.board.boardName + 'Logic.java', false, 'UTF-8')]
+class [logic.board.boardName + 'Logic'/]
+{
+	// Attribute declaration	
+	private final [logic.rule/] rules; 
+	private final [logic.board/] ['boardName'/]
+	private final [logic.player/] ['player1'/];
+	private finale[logic.player/] ['player2'/];
+	
+
+}
+
+[/file]
+
+[file (logic.board.boardName + 'Rules.java', false, 'UTF-8')]
+class [logic.board.boardName + 'Rules'/]
+{
+	// Attribute declaration	
+	private int rows = [logic.board.rows/];
+	private int columns = [logic.board.columns/];
+	
+}
+
+[/file]
+
+
+[file (logic.board.boardName + 'Player.java', false, 'UTF-8')]
+class [logic.board.boardName + 'Player'/]
+{
+[let counter : Integer = 0]	
+	[for (p : Player | logic.player)]
+		private String [p.name/] = '[p.name/]';
+		private char [p.name/] = '[if (counter = 0)]X[else]O[/if]';
+		[counter = 2 /]
+	[/for]
+[/let]
+	
+	
+}
+[/file]
+
+
+[file (logic.board.boardName + 'Board.java', false, 'UTF-8')]
+class [logic.board.boardName + 'Board'/]
+{
+	// Attribute declaration	
+	private final char [''/][''/] board; 
+	private int rows = [logic.board.rows/];
+	private int columns = [logic.board.columns/];
+	
+	//Constructor
+	[logic.board.boardName + 'Player'/]{
+		board = new char[logic.board.rows/][logic.board.columns/];
+		initializeBoard();
+	}
+	// initializeBoard method
+    public void initializeBoard() {
+         public void initializeBoard() {
+        [for (i : Integer | logic.board.rows - 1)]
+            [for (j : Integer | logic.board.columns- 1)]
+                board[i/][j/] = '.';
+            [/for]
+        [/for]
+    }
+    }
+
+}
+
+
+[/file]
+
+[/template]
