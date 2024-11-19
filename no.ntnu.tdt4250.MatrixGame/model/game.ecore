@@ -1,53 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="game" nsURI="http://www.ntnu.no/tdt4250/MatrixGame" nsPrefix="game">
-  <eClassifiers xsi:type="ecore:EClass" name="GameLogic">
-    <eOperations name="switchPlayer"/>
-    <eOperations name="isGameOver"/>
-    <eOperations name="checkWin" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eOperations name="makeMove">
-      <eParameters name="row" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
-      <eParameters name="col" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
-    </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gameName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="playerX" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EChar" changeable="false"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="playerO" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EChar" changeable="false"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mapLength" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="grid" lowerBound="1" eType="#//Grid"
+  <eClassifiers xsi:type="ecore:EClass" name="Board">
+    <eOperations name="displayBoard"/>
+    <eOperations name="dropPiece" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="getGameBoard" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EChar"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="board" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EChar"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rows" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="columns" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Logic">
+    <eOperations name="startGame"/>
+    <eOperations name="main"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gameBoard" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EChar"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rules" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="player1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="player2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rule" lowerBound="1" eType="#//Rule"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="currentPlayer" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EChar" changeable="false"
-        defaultValueLiteral="playerX"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="player" lowerBound="2"
+        upperBound="2" eType="#//Player" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="board" lowerBound="1" eType="#//Board"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Cell">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="character" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Player">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="symbol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EChar"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Row">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cells" lowerBound="1" upperBound="-1"
-        transient="true">
-      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
-        <eTypeArguments eClassifier="#//Cell"/>
-      </eGenericType>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="cell" lowerBound="3" upperBound="-1"
-        eType="#//Cell" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Grid">
-    <eOperations name="getCell" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EChar">
-      <eParameters name="row" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
-      <eParameters name="col" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
-    </eOperations>
-    <eOperations name="setCell">
-      <eParameters name="row" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
-      <eParameters name="col" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
-      <eParameters name="symbol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EChar"/>
-    </eOperations>
-    <eOperations name="isFull" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="row" lowerBound="3" upperBound="-1"
-        eType="#//Row" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="map" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Rule">
+    <eOperations name="checkWinner" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="isBoardFull" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rows" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="columns" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
 </ecore:EPackage>

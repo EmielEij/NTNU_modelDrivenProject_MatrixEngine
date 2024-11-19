@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 
-import no.ntnu.tdt4250.matrixgame.game.GamePackage;
+import matrixGames.MatrixGamesPackage;
 
 /**
  * Entry point of the 'Generate' generation module.
@@ -122,7 +122,7 @@ public class Generate extends AbstractAcceleoGenerator {
      * @generated NOT
      */
     public static void main(String[] args) {
-    	EPackage myPackage = GamePackage.eINSTANCE;
+    	EPackage myPackage = MatrixGamesPackage.eINSTANCE;
     	EPackage.Registry.INSTANCE.put(myPackage.getNsURI(), myPackage);
     	try {
             if (args.length < 2) {

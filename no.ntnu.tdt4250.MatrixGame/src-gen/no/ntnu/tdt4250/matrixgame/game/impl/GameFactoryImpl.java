@@ -55,14 +55,14 @@ public class GameFactoryImpl extends EFactoryImpl implements GameFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case GamePackage.GAME_LOGIC:
-			return createGameLogic();
-		case GamePackage.CELL:
-			return createCell();
-		case GamePackage.ROW:
-			return createRow();
-		case GamePackage.GRID:
-			return createGrid();
+		case GamePackage.BOARD:
+			return createBoard();
+		case GamePackage.LOGIC:
+			return createLogic();
+		case GamePackage.PLAYER:
+			return createPlayer();
+		case GamePackage.RULE:
+			return createRule();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -74,9 +74,9 @@ public class GameFactoryImpl extends EFactoryImpl implements GameFactory {
 	 * @generated
 	 */
 	@Override
-	public GameLogic createGameLogic() {
-		GameLogicImpl gameLogic = new GameLogicImpl();
-		return gameLogic;
+	public Board createBoard() {
+		BoardImpl board = new BoardImpl();
+		return board;
 	}
 
 	/**
@@ -85,9 +85,9 @@ public class GameFactoryImpl extends EFactoryImpl implements GameFactory {
 	 * @generated
 	 */
 	@Override
-	public Cell createCell() {
-		CellImpl cell = new CellImpl();
-		return cell;
+	public Logic createLogic() {
+		LogicImpl logic = new LogicImpl();
+		return logic;
 	}
 
 	/**
@@ -96,9 +96,9 @@ public class GameFactoryImpl extends EFactoryImpl implements GameFactory {
 	 * @generated
 	 */
 	@Override
-	public Row createRow() {
-		RowImpl row = new RowImpl();
-		return row;
+	public Player createPlayer() {
+		PlayerImpl player = new PlayerImpl();
+		return player;
 	}
 
 	/**
@@ -107,9 +107,9 @@ public class GameFactoryImpl extends EFactoryImpl implements GameFactory {
 	 * @generated
 	 */
 	@Override
-	public Grid createGrid() {
-		GridImpl grid = new GridImpl();
-		return grid;
+	public Rule createRule() {
+		RuleImpl rule = new RuleImpl();
+		return rule;
 	}
 
 	/**

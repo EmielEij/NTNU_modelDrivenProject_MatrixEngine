@@ -22,40 +22,40 @@ public interface GameFactory extends EFactory {
 	GameFactory eINSTANCE = no.ntnu.tdt4250.matrixgame.game.impl.GameFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Board</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Board</em>'.
+	 * @generated
+	 */
+	Board createBoard();
+
+	/**
 	 * Returns a new object of class '<em>Logic</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Logic</em>'.
 	 * @generated
 	 */
-	GameLogic createGameLogic();
+	Logic createLogic();
 
 	/**
-	 * Returns a new object of class '<em>Cell</em>'.
+	 * Returns a new object of class '<em>Player</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Cell</em>'.
+	 * @return a new object of class '<em>Player</em>'.
 	 * @generated
 	 */
-	Cell createCell();
+	Player createPlayer();
 
 	/**
-	 * Returns a new object of class '<em>Row</em>'.
+	 * Returns a new object of class '<em>Rule</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Row</em>'.
+	 * @return a new object of class '<em>Rule</em>'.
 	 * @generated
 	 */
-	Row createRow();
-
-	/**
-	 * Returns a new object of class '<em>Grid</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Grid</em>'.
-	 * @generated
-	 */
-	Grid createGrid();
+	Rule createRule();
 
 	/**
 	 * Returns the package supported by this factory.

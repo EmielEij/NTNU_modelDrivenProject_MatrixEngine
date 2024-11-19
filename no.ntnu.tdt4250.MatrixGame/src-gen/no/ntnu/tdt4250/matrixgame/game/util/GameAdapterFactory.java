@@ -67,23 +67,23 @@ public class GameAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected GameSwitch<Adapter> modelSwitch = new GameSwitch<Adapter>() {
 		@Override
-		public Adapter caseGameLogic(GameLogic object) {
-			return createGameLogicAdapter();
+		public Adapter caseBoard(Board object) {
+			return createBoardAdapter();
 		}
 
 		@Override
-		public Adapter caseCell(Cell object) {
-			return createCellAdapter();
+		public Adapter caseLogic(Logic object) {
+			return createLogicAdapter();
 		}
 
 		@Override
-		public Adapter caseRow(Row object) {
-			return createRowAdapter();
+		public Adapter casePlayer(Player object) {
+			return createPlayerAdapter();
 		}
 
 		@Override
-		public Adapter caseGrid(Grid object) {
-			return createGridAdapter();
+		public Adapter caseRule(Rule object) {
+			return createRuleAdapter();
 		}
 
 		@Override
@@ -106,58 +106,58 @@ public class GameAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link no.ntnu.tdt4250.matrixgame.game.GameLogic <em>Logic</em>}'.
+	 * Creates a new adapter for an object of class '{@link no.ntnu.tdt4250.matrixgame.game.Board <em>Board</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see no.ntnu.tdt4250.matrixgame.game.GameLogic
+	 * @see no.ntnu.tdt4250.matrixgame.game.Board
 	 * @generated
 	 */
-	public Adapter createGameLogicAdapter() {
+	public Adapter createBoardAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link no.ntnu.tdt4250.matrixgame.game.Cell <em>Cell</em>}'.
+	 * Creates a new adapter for an object of class '{@link no.ntnu.tdt4250.matrixgame.game.Logic <em>Logic</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see no.ntnu.tdt4250.matrixgame.game.Cell
+	 * @see no.ntnu.tdt4250.matrixgame.game.Logic
 	 * @generated
 	 */
-	public Adapter createCellAdapter() {
+	public Adapter createLogicAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link no.ntnu.tdt4250.matrixgame.game.Row <em>Row</em>}'.
+	 * Creates a new adapter for an object of class '{@link no.ntnu.tdt4250.matrixgame.game.Player <em>Player</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see no.ntnu.tdt4250.matrixgame.game.Row
+	 * @see no.ntnu.tdt4250.matrixgame.game.Player
 	 * @generated
 	 */
-	public Adapter createRowAdapter() {
+	public Adapter createPlayerAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link no.ntnu.tdt4250.matrixgame.game.Grid <em>Grid</em>}'.
+	 * Creates a new adapter for an object of class '{@link no.ntnu.tdt4250.matrixgame.game.Rule <em>Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see no.ntnu.tdt4250.matrixgame.game.Grid
+	 * @see no.ntnu.tdt4250.matrixgame.game.Rule
 	 * @generated
 	 */
-	public Adapter createGridAdapter() {
+	public Adapter createRuleAdapter() {
 		return null;
 	}
 

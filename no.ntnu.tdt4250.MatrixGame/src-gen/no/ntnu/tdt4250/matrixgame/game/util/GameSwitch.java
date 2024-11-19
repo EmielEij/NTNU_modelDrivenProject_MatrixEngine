@@ -66,30 +66,30 @@ public class GameSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-		case GamePackage.GAME_LOGIC: {
-			GameLogic gameLogic = (GameLogic) theEObject;
-			T result = caseGameLogic(gameLogic);
+		case GamePackage.BOARD: {
+			Board board = (Board) theEObject;
+			T result = caseBoard(board);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case GamePackage.CELL: {
-			Cell cell = (Cell) theEObject;
-			T result = caseCell(cell);
+		case GamePackage.LOGIC: {
+			Logic logic = (Logic) theEObject;
+			T result = caseLogic(logic);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case GamePackage.ROW: {
-			Row row = (Row) theEObject;
-			T result = caseRow(row);
+		case GamePackage.PLAYER: {
+			Player player = (Player) theEObject;
+			T result = casePlayer(player);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case GamePackage.GRID: {
-			Grid grid = (Grid) theEObject;
-			T result = caseGrid(grid);
+		case GamePackage.RULE: {
+			Rule rule = (Rule) theEObject;
+			T result = caseRule(rule);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -97,6 +97,21 @@ public class GameSwitch<T> extends Switch<T> {
 		default:
 			return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Board</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Board</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBoard(Board object) {
+		return null;
 	}
 
 	/**
@@ -110,52 +125,37 @@ public class GameSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseGameLogic(GameLogic object) {
+	public T caseLogic(Logic object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Cell</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Player</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Cell</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Player</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCell(Cell object) {
+	public T casePlayer(Player object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Row</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Rule</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Row</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Rule</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRow(Row object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Grid</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Grid</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseGrid(Grid object) {
+	public T caseRule(Rule object) {
 		return null;
 	}
 

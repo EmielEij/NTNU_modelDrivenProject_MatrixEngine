@@ -2,23 +2,20 @@
  */
 package no.ntnu.tdt4250.matrixgame.game.impl;
 
-import no.ntnu.tdt4250.matrixgame.game.Cell;
+import no.ntnu.tdt4250.matrixgame.game.Board;
 import no.ntnu.tdt4250.matrixgame.game.GameFactory;
-import no.ntnu.tdt4250.matrixgame.game.GameLogic;
 import no.ntnu.tdt4250.matrixgame.game.GamePackage;
-import no.ntnu.tdt4250.matrixgame.game.Grid;
-import no.ntnu.tdt4250.matrixgame.game.Row;
+import no.ntnu.tdt4250.matrixgame.game.Logic;
+import no.ntnu.tdt4250.matrixgame.game.Player;
+import no.ntnu.tdt4250.matrixgame.game.Rule;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
-import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,28 +29,28 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass gameLogicEClass = null;
+	private EClass boardEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass cellEClass = null;
+	private EClass logicEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass rowEClass = null;
+	private EClass playerEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass gridEClass = null;
+	private EClass ruleEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -105,9 +102,6 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 
 		isInited = true;
 
-		// Initialize simple dependencies
-		XMLTypePackage.eINSTANCE.eClass();
-
 		// Create package meta-data objects
 		theGamePackage.createPackageContents();
 
@@ -128,8 +122,8 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getGameLogic() {
-		return gameLogicEClass;
+	public EClass getBoard() {
+		return boardEClass;
 	}
 
 	/**
@@ -138,8 +132,8 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getGameLogic_GameName() {
-		return (EAttribute) gameLogicEClass.getEStructuralFeatures().get(0);
+	public EAttribute getBoard_Board() {
+		return (EAttribute) boardEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -148,8 +142,8 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getGameLogic_PlayerX() {
-		return (EAttribute) gameLogicEClass.getEStructuralFeatures().get(1);
+	public EAttribute getBoard_Rows() {
+		return (EAttribute) boardEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -158,8 +152,8 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getGameLogic_PlayerO() {
-		return (EAttribute) gameLogicEClass.getEStructuralFeatures().get(2);
+	public EAttribute getBoard_Columns() {
+		return (EAttribute) boardEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -168,8 +162,8 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getGameLogic_MapLength() {
-		return (EAttribute) gameLogicEClass.getEStructuralFeatures().get(3);
+	public EOperation getBoard__DisplayBoard() {
+		return boardEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -178,8 +172,8 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getGameLogic_Grid() {
-		return (EReference) gameLogicEClass.getEStructuralFeatures().get(4);
+	public EOperation getBoard__DropPiece() {
+		return boardEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -188,8 +182,8 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getGameLogic_CurrentPlayer() {
-		return (EAttribute) gameLogicEClass.getEStructuralFeatures().get(5);
+	public EOperation getBoard__GetGameBoard() {
+		return boardEClass.getEOperations().get(2);
 	}
 
 	/**
@@ -198,8 +192,8 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getGameLogic__SwitchPlayer() {
-		return gameLogicEClass.getEOperations().get(0);
+	public EClass getLogic() {
+		return logicEClass;
 	}
 
 	/**
@@ -208,8 +202,8 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getGameLogic__IsGameOver() {
-		return gameLogicEClass.getEOperations().get(1);
+	public EAttribute getLogic_GameBoard() {
+		return (EAttribute) logicEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -218,8 +212,8 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getGameLogic__CheckWin() {
-		return gameLogicEClass.getEOperations().get(2);
+	public EAttribute getLogic_Rules() {
+		return (EAttribute) logicEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -228,8 +222,8 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getGameLogic__MakeMove__int_int() {
-		return gameLogicEClass.getEOperations().get(3);
+	public EAttribute getLogic_Player1() {
+		return (EAttribute) logicEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -238,8 +232,8 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getCell() {
-		return cellEClass;
+	public EAttribute getLogic_Player2() {
+		return (EAttribute) logicEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -248,8 +242,8 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCell_Character() {
-		return (EAttribute) cellEClass.getEStructuralFeatures().get(0);
+	public EReference getLogic_Rule() {
+		return (EReference) logicEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -258,8 +252,8 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getRow() {
-		return rowEClass;
+	public EReference getLogic_Player() {
+		return (EReference) logicEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -268,8 +262,8 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getRow_Cells() {
-		return (EAttribute) rowEClass.getEStructuralFeatures().get(0);
+	public EReference getLogic_Board() {
+		return (EReference) logicEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -278,8 +272,8 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getRow_Cell() {
-		return (EReference) rowEClass.getEStructuralFeatures().get(1);
+	public EOperation getLogic__StartGame() {
+		return logicEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -288,8 +282,8 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getGrid() {
-		return gridEClass;
+	public EOperation getLogic__Main() {
+		return logicEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -298,8 +292,8 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getGrid_Row() {
-		return (EReference) gridEClass.getEStructuralFeatures().get(0);
+	public EClass getPlayer() {
+		return playerEClass;
 	}
 
 	/**
@@ -308,8 +302,8 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getGrid_Map() {
-		return (EAttribute) gridEClass.getEStructuralFeatures().get(1);
+	public EAttribute getPlayer_Name() {
+		return (EAttribute) playerEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -318,8 +312,8 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getGrid__GetCell__int_int() {
-		return gridEClass.getEOperations().get(0);
+	public EAttribute getPlayer_Symbol() {
+		return (EAttribute) playerEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -328,8 +322,8 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getGrid__SetCell__int_int_char() {
-		return gridEClass.getEOperations().get(1);
+	public EClass getRule() {
+		return ruleEClass;
 	}
 
 	/**
@@ -338,8 +332,38 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getGrid__IsFull() {
-		return gridEClass.getEOperations().get(2);
+	public EAttribute getRule_Rows() {
+		return (EAttribute) ruleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getRule_Columns() {
+		return (EAttribute) ruleEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getRule__CheckWinner() {
+		return ruleEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getRule__IsBoardFull() {
+		return ruleEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -372,31 +396,34 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 		isCreated = true;
 
 		// Create classes and their features
-		gameLogicEClass = createEClass(GAME_LOGIC);
-		createEAttribute(gameLogicEClass, GAME_LOGIC__GAME_NAME);
-		createEAttribute(gameLogicEClass, GAME_LOGIC__PLAYER_X);
-		createEAttribute(gameLogicEClass, GAME_LOGIC__PLAYER_O);
-		createEAttribute(gameLogicEClass, GAME_LOGIC__MAP_LENGTH);
-		createEReference(gameLogicEClass, GAME_LOGIC__GRID);
-		createEAttribute(gameLogicEClass, GAME_LOGIC__CURRENT_PLAYER);
-		createEOperation(gameLogicEClass, GAME_LOGIC___SWITCH_PLAYER);
-		createEOperation(gameLogicEClass, GAME_LOGIC___IS_GAME_OVER);
-		createEOperation(gameLogicEClass, GAME_LOGIC___CHECK_WIN);
-		createEOperation(gameLogicEClass, GAME_LOGIC___MAKE_MOVE__INT_INT);
+		boardEClass = createEClass(BOARD);
+		createEAttribute(boardEClass, BOARD__BOARD);
+		createEAttribute(boardEClass, BOARD__ROWS);
+		createEAttribute(boardEClass, BOARD__COLUMNS);
+		createEOperation(boardEClass, BOARD___DISPLAY_BOARD);
+		createEOperation(boardEClass, BOARD___DROP_PIECE);
+		createEOperation(boardEClass, BOARD___GET_GAME_BOARD);
 
-		cellEClass = createEClass(CELL);
-		createEAttribute(cellEClass, CELL__CHARACTER);
+		logicEClass = createEClass(LOGIC);
+		createEAttribute(logicEClass, LOGIC__GAME_BOARD);
+		createEAttribute(logicEClass, LOGIC__RULES);
+		createEAttribute(logicEClass, LOGIC__PLAYER1);
+		createEAttribute(logicEClass, LOGIC__PLAYER2);
+		createEReference(logicEClass, LOGIC__RULE);
+		createEReference(logicEClass, LOGIC__PLAYER);
+		createEReference(logicEClass, LOGIC__BOARD);
+		createEOperation(logicEClass, LOGIC___START_GAME);
+		createEOperation(logicEClass, LOGIC___MAIN);
 
-		rowEClass = createEClass(ROW);
-		createEAttribute(rowEClass, ROW__CELLS);
-		createEReference(rowEClass, ROW__CELL);
+		playerEClass = createEClass(PLAYER);
+		createEAttribute(playerEClass, PLAYER__NAME);
+		createEAttribute(playerEClass, PLAYER__SYMBOL);
 
-		gridEClass = createEClass(GRID);
-		createEReference(gridEClass, GRID__ROW);
-		createEAttribute(gridEClass, GRID__MAP);
-		createEOperation(gridEClass, GRID___GET_CELL__INT_INT);
-		createEOperation(gridEClass, GRID___SET_CELL__INT_INT_CHAR);
-		createEOperation(gridEClass, GRID___IS_FULL);
+		ruleEClass = createEClass(RULE);
+		createEAttribute(ruleEClass, RULE__ROWS);
+		createEAttribute(ruleEClass, RULE__COLUMNS);
+		createEOperation(ruleEClass, RULE___CHECK_WINNER);
+		createEOperation(ruleEClass, RULE___IS_BOARD_FULL);
 	}
 
 	/**
@@ -423,10 +450,6 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
-		// Obtain other dependent packages
-		XMLTypePackage theXMLTypePackage = (XMLTypePackage) EPackage.Registry.INSTANCE
-				.getEPackage(XMLTypePackage.eNS_URI);
-
 		// Create type parameters
 
 		// Set bounds for type parameters
@@ -434,66 +457,58 @@ public class GamePackageImpl extends EPackageImpl implements GamePackage {
 		// Add supertypes to classes
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(gameLogicEClass, GameLogic.class, "GameLogic", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getGameLogic_GameName(), ecorePackage.getEString(), "gameName", null, 0, 1, GameLogic.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getGameLogic_PlayerX(), ecorePackage.getEChar(), "playerX", null, 1, 1, GameLogic.class,
-				!IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEAttribute(getGameLogic_PlayerO(), ecorePackage.getEChar(), "playerO", null, 1, 1, GameLogic.class,
-				!IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEAttribute(getGameLogic_MapLength(), ecorePackage.getEInt(), "mapLength", null, 0, 1, GameLogic.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getGameLogic_Grid(), this.getGrid(), null, "grid", null, 1, 1, GameLogic.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEAttribute(getGameLogic_CurrentPlayer(), ecorePackage.getEChar(), "currentPlayer", "playerX", 1, 1,
-				GameLogic.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
-
-		initEOperation(getGameLogic__SwitchPlayer(), null, "switchPlayer", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEOperation(getGameLogic__IsGameOver(), null, "isGameOver", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEOperation(getGameLogic__CheckWin(), ecorePackage.getEBoolean(), "checkWin", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		EOperation op = initEOperation(getGameLogic__MakeMove__int_int(), null, "makeMove", 0, 1, IS_UNIQUE,
-				IS_ORDERED);
-		addEParameter(op, theXMLTypePackage.getInt(), "row", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theXMLTypePackage.getInt(), "col", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEClass(cellEClass, Cell.class, "Cell", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCell_Character(), ecorePackage.getEString(), "character", null, 1, 1, Cell.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(rowEClass, Row.class, "Row", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		EGenericType g1 = createEGenericType(ecorePackage.getEEList());
-		EGenericType g2 = createEGenericType(this.getCell());
-		g1.getETypeArguments().add(g2);
-		initEAttribute(getRow_Cells(), g1, "cells", null, 1, -1, Row.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRow_Cell(), this.getCell(), null, "cell", null, 3, -1, Row.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(gridEClass, Grid.class, "Grid", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getGrid_Row(), this.getRow(), null, "row", null, 3, -1, Grid.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getGrid_Map(), ecorePackage.getEString(), "map", null, 0, 1, Grid.class, !IS_TRANSIENT,
+		initEClass(boardEClass, Board.class, "Board", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBoard_Board(), ecorePackage.getEChar(), "board", null, 1, 1, Board.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBoard_Rows(), ecorePackage.getEInt(), "rows", null, 1, 1, Board.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBoard_Columns(), ecorePackage.getEInt(), "columns", null, 1, 1, Board.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = initEOperation(getGrid__GetCell__int_int(), ecorePackage.getEChar(), "getCell", 0, 1, IS_UNIQUE,
+		initEOperation(getBoard__DisplayBoard(), null, "displayBoard", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getBoard__DropPiece(), ecorePackage.getEBoolean(), "dropPiece", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getBoard__GetGameBoard(), ecorePackage.getEChar(), "getGameBoard", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(logicEClass, Logic.class, "Logic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLogic_GameBoard(), ecorePackage.getEChar(), "gameBoard", null, 0, 1, Logic.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLogic_Rules(), ecorePackage.getEBoolean(), "rules", null, 0, 1, Logic.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLogic_Player1(), ecorePackage.getEBooleanObject(), "player1", null, 0, 1, Logic.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLogic_Player2(), ecorePackage.getEBooleanObject(), "player2", null, 0, 1, Logic.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLogic_Rule(), this.getRule(), null, "rule", null, 1, 1, Logic.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		addEParameter(op, theXMLTypePackage.getInt(), "row", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theXMLTypePackage.getInt(), "col", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEReference(getLogic_Player(), this.getPlayer(), null, "player", null, 2, 2, Logic.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getLogic_Board(), this.getBoard(), null, "board", null, 1, 1, Logic.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
-		op = initEOperation(getGrid__SetCell__int_int_char(), null, "setCell", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theXMLTypePackage.getInt(), "row", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theXMLTypePackage.getInt(), "col", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEChar(), "symbol", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getLogic__StartGame(), null, "startGame", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getGrid__IsFull(), ecorePackage.getEBoolean(), "isFull", 1, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getLogic__Main(), null, "main", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(playerEClass, Player.class, "Player", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPlayer_Name(), ecorePackage.getEString(), "name", null, 0, 1, Player.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPlayer_Symbol(), ecorePackage.getEChar(), "symbol", null, 0, 1, Player.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(ruleEClass, Rule.class, "Rule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRule_Rows(), ecorePackage.getEInt(), "rows", null, 1, 1, Rule.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRule_Columns(), ecorePackage.getEInt(), "columns", null, 1, 1, Rule.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getRule__CheckWinner(), ecorePackage.getEBoolean(), "checkWinner", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getRule__IsBoardFull(), ecorePackage.getEBoolean(), "isBoardFull", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
