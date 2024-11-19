@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game:GameLogic xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:game="http://www.ntnu.no/tdt4250/MatrixGame" gameName="ConnectFour" width="7" height="6">
+  <grid map="a" width="7" height="6">
+    <row/>
+  </grid>
+  <player token="88"/>
+</game:GameLogic>
