@@ -5,26 +5,31 @@
 [template public generateElement(logic : Logic)]
 [comment @main/]
 [file (logic.board.boardName + 'Logic.java', false, 'UTF-8')]
+import java.util.Scanner;
 class [logic.board.boardName + 'Logic'/]
 {
 	// Attribute declaration	
-	private final [logic.rule/] rules; 
-	private final [logic.board/] ['boardName'/]
-	private final [logic.player/] ['player1'/];
-	private finale[logic.player/] ['player2'/];
-	[let counter : Integer = 0]	
-	[for (p : Player | logic.player)]
-		private String [p.name/];
-		private char [p.name/];
-		[counter = 2 /]
-	[/for]
-	public voif startGame(){
+	private final [logic.board.boardName + 'Rules'/] rules; 
+	private final [logic.board.boardName + 'Board'/] board;
+	private final [logic.board.boardName + 'Player'/] player1;
+	private final [logic.board.boardName + 'Player'/] player2;
+
+	
+	public [logic.board.boardName + 'Logic'/]([logic.board.boardName + 'Player'/] p1, [logic.board.boardName + 'Player'/] p2){
+		this.player1 = p1;
+		this.player2 = p2;
+		board = new [logic.board.boardName + 'Board'/]();
+		rules = new [logic.board.boardName + 'Rules'/]();
+	}
+
+
+	public void startGame(){
 	    Scanner scanner = new Scanner(System.in);
-    	[logic.player/] currentPlayer = player1;
+    	[logic.board.boardName + 'Player'/] currentPlayer = player1;
 
 	 while ([true/]) {
-      gameBoard.displayBoard();
-      System.out.println(currentPlayer.getName() + "'s turn (" + currentPlayer.getSymbol() + ")");
+      board.displayBoard();
+      System.out.println(currentPlayer.getNamePlayer() + "'s turn (" + currentPlayer.getNameSymbol() + ")");
       System.out.print("Enter a column (0-6): ");
       int column;
 
@@ -36,18 +41,18 @@ class [logic.board.boardName + 'Logic'/]
         continue;
       }
 
-      if (!gameBoard.dropPiece(column, currentPlayer.getSymbol())) {
+      if (!board.dropPiece(column, currentPlayer.getNameSymbol())) {
         continue; // Retry the current player's turn
       }
 
-      if (gameRules.checkWinner(gameBoard.getBoard(), currentPlayer.getSymbol())) {
-        gameBoard.displayBoard();
-        System.out.println("Congratulations, " + currentPlayer.getName() + "! You win!");
+      if (rules.checkWinner(board.getBoard(), currentPlayer.getNameSymbol())) {
+        board.displayBoard();
+        System.out.println("Congratulations, " + currentPlayer.getNamePlayer() + "! You win!");
         break;
       }
 
-      if (gameRules.isBoardFull(gameBoard.getBoard())) {
-        gameBoard.displayBoard();
+      if (rules.isBoardFull(board.getBoard())) {
+        board.displayBoard();
         System.out.println("The game is a draw!");
         break;
       }
@@ -58,8 +63,8 @@ class [logic.board.boardName + 'Logic'/]
 
     scanner.close();
   }
-[/let]
-	public static void main(String[''/] args) {
+
+	public static void main(String['[]'/] args) {
 	    System.out.println("Welcome to Connect Four!");
 	    Scanner scanner = new Scanner(System.in);
 	
@@ -74,10 +79,10 @@ class [logic.board.boardName + 'Logic'/]
 	    System.out.print("Choose a symbol for Player 2: ");
 	    char player2Symbol = scanner.nextLine().charAt(0);
 	
-	    Player player1 = new Player(player1Name, player1Symbol);
-	    Player player2 = new Player(player2Name, player2Symbol);
+	    [logic.board.boardName + 'Player'/] player1 = new [logic.board.boardName + 'Player'/](player1Name, player1Symbol);
+	    [logic.board.boardName + 'Player'/] player2 = new [logic.board.boardName + 'Player'/](player2Name, player2Symbol);
 	
-	    GameLogic game = new GameLogic(player1, player2);
+	    [logic.board.boardName + 'Logic'/] game = new [logic.board.boardName + 'Logic'/](player1, player2);
 	    game.startGame();
 	  }
 	
@@ -91,9 +96,65 @@ class [logic.board.boardName + 'Rules'/]
 	private int rows = [logic.board.rows/];
 	private int columns = [logic.board.columns/];
 	
-    public boolean checkWinner(char[''/][''/] board, char symbol) {
-        
+    public boolean checkWinner(char['[]'/]['[]'/] board, char symbol) {
+      for (int i = 0; i < rows; i++) {
+      for (int j = 0; j < columns - 3; j++) {
+        if (board['[i]'/]['[j]'/] == symbol
+            && board['[i]'/]['[j + 1]'/] == symbol
+            && board['[i]'/]['[j + 2]'/] == symbol
+            && board['[i]'/]['[j + 3]'/] == symbol) {
+          return true;
+        }
+      }
     }
+
+    // Check vertical
+    for (int i = 0; i < rows - 3; i++) {
+      for (int j = 0; j < columns; j++) {
+        if (board['[i]'/]['[j]'/] == symbol
+            && board['[i + 1]'/]['[j]'/] == symbol
+            && board['[i + 2]'/]['[j]'/] == symbol
+            && board['[i + 3]'/]['[j]'/] == symbol) {
+          return true;
+        }
+      }
+    }
+
+    // Check diagonal (top-left to bottom-right)
+    for (int i = 0; i < rows - 3; i++) {
+      for (int j = 0; j < columns - 3; j++) {
+        if (board['[i]'/]['[j]'/] == symbol
+            && board['[i + 1][j + 1]'/] == symbol
+            && board['[i + 2][j + 2]'/] == symbol
+            && board['[i + 3][j + 3]'/] == symbol) {
+          return true;
+        }
+      }
+    }
+
+    // Check diagonal (bottom-left to top-right)
+    for (int i = 3; i < rows; i++) {
+      for (int j = 0; j < columns - 3; j++) {
+        if (board['[i]'/]['[j]'/] == symbol
+            && board['[i - 1][j + 1]'/] == symbol
+            && board['[i - 2][j + 2]'/] == symbol
+            && board['[i - 3][j + 3]'/] == symbol) {
+          return true;
+        }
+      }
+    }
+
+    return false;
+  }
+    
+	public boolean isBoardFull(char['[][]'/] board) {
+    for (int j = 0; j < columns; j++) {
+      if (board['[0]'/]['[j]'/] == '.') {
+        return false;
+      }
+    }
+    return true;
+  }
 }
 [/file]
 
@@ -102,21 +163,21 @@ class [logic.board.boardName + 'Rules'/]
 class [logic.board.boardName + 'Player'/]
 {
 
-	private String [logic.player.name/];
+	private String playerName;
 	private char symbol;
 
 	//Constructor
-	[logic.board.boardName + 'Player'/](){
-	[logic.player.name/] = '[logic.player.name/]';
-	symbol = '[logic.player.symbol/]';
+	[logic.board.boardName + 'Player'/](String n, char s){
+	this.playerName = n;
+	this.symbol = s;
 
 	}
 	public String getNamePlayer(){
-		return [logic.player/]
+		return playerName;
 	}
-	public String getNamePlayer(){
-		return [logic.player.name/]
-	}
+	public char getNameSymbol(){
+		return symbol;
+	
 	}
 	
 }
@@ -127,33 +188,33 @@ class [logic.board.boardName + 'Player'/]
 class [logic.board.boardName + 'Board'/]
 {
 	// Attribute declaration	
-	private final char [''/][''/] board; 
+	private final char ['[]'/]['[]'/] board; 
 	private int rows = [logic.board.rows/];
 	private int columns = [logic.board.columns/];
 	
 	//Constructor
-	[logic.board.boardName + 'Board'/]{
-		board = new char[logic.board.rows/][logic.board.columns/];
+	[logic.board.boardName + 'Board'/](){
+		board = new char['[0]'/]['[0]'/];
 		initializeBoard();
 	}
 	public void initializeBoard() {
 	    for (int i = 0; i < rows; i++) {
 	      for (int j = 0; j < columns; j++) {
-	        board['i'/]['j'/] = '.';
+	        board['[i]'/]['[j]'/] = '.';
 	      }
 	    }
 	  }
 	
 	 public void displayBoard() {
-        [for (i : Integer | logic.board.rows - 1)]
-            [for (j : Integer | logic.board.columns - 1)]
-                System.out.print(board[i/][j/] + " ");
-            [/for]
-            System.out.println();
-        [/for]
+       	for (char['[]'/] row : board) {
+      		for (char cell : row) {
+       			 System.out.print(cell + " ");
+      		}
+      		System.out.println();
     }
-	public char[''/][''/] getBoard(){
-		return [logic.board/];
+    }
+	public char['[]'/]['[]'/] getBoard(){
+		return board;
 	}
     // dopPiece missing
 	public boolean dropPiece(int column, char symbol) {
@@ -162,8 +223,8 @@ class [logic.board.boardName + 'Board'/]
       return false;
     }
     for (int i = rows - 1; i >= 0; i--) {
-      if (board['i'/]['column'/] == '.') {
-        board['i'/]['column'/] = symbol;
+      if (board['[i]'/]['[column]'/] == '.') {
+        board['[i]'/]['[column]'/] = symbol;
         return true;
       }
     }
