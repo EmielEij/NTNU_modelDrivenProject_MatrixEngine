@@ -5,6 +5,6 @@ class Connect4Rules
 	private int columns = 7;
 	
     public boolean checkWinner(char[][] board, char symbol) {
-        
+        return false;
     }
 }

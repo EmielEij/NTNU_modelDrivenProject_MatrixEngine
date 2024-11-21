@@ -1,27 +1,28 @@
+import java.util.Scanner;
 class Connect4Logic
 {
 	// Attribute declaration	
-	private final Connect4Rule rules; 
-	private final Connect4Board boardName;
+	private final Connect4Rules rules; 
+	private final Connect4Board board;
 	private final Connect4Player player1;
-	private final Player player2;
+	private final Connect4Player player2;
 
 	
-	public Connect4Logic(Player p1, Player p2){
+	public Connect4Logic(Connect4Player p1, Connect4Player p2){
 		this.player1 = p1;
 		this.player2 = p2;
-		boardName = new BoardName();
-		rules = new Rule();
+		boardName = new Connect4Board boardName();
+		rules = new Connect4Rules();
 	}
 
 
 	public void startGame(){
 	    Scanner scanner = new Scanner(System.in);
-    	Player currentPlayer = player1;
+    	Connect4Player currentPlayer = player1;
 
 	 while (true) {
-      gameBoard.displayBoard();
-      System.out.println(currentPlayer.getName() + "'s turn (" + currentPlayer.getSymbol() + ")");
+      board.displayBoard();
+      System.out.println(currentPlayer.getNamePlayer() + "'s turn (" + currentPlayer.getSymbolPlayer() + ")");
       System.out.print("Enter a column (0-6): ");
       int column;
 
@@ -33,18 +34,18 @@ class Connect4Logic
         continue;
       }
 
-      if (!gameBoard.dropPiece(column, currentPlayer.getSymbol())) {
+      if (!board.dropPiece(column, currentPlayer.getSymbolPlayer())) {
         continue; // Retry the current player's turn
       }
 
-      if (gameRules.checkWinner(gameBoard.getBoard(), currentPlayer.getSymbol())) {
-        gameBoard.displayBoard();
-        System.out.println("Congratulations, " + currentPlayer.getName() + "! You win!");
+      if (gameRules.checkWinner(board.getBoard(), currentPlayer.getSymbolPlayer())) {
+        board.displayBoard();
+        System.out.println("Congratulations, " + currentPlayer.getNamePlayer() + "! You win!");
         break;
       }
 
-      if (gameRules.isBoardFull(gameBoard.getBoard())) {
-        gameBoard.displayBoard();
+      if (gameRules.isBoardFull(board.getBoard())) {
+        board.displayBoard();
         System.out.println("The game is a draw!");
         break;
       }
@@ -71,8 +72,8 @@ class Connect4Logic
 	    System.out.print("Choose a symbol for Player 2: ");
 	    char player2Symbol = scanner.nextLine().charAt(0);
 	
-	    Player player1 = new Player(player1Name, player1Symbol);
-	    Player player2 = new Player(player2Name, player2Symbol);
+	    Connect4Player player1 = new Player(player1Name, player1Symbol);
+	    Connect4Player player2 = new Player(player2Name, player2Symbol);
 	
 	    GameLogic game = new GameLogic(player1, player2);
 	    game.startGame();
