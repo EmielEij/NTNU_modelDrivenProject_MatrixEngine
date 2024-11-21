@@ -650,10 +650,10 @@
           </argument>
         </body>
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="(){&#xA;&#x9;&#x9;board = new char"/>
-        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="[0]">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="[rows]">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         </body>
-        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="[0]">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="[columns]">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         </body>
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";&#xA;&#x9;&#x9;initializeBoard();&#xA;&#x9;}&#xA;&#x9;public void initializeBoard() {&#xA;&#x9;    for (int i = 0; i &lt; rows; i++) {&#xA;&#x9;      for (int j = 0; j &lt; columns; j++) {&#xA;&#x9;        board"/>
@@ -1052,7 +1052,7 @@
   <ecore:EAnnotation source="positions">
     <eAnnotations source="positions.0" references="/0/generateElement">
       <details key="start" value="83"/>
-      <details key="end" value="6710"/>
+      <details key="end" value="6719"/>
       <details key="line" value="5"/>
     </eAnnotations>
     <eAnnotations source="positions.1" references="/0/generateElement/%">
@@ -2102,7 +2102,7 @@
     </eAnnotations>
     <eAnnotations source="positions.210" references="/0/generateElement/%.6">
       <details key="start" value="5409"/>
-      <details key="end" value="6698"/>
+      <details key="end" value="6707"/>
       <details key="line" value="187"/>
     </eAnnotations>
     <eAnnotations source="positions.211" references="/0/generateElement/%.6/%">
@@ -2227,107 +2227,107 @@
     </eAnnotations>
     <eAnnotations source="positions.235" references="/0/generateElement/%.6/%.12">
       <details key="start" value="5747"/>
-      <details key="end" value="5752"/>
+      <details key="end" value="5755"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.236" references="/0/generateElement/%.6/%.13">
-      <details key="start" value="5755"/>
-      <details key="end" value="5760"/>
+      <details key="start" value="5758"/>
+      <details key="end" value="5769"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.237" references="/0/generateElement/%.6/%.14">
-      <details key="start" value="5762"/>
-      <details key="end" value="5916"/>
+      <details key="start" value="5771"/>
+      <details key="end" value="5925"/>
       <details key="line" value="197"/>
     </eAnnotations>
     <eAnnotations source="positions.238" references="/0/generateElement/%.6/%.15">
-      <details key="start" value="5917"/>
-      <details key="end" value="5922"/>
+      <details key="start" value="5926"/>
+      <details key="end" value="5931"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.239" references="/0/generateElement/%.6/%.16">
-      <details key="start" value="5925"/>
-      <details key="end" value="5930"/>
+      <details key="start" value="5934"/>
+      <details key="end" value="5939"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.240" references="/0/generateElement/%.6/%.17">
-      <details key="start" value="5932"/>
-      <details key="end" value="6011"/>
+      <details key="start" value="5941"/>
+      <details key="end" value="6020"/>
       <details key="line" value="203"/>
     </eAnnotations>
     <eAnnotations source="positions.241" references="/0/generateElement/%.6/%.18">
-      <details key="start" value="6012"/>
-      <details key="end" value="6016"/>
+      <details key="start" value="6021"/>
+      <details key="end" value="6025"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.242" references="/0/generateElement/%.6/%.19">
-      <details key="start" value="6018"/>
-      <details key="end" value="6171"/>
+      <details key="start" value="6027"/>
+      <details key="end" value="6180"/>
       <details key="line" value="209"/>
     </eAnnotations>
     <eAnnotations source="positions.243" references="/0/generateElement/%.6/%.20">
-      <details key="start" value="6172"/>
-      <details key="end" value="6176"/>
+      <details key="start" value="6181"/>
+      <details key="end" value="6185"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.244" references="/0/generateElement/%.6/%.21">
-      <details key="start" value="6179"/>
-      <details key="end" value="6183"/>
+      <details key="start" value="6188"/>
+      <details key="end" value="6192"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.245" references="/0/generateElement/%.6/%.22">
-      <details key="start" value="6185"/>
-      <details key="end" value="6326"/>
+      <details key="start" value="6194"/>
+      <details key="end" value="6335"/>
       <details key="line" value="216"/>
     </eAnnotations>
     <eAnnotations source="positions.246" references="/0/generateElement/%.6/%.23">
-      <details key="start" value="6327"/>
-      <details key="end" value="6346"/>
+      <details key="start" value="6336"/>
+      <details key="end" value="6355"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.247" references="/0/generateElement/%.6/%.23/%">
-      <details key="start" value="6327"/>
-      <details key="end" value="6338"/>
+      <details key="start" value="6336"/>
+      <details key="end" value="6347"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.248" references="/0/generateElement/%.6/%.23/%/logic">
-      <details key="start" value="6327"/>
-      <details key="end" value="6332"/>
+      <details key="start" value="6336"/>
+      <details key="end" value="6341"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.249" references="/0/generateElement/%.6/%.24">
-      <details key="start" value="6348"/>
-      <details key="end" value="6491"/>
+      <details key="start" value="6357"/>
+      <details key="end" value="6500"/>
       <details key="line" value="221"/>
     </eAnnotations>
     <eAnnotations source="positions.250" references="/0/generateElement/%.6/%.25">
-      <details key="start" value="6492"/>
-      <details key="end" value="6497"/>
+      <details key="start" value="6501"/>
+      <details key="end" value="6506"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.251" references="/0/generateElement/%.6/%.26">
-      <details key="start" value="6500"/>
-      <details key="end" value="6510"/>
+      <details key="start" value="6509"/>
+      <details key="end" value="6519"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.252" references="/0/generateElement/%.6/%.27">
-      <details key="start" value="6512"/>
-      <details key="end" value="6536"/>
+      <details key="start" value="6521"/>
+      <details key="end" value="6545"/>
       <details key="line" value="226"/>
     </eAnnotations>
     <eAnnotations source="positions.253" references="/0/generateElement/%.6/%.28">
-      <details key="start" value="6537"/>
-      <details key="end" value="6542"/>
+      <details key="start" value="6546"/>
+      <details key="end" value="6551"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.254" references="/0/generateElement/%.6/%.29">
-      <details key="start" value="6545"/>
-      <details key="end" value="6555"/>
+      <details key="start" value="6554"/>
+      <details key="end" value="6564"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.255" references="/0/generateElement/%.6/%.30">
-      <details key="start" value="6557"/>
-      <details key="end" value="6691"/>
+      <details key="start" value="6566"/>
+      <details key="end" value="6700"/>
       <details key="line" value="227"/>
     </eAnnotations>
     <eAnnotations source="positions.256" references="/0/generateElement/%.6/%.31">

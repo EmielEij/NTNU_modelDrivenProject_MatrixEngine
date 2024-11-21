@@ -15,6 +15,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -88,7 +89,7 @@ public class RuleItemProvider extends ItemProviderAdapter implements IEditingDom
 						getResourceLocator(), getString("_UI_Rule_columns_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_Rule_columns_feature", "_UI_Rule_type"),
 						MatrixGamesPackage.Literals.RULE__COLUMNS, true, false, false,
-						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
