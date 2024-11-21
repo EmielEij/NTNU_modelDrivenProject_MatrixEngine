@@ -7,7 +7,7 @@ class Connect4Board
 	
 	//Constructor
 	Connect4Board(){
-		board = new char[0][0];
+		board = new char[][];
 		initializeBoard();
 	}
 	public void initializeBoard() {

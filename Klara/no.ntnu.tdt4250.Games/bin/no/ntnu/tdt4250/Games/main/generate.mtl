@@ -8,13 +8,13 @@
 class [logic.board.boardName + 'Logic'/]
 {
 	// Attribute declaration	
-	private final Rule rules; 
-	private final Board ['boardName'/];
-	private final Player player1;
+	private final [logic.board.boardName + 'Rule'/] rules; 
+	private final [logic.board.boardName + 'Board'/] ['boardName'/];
+	private final [logic.board.boardName + 'Player'/] player1;
 	private final Player player2;
 
 	
-	public logic.board.boardName + 'Logic.java'(Player p1, Player p2){
+	public [logic.board.boardName + 'Logic'/](Player p1, Player p2){
 		this.player1 = p1;
 		this.player2 = p2;
 		boardName = new BoardName();
@@ -137,7 +137,7 @@ class [logic.board.boardName + 'Board'/]
 	
 	//Constructor
 	[logic.board.boardName + 'Board'/](){
-		board = new char['[]'/]['[]'/];
+		board = new char['[0]'/]['[0]'/];
 		initializeBoard();
 	}
 	public void initializeBoard() {

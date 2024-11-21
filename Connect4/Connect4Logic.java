@@ -1,13 +1,13 @@
 class Connect4Logic
 {
 	// Attribute declaration	
-	private final Connect4Rule rules; 
-	private final Connect4Board boardName;
-	private final Connect4Player player1;
+	private final Rule rules; 
+	private final Board boardName;
+	private final Player player1;
 	private final Player player2;
 
 	
-	public Connect4Logic(Player p1, Player p2){
+	public logic.board.boardName + 'Logic.java'(Player p1, Player p2){
 		this.player1 = p1;
 		this.player2 = p2;
 		boardName = new BoardName();
