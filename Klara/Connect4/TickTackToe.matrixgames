@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<matrixGames:Logic xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:matrixGames="http:/ntnu.tdt4250/matrixGames">
+  <player/>
+  <player/>
+  <board/>
+  <rule/>
+</matrixGames:Logic>
