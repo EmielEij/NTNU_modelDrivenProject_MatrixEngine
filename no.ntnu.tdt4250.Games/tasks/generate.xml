@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="generate" name="no.ntnu.tdt4250.Games">
-    <property name="ECLIPSE_HOME" value="../../../../../Applications/Eclipse.app/Contents/Eclipse"/>
+    <property name="ECLIPSE_HOME" value="../../../../Documents/eclipse"/>
     <property name="ECLIPSE_WORKSPACE" value="../.."/>
 
     <!-- The classpath with only the dependencies used by the project -->
     <path id="no.ntnu.tdt4250.Games.libraryclasspath">
         <pathelement location="${ECLIPSE_WORKSPACE}/no.ntnu.tdt4250.Games/bin"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.4.v20240802-1551/jre/lib/jrt-fs.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.osgi.annotation.versioning_1.1.2.202109301733.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.osgi.annotation.bundle_2.0.0.202202082230.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.osgi.service.component.annotations_1.5.1.202212101352.jar"/>

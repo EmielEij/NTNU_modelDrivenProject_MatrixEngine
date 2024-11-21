@@ -50,12 +50,12 @@ public interface Rule extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Columns</em>' attribute.
-	 * @see #setColumns(int)
+	 * @see #setColumns(Integer)
 	 * @see matrixGames.MatrixGamesPackage#getRule_Columns()
 	 * @model required="true"
 	 * @generated
 	 */
-	int getColumns();
+	Integer getColumns();
 
 	/**
 	 * Sets the value of the '{@link matrixGames.Rule#getColumns <em>Columns</em>}' attribute.
@@ -65,7 +65,7 @@ public interface Rule extends EObject {
 	 * @see #getColumns()
 	 * @generated
 	 */
-	void setColumns(int value);
+	void setColumns(Integer value);
 
 	/**
 	 * Returns the value of the '<em><b>Logic</b></em>' containment reference.

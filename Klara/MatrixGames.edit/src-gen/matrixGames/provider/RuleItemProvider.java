@@ -88,7 +88,7 @@ public class RuleItemProvider extends ItemProviderAdapter implements IEditingDom
 						getResourceLocator(), getString("_UI_Rule_columns_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_Rule_columns_feature", "_UI_Rule_type"),
 						MatrixGamesPackage.Literals.RULE__COLUMNS, true, false, false,
-						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**

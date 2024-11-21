@@ -63,7 +63,7 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int COLUMNS_EDEFAULT = 0;
+	protected static final Integer COLUMNS_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getColumns() <em>Columns</em>}' attribute.
@@ -73,7 +73,7 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 	 * @generated
 	 * @ordered
 	 */
-	protected int columns = COLUMNS_EDEFAULT;
+	protected Integer columns = COLUMNS_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getLogic() <em>Logic</em>}' containment reference.
@@ -133,7 +133,7 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 	 * @generated
 	 */
 	@Override
-	public int getColumns() {
+	public Integer getColumns() {
 		return columns;
 	}
 
@@ -143,8 +143,8 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 	 * @generated
 	 */
 	@Override
-	public void setColumns(int newColumns) {
-		int oldColumns = columns;
+	public void setColumns(Integer newColumns) {
+		Integer oldColumns = columns;
 		columns = newColumns;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MatrixGamesPackage.RULE__COLUMNS, oldColumns,
@@ -311,7 +311,7 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 		case MatrixGamesPackage.RULE__ROWS:
 			return ROWS_EDEFAULT == null ? rows != null : !ROWS_EDEFAULT.equals(rows);
 		case MatrixGamesPackage.RULE__COLUMNS:
-			return columns != COLUMNS_EDEFAULT;
+			return COLUMNS_EDEFAULT == null ? columns != null : !COLUMNS_EDEFAULT.equals(columns);
 		case MatrixGamesPackage.RULE__LOGIC:
 			return logic != null;
 		}
