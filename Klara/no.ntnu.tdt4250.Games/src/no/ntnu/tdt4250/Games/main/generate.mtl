@@ -24,7 +24,7 @@ class [logic.board.boardName + 'Logic'/]
 
 	public void startGame(){
 	    Scanner scanner = new Scanner(System.in);
-    	[logic.player/] currentPlayer = player1;
+    	Player currentPlayer = player1;
 
 	 while ([true/]) {
       gameBoard.displayBoard();
@@ -110,16 +110,16 @@ class [logic.board.boardName + 'Player'/]
 	private char symbol;
 
 	//Constructor
-	[logic.board.boardName + 'Player'/](){
-	playerName = '[logic.player.name/]';
-	symbol = '[logic.player.symbol/]';
+	[logic.board.boardName + 'Player'/](String n, String s){
+	this.playerName = n;
+	this.symbol = s;
 
 	}
 	public String getNamePlayer(){
-		return [logic.player/]
+		return playerName;
 	}
 	public String getNamePlayer(){
-		return [logic.player.name/]
+		return symbol;
 	}
 	}
 	
@@ -136,8 +136,8 @@ class [logic.board.boardName + 'Board'/]
 	private int columns = [logic.board.columns/];
 	
 	//Constructor
-	[logic.board.boardName + 'Board'/]{
-		board = new char[logic.board.rows/][logic.board.columns/];
+	[logic.board.boardName + 'Board'/](){
+		board = new char['[]'/]['[]'/];
 		initializeBoard();
 	}
 	public void initializeBoard() {
@@ -149,15 +149,15 @@ class [logic.board.boardName + 'Board'/]
 	  }
 	
 	 public void displayBoard() {
-        [for (i : Integer | logic.board.rows - 1)]
-            [for (j : Integer | logic.board.columns - 1)]
-                System.out.print(board['[i]'/]['[j]'/] + " ");
-            [/for]
-            System.out.println();
-        [/for]
+       	for (char['[]'/] row : board) {
+      		for (char cell : row) {
+       			 System.out.print(cell + " ");
+      		}
+      		System.out.println();
+    }
     }
 	public char['[]'/]['[]'/] getBoard(){
-		return [logic.board/];
+		return board;
 	}
     // dopPiece missing
 	public boolean dropPiece(int column, char symbol) {

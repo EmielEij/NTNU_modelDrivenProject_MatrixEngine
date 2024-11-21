@@ -6,8 +6,8 @@ class Connect4Board
 	private int columns = 7;
 	
 	//Constructor
-	Connect4Board{
-		board = new char67;
+	Connect4Board(){
+		board = new char[][];
 		initializeBoard();
 	}
 	public void initializeBoard() {
@@ -19,11 +19,15 @@ class Connect4Board
 	  }
 	
 	 public void displayBoard() {
-                System.out.print(board[i][j] + " ");
-            System.out.println();
+       	for (char[] row : board) {
+      		for (char cell : row) {
+       			 System.out.print(cell + " ");
+      		}
+      		System.out.println();
+    }
     }
 	public char[][] getBoard(){
-		return matrixGames.impl.BoardImpl@426b6a74 (board: 0, rows: 6, columns: 7, boardName: Connect4);
+		return board;
 	}
     // dopPiece missing
 	public boolean dropPiece(int column, char symbol) {
