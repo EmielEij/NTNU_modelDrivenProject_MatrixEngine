@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<matrixGames:Logic xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:matrixGames="http:/ntnu.tdt4250/matrixGames">
-  <rule rows="6" columns="7" GameRules="ConnectFour"/>
-  <player name="Anna" GamePlayer="Anna"/>
-  <player name="Nina" symbol="1" GamePlayer="Nina"/>
-  <board rows="6" columns="7" boardName="ConnectFour"/>
-</matrixGames:Logic>
