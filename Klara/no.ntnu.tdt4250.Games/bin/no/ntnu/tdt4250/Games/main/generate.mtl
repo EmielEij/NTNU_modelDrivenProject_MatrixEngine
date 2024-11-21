@@ -8,17 +8,21 @@
 class [logic.board.boardName + 'Logic'/]
 {
 	// Attribute declaration	
-	private final [logic.rule/] rules; 
-	private final [logic.board/] ['boardName'/]
-	private final [logic.player/] ['player1'/];
-	private finale[logic.player/] ['player2'/];
-	[let counter : Integer = 0]	
-	[for (p : Player | logic.player)]
-		private String [p.name/];
-		private char [p.name/];
-		[counter = 2 /]
-	[/for]
-	public voif startGame(){
+	private final Rule rules; 
+	private final Board ['boardName'/];
+	private final Player player1;
+	private final Player player2;
+
+	
+	public logic.board.boardName + 'Logic.java'(Player p1, Player p2){
+		this.player1 = p1;
+		this.player2 = p2;
+		boardName = new BoardName();
+		rules = new Rule();
+	}
+
+
+	public void startGame(){
 	    Scanner scanner = new Scanner(System.in);
     	[logic.player/] currentPlayer = player1;
 
@@ -58,8 +62,8 @@ class [logic.board.boardName + 'Logic'/]
 
     scanner.close();
   }
-[/let]
-	public static void main(String[''/] args) {
+
+	public static void main(String['[]'/] args) {
 	    System.out.println("Welcome to Connect Four!");
 	    Scanner scanner = new Scanner(System.in);
 	
@@ -91,7 +95,7 @@ class [logic.board.boardName + 'Rules'/]
 	private int rows = [logic.board.rows/];
 	private int columns = [logic.board.columns/];
 	
-    public boolean checkWinner(char[''/][''/] board, char symbol) {
+    public boolean checkWinner(char['[]'/]['[]'/] board, char symbol) {
         
     }
 }
@@ -102,12 +106,12 @@ class [logic.board.boardName + 'Rules'/]
 class [logic.board.boardName + 'Player'/]
 {
 
-	private String [logic.player.name/];
+	private String playerName;
 	private char symbol;
 
 	//Constructor
 	[logic.board.boardName + 'Player'/](){
-	[logic.player.name/] = '[logic.player.name/]';
+	playerName = '[logic.player.name/]';
 	symbol = '[logic.player.symbol/]';
 
 	}
@@ -127,7 +131,7 @@ class [logic.board.boardName + 'Player'/]
 class [logic.board.boardName + 'Board'/]
 {
 	// Attribute declaration	
-	private final char [''/][''/] board; 
+	private final char ['[]'/]['[]'/] board; 
 	private int rows = [logic.board.rows/];
 	private int columns = [logic.board.columns/];
 	
@@ -139,7 +143,7 @@ class [logic.board.boardName + 'Board'/]
 	public void initializeBoard() {
 	    for (int i = 0; i < rows; i++) {
 	      for (int j = 0; j < columns; j++) {
-	        board['i'/]['j'/] = '.';
+	        board['[i]'/]['[j]'/] = '.';
 	      }
 	    }
 	  }
@@ -147,12 +151,12 @@ class [logic.board.boardName + 'Board'/]
 	 public void displayBoard() {
         [for (i : Integer | logic.board.rows - 1)]
             [for (j : Integer | logic.board.columns - 1)]
-                System.out.print(board[i/][j/] + " ");
+                System.out.print(board['[i]'/]['[j]'/] + " ");
             [/for]
             System.out.println();
         [/for]
     }
-	public char[''/][''/] getBoard(){
+	public char['[]'/]['[]'/] getBoard(){
 		return [logic.board/];
 	}
     // dopPiece missing
@@ -162,8 +166,8 @@ class [logic.board.boardName + 'Board'/]
       return false;
     }
     for (int i = rows - 1; i >= 0; i--) {
-      if (board['i'/]['column'/] == '.') {
-        board['i'/]['column'/] = symbol;
+      if (board['[i]'/]['[column]'/] == '.') {
+        board['[i]'/]['[column]'/] = symbol;
         return true;
       }
     }

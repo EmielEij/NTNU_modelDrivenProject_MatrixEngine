@@ -4,7 +4,7 @@ class Connect4Rules
 	private int rows = 6;
 	private int columns = 7;
 	
-    public boolean checkWinner(char board, char symbol) {
+    public boolean checkWinner(char[][] board, char symbol) {
         
     }
 }
