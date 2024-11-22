@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<matrixGames:Logic xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:matrixGames="http:/ntnu.tdt4250/matrixGames">
+  <player name="Oliver" symbol="43" GamePlayer="Oliver"/>
+  <board rows="4" columns="4" boardName="Sudoku"/>
+  <rule rows="4" columns="4"/>
+</matrixGames:Logic>
