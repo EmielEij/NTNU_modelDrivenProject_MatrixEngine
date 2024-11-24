@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:matrixGames="http:/ntnu.tdt4250/matrixGames" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http:/ntnu.tdt4250/matrixGames platform:/resource/Klara/MatrixGames/model/matrixGames.ecore http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis uid="_oJJWAKpdEe--Rb3aOnZRbw" selectedViews="_MuyLQKpgEe-M3IcevaCMkQ" version="15.4.1.202403191723">
+    <semanticResources>platform:/resource/Klara/MatrixGames/model/Connect4.xmi</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" uid="_MuyLQKpgEe-M3IcevaCMkQ">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/tdt4250.matrixgame.diagram/description/diagram.odesign#//@ownedViewpoints[name='MatrixGameDiagramViewpoint']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_RQuFYKpgEe-M3IcevaCMkQ" name="new MatrixGameDiagram" repPath="#_RQOWIKpgEe-M3IcevaCMkQ" changeId="1732452108470">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/tdt4250.matrixgame.diagram/description/diagram.odesign#//@ownedViewpoints[name='MatrixGameDiagramViewpoint']/@ownedRepresentations[name='MatrixGameDiagram']"/>
+        <target xmi:type="matrixGames:Logic" href="platform:/resource/Klara/MatrixGames/model/Connect4.xmi#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+    <ownedViews xmi:type="viewpoint:DView" uid="_Ou3MoKpgEe-M3IcevaCMkQ">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/tdt4250.MatrixGame.diagram/description/diagram.odesign#//@ownedViewpoints[name='MatrixGameViewpoint']"/>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram uid="_RQOWIKpgEe-M3IcevaCMkQ">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_RRbQAKpgEe-M3IcevaCMkQ" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_RRbQAapgEe-M3IcevaCMkQ" type="Sirius" element="_RQOWIKpgEe-M3IcevaCMkQ" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_ri4xoKpgEe-M3IcevaCMkQ" visible="false" type="2001" element="_rg5NkKpgEe-M3IcevaCMkQ">
+          <children xmi:type="notation:Node" xmi:id="_ri8cAKpgEe-M3IcevaCMkQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_ri8cAapgEe-M3IcevaCMkQ" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_w8CAkKpgEe-M3IcevaCMkQ" type="3004" element="_w5hfIKpgEe-M3IcevaCMkQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_w8CAkapgEe-M3IcevaCMkQ" fontName="Ubuntu"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_w8CAkqpgEe-M3IcevaCMkQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_ri4xoapgEe-M3IcevaCMkQ" fontName="Ubuntu"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ri4xoqpgEe-M3IcevaCMkQ" x="204" y="180" width="20" height="20"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_ri-4QKpgEe-M3IcevaCMkQ" visible="false" type="2001" element="_rg-tIKpgEe-M3IcevaCMkQ">
+          <children xmi:type="notation:Node" xmi:id="_ri_fUKpgEe-M3IcevaCMkQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_ri_fUapgEe-M3IcevaCMkQ" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_w8CnoKpgEe-M3IcevaCMkQ" type="3004" element="_w5j7YKpgEe-M3IcevaCMkQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_w8CnoapgEe-M3IcevaCMkQ" fontName="Ubuntu"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_w8CnoqpgEe-M3IcevaCMkQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_ri-4QapgEe-M3IcevaCMkQ" fontName="Ubuntu"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ri-4QqpgEe-M3IcevaCMkQ" x="244" y="190" width="20" height="20"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_0cNiwKpgEe-M3IcevaCMkQ" type="2001" element="_0cDKsKpgEe-M3IcevaCMkQ">
+          <children xmi:type="notation:Node" xmi:id="_0cOw4KpgEe-M3IcevaCMkQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_0cOw4apgEe-M3IcevaCMkQ" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_0cP_AKpgEe-M3IcevaCMkQ" type="3004" element="_0cDxwKpgEe-M3IcevaCMkQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_0cP_AapgEe-M3IcevaCMkQ" fontName="Ubuntu"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0cP_AqpgEe-M3IcevaCMkQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_0cNiwapgEe-M3IcevaCMkQ" fontName="Ubuntu" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0cNiwqpgEe-M3IcevaCMkQ" x="120" y="72" width="102" height="85"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_0cOw4qpgEe-M3IcevaCMkQ" type="2001" element="_0cEY0KpgEe-M3IcevaCMkQ">
+          <children xmi:type="notation:Node" xmi:id="_0cPX8KpgEe-M3IcevaCMkQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_0cPX8apgEe-M3IcevaCMkQ" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_0cQmEKpgEe-M3IcevaCMkQ" type="3004" element="_0cEY0apgEe-M3IcevaCMkQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_0cQmEapgEe-M3IcevaCMkQ" fontName="Ubuntu"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0cQmEqpgEe-M3IcevaCMkQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_0cOw46pgEe-M3IcevaCMkQ" fontName="Ubuntu" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0cOw5KpgEe-M3IcevaCMkQ" x="252" y="74" width="102" height="82"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_HNDyoKphEe-M3IcevaCMkQ" type="2001" element="_HMqKAKphEe-M3IcevaCMkQ">
+          <children xmi:type="notation:Node" xmi:id="_HNEZsKphEe-M3IcevaCMkQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_HNEZsaphEe-M3IcevaCMkQ" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HNEZsqphEe-M3IcevaCMkQ" type="3004" element="_HMvpkKphEe-M3IcevaCMkQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_HNEZs6phEe-M3IcevaCMkQ" fontName="Ubuntu"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HNEZtKphEe-M3IcevaCMkQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_HNDyoaphEe-M3IcevaCMkQ" fontName="Ubuntu" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HNDyoqphEe-M3IcevaCMkQ" x="168" y="216" width="138" height="121"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_T7B6EKphEe-M3IcevaCMkQ" type="2001" element="_T6mcQaphEe-M3IcevaCMkQ">
+          <children xmi:type="notation:Node" xmi:id="_T7ChIKphEe-M3IcevaCMkQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_T7ChIaphEe-M3IcevaCMkQ" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_WYQxgKphEe-M3IcevaCMkQ" type="3004" element="_WWfP4KphEe-M3IcevaCMkQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_WYQxgaphEe-M3IcevaCMkQ" fontName="Ubuntu"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WYQxgqphEe-M3IcevaCMkQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_T7B6EaphEe-M3IcevaCMkQ" fontName="Ubuntu"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_T7B6EqphEe-M3IcevaCMkQ" x="24" y="204" width="80" height="61"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_RRbQAqpgEe-M3IcevaCMkQ"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_RRjL0KpgEe-M3IcevaCMkQ" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_RRjy4KpgEe-M3IcevaCMkQ"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_rg5NkKpgEe-M3IcevaCMkQ" name="Anna" visible="false" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="matrixGames:Player" href="platform:/resource/Klara/MatrixGames/model/Connect4.xmi#//@player.0"/>
+      <semanticElements xmi:type="matrixGames:Player" href="platform:/resource/Klara/MatrixGames/model/Connect4.xmi#//@player.0"/>
+      <ownedStyle xmi:type="diagram:BundledImage" uid="_w5hfIKpgEe-M3IcevaCMkQ" labelSize="12" labelPosition="node">
+        <description xmi:type="style:BundledImageDescription" href="platform:/resource/tdt4250.matrixgame.diagram/description/diagram.odesign#//@ownedViewpoints[name='MatrixGameDiagramViewpoint']/@ownedRepresentations[name='MatrixGameDiagram']/@defaultLayer/@nodeMappings[name='Player1']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/tdt4250.matrixgame.diagram/description/diagram.odesign#//@ownedViewpoints[name='MatrixGameDiagramViewpoint']/@ownedRepresentations[name='MatrixGameDiagram']/@defaultLayer/@nodeMappings[name='Player1']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_rg-tIKpgEe-M3IcevaCMkQ" name="Nina" visible="false" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="matrixGames:Player" href="platform:/resource/Klara/MatrixGames/model/Connect4.xmi#//@player.1"/>
+      <semanticElements xmi:type="matrixGames:Player" href="platform:/resource/Klara/MatrixGames/model/Connect4.xmi#//@player.1"/>
+      <ownedStyle xmi:type="diagram:BundledImage" uid="_w5j7YKpgEe-M3IcevaCMkQ" labelSize="12" labelPosition="node">
+        <description xmi:type="style:BundledImageDescription" href="platform:/resource/tdt4250.matrixgame.diagram/description/diagram.odesign#//@ownedViewpoints[name='MatrixGameDiagramViewpoint']/@ownedRepresentations[name='MatrixGameDiagram']/@defaultLayer/@nodeMappings[name='Player1']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/tdt4250.matrixgame.diagram/description/diagram.odesign#//@ownedViewpoints[name='MatrixGameDiagramViewpoint']/@ownedRepresentations[name='MatrixGameDiagram']/@defaultLayer/@nodeMappings[name='Player1']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_0cDKsKpgEe-M3IcevaCMkQ" name="Anna" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="matrixGames:Player" href="platform:/resource/Klara/MatrixGames/model/Connect4.xmi#//@player.0"/>
+      <semanticElements xmi:type="matrixGames:Player" href="platform:/resource/Klara/MatrixGames/model/Connect4.xmi#//@player.0"/>
+      <ownedStyle xmi:type="diagram:BundledImage" uid="_0cDxwKpgEe-M3IcevaCMkQ" labelSize="12" labelPosition="node" color="114,159,207">
+        <description xmi:type="style:BundledImageDescription" href="platform:/resource/tdt4250.matrixgame.diagram/description/diagram.odesign#//@ownedViewpoints[name='MatrixGameDiagramViewpoint']/@ownedRepresentations[name='MatrixGameDiagram']/@defaultLayer/@nodeMappings[name='Player']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/tdt4250.matrixgame.diagram/description/diagram.odesign#//@ownedViewpoints[name='MatrixGameDiagramViewpoint']/@ownedRepresentations[name='MatrixGameDiagram']/@defaultLayer/@nodeMappings[name='Player']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_0cEY0KpgEe-M3IcevaCMkQ" name="Nina" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="matrixGames:Player" href="platform:/resource/Klara/MatrixGames/model/Connect4.xmi#//@player.1"/>
+      <semanticElements xmi:type="matrixGames:Player" href="platform:/resource/Klara/MatrixGames/model/Connect4.xmi#//@player.1"/>
+      <ownedStyle xmi:type="diagram:BundledImage" uid="_0cEY0apgEe-M3IcevaCMkQ" labelSize="12" labelPosition="node" color="114,159,207">
+        <description xmi:type="style:BundledImageDescription" href="platform:/resource/tdt4250.matrixgame.diagram/description/diagram.odesign#//@ownedViewpoints[name='MatrixGameDiagramViewpoint']/@ownedRepresentations[name='MatrixGameDiagram']/@defaultLayer/@nodeMappings[name='Player']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/tdt4250.matrixgame.diagram/description/diagram.odesign#//@ownedViewpoints[name='MatrixGameDiagramViewpoint']/@ownedRepresentations[name='MatrixGameDiagram']/@defaultLayer/@nodeMappings[name='Player']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_HMqKAKphEe-M3IcevaCMkQ" name="Connect4" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="matrixGames:Board" href="platform:/resource/Klara/MatrixGames/model/Connect4.xmi#//@board"/>
+      <semanticElements xmi:type="matrixGames:Board" href="platform:/resource/Klara/MatrixGames/model/Connect4.xmi#//@board"/>
+      <ownedStyle xmi:type="diagram:BundledImage" uid="_HMvpkKphEe-M3IcevaCMkQ" labelSize="12" labelPosition="node" color="138,226,52">
+        <description xmi:type="style:BundledImageDescription" href="platform:/resource/tdt4250.matrixgame.diagram/description/diagram.odesign#//@ownedViewpoints[name='MatrixGameDiagramViewpoint']/@ownedRepresentations[name='MatrixGameDiagram']/@defaultLayer/@nodeMappings[name='Board']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/tdt4250.matrixgame.diagram/description/diagram.odesign#//@ownedViewpoints[name='MatrixGameDiagramViewpoint']/@ownedRepresentations[name='MatrixGameDiagram']/@defaultLayer/@nodeMappings[name='Board']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_T6mcQaphEe-M3IcevaCMkQ" name="Invalid feature as name" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="matrixGames:Rule" href="platform:/resource/Klara/MatrixGames/model/Connect4.xmi#//@rule"/>
+      <semanticElements xmi:type="matrixGames:Rule" href="platform:/resource/Klara/MatrixGames/model/Connect4.xmi#//@rule"/>
+      <ownedStyle xmi:type="diagram:BundledImage" uid="_WWfP4KphEe-M3IcevaCMkQ" labelSize="12" labelPosition="node" color="252,175,62">
+        <description xmi:type="style:BundledImageDescription" href="platform:/resource/tdt4250.matrixgame.diagram/description/diagram.odesign#//@ownedViewpoints[name='MatrixGameDiagramViewpoint']/@ownedRepresentations[name='MatrixGameDiagram']/@defaultLayer/@nodeMappings[name='Rules']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/tdt4250.matrixgame.diagram/description/diagram.odesign#//@ownedViewpoints[name='MatrixGameDiagramViewpoint']/@ownedRepresentations[name='MatrixGameDiagram']/@defaultLayer/@nodeMappings[name='Rules']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/tdt4250.matrixgame.diagram/description/diagram.odesign#//@ownedViewpoints[name='MatrixGameDiagramViewpoint']/@ownedRepresentations[name='MatrixGameDiagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_RQe00KpgEe-M3IcevaCMkQ"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/tdt4250.matrixgame.diagram/description/diagram.odesign#//@ownedViewpoints[name='MatrixGameDiagramViewpoint']/@ownedRepresentations[name='MatrixGameDiagram']/@defaultLayer"/>
+    <target xmi:type="matrixGames:Logic" href="platform:/resource/Klara/MatrixGames/model/Connect4.xmi#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>
