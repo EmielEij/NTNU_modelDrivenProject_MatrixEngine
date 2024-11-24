@@ -84,8 +84,8 @@ class SudokuLogic
 	    // Get player details
 	    System.out.print("Enter Player 1 name: ");
 	    String player1Name = scanner.nextLine();
-	    System.out.print("Choose a symbol for Player 1: ");
-	    char player1Symbol = scanner.nextLine().charAt(0);
+	    //System.out.print("Choose a symbol for Player 1: ");
+	    char player1Symbol = '0';
 	
 	    SudokuPlayer player1 = new SudokuPlayer(player1Name, player1Symbol);
 	
