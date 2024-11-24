@@ -10,8 +10,7 @@
       <!-- @generated matrixGames -->
       <package
             uri="http:/ntnu.tdt4250/matrixGames"
-            class="matrixGames.MatrixGamesPackage"
-            genModel="model/matrixGames.genmodel"/>
+            class="matrixGames.MatrixGamesPackage"/>
    </extension>
 
 </plugin>
