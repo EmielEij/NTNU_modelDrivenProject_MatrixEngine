@@ -1,41 +1,41 @@
 import java.util.Scanner;
-class TickTackToeLogic
+class TicTacToeLogic
 {
 	// Attribute declaration	
-	private final TickTackToeRules rules; 
-	private final TickTackToeBoard board;
-	private final TickTackToePlayer player1;
-	private final TickTackToePlayer player2;
+	private final TicTacToeRules rules; 
+	private final TicTacToeBoard board;
+	private final TicTacToePlayer player1;
+	private final TicTacToePlayer player2;
 
 	
-	public TickTackToeLogic(TickTackToePlayer p1, TickTackToePlayer p2){
+	public TicTacToeLogic(TicTacToePlayer p1, TicTacToePlayer p2){
 		this.player1 = p1;
 		this.player2 = p2;
-		board = new TickTackToeBoard();
-		rules = new TickTackToeRules();
+		board = new TicTacToeBoard();
+		rules = new TicTacToeRules();
 	}
 
 
 	public void startGame(){
 	    Scanner scanner = new Scanner(System.in);
-    	TickTackToePlayer currentPlayer = player1;
+    	TicTacToePlayer currentPlayer = player1;
 
 	 while (true) {
       board.displayBoard();
       System.out.println(currentPlayer.getNamePlayer() + "'s turn (" + currentPlayer.getNameSymbol() + ")");
-      System.out.print("Enter a location X(1-3)Y(1-3): X:Y");
+      System.out.print("Enter a location X(1-3)Y(1-3): X,Y");
       int X;
       int Y;
 
 	  while (true) {
-		System.out.print("Enter a location X(1-3)Y(1-3) in the format X:Y: ");
+		System.out.print("Enter a location X(1-3)Y(1-3) in the format X,Y: ");
 		String input = scanner.nextLine();
 
 		try {
 			// Split input by ":" to extract X and Y
-			String[] parts = input.split(":");
+			String[] parts = input.split(",");
 			if (parts.length != 2) {
-				throw new IllegalArgumentException("Input must be in the format X:Y");
+				throw new IllegalArgumentException("Input must be in the format X,Y");
 			}
 
 			// Parse X and Y values
@@ -51,7 +51,7 @@ class TickTackToeLogic
 			System.out.println("You entered a valid location: X = " + X + ", Y = " + Y);
 			break; // Exit the loop as input is valid
 		} catch (Exception e) {
-			System.out.println("Invalid input. Please enter a location like this X(1-3)Y(1-3): X:Y");
+			System.out.println("Invalid input. Please enter a location like this X(1-3)Y(1-3): X,Y");
 		}
 	}
       if (!board.placeToken(X, Y, currentPlayer.getNameSymbol())) {
@@ -79,12 +79,12 @@ class TickTackToeLogic
   }
 
 	public static void main(String[] args) {
-	    System.out.println("Welcome to Connect Four!");
+	    System.out.println("Welcome to TicTacToe!");
 	
-	    TickTackToePlayer player1 = new TickTackToePlayer("X", 'X');
-	    TickTackToePlayer player2 = new TickTackToePlayer("O", 'O');
+	    TicTacToePlayer player1 = new TicTacToePlayer("X", 'X');
+	    TicTacToePlayer player2 = new TicTacToePlayer("O", 'O');
 	
-	    TickTackToeLogic game = new TickTackToeLogic(player1, player2);
+	    TicTacToeLogic game = new TicTacToeLogic(player1, player2);
 	    game.startGame();
 	  }
 	

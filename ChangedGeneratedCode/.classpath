@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="src" path="TickTackToe"/>
-	<classpathentry kind="output" path="TickTackToe"/>
+	<classpathentry kind="src" path="TicTacToe"/>
+	<classpathentry kind="output" path="TicTacToe"/>
 </classpath>

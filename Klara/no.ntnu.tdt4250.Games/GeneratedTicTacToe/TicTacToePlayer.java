@@ -1,11 +1,11 @@
-class TickTackToePlayer
+class TicTacToePlayer
 {
 
 	private String playerName;
 	private char symbol;
 
 	//Constructor
-	TickTackToePlayer(String n, char s){
+	TicTacToePlayer(String n, char s){
 	this.playerName = n;
 	this.symbol = s;
 

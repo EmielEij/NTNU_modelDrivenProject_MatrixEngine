@@ -1,4 +1,4 @@
-class TickTackToeBoard
+class TicTacToeBoard
 {
 	// Attribute declaration	
 	private final char [][] board; 
@@ -6,7 +6,7 @@ class TickTackToeBoard
 	private int columns = 3;
 	
 	//Constructor
-	TickTackToeBoard(){
+	TicTacToeBoard(){
 		board = new char[rows][columns];
 		initializeBoard();
 	}

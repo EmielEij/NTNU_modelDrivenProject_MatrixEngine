@@ -1,4 +1,4 @@
-class TickTackToeRules
+class TicTacToeRules
 {
 	// Attribute declaration	
 	private int rows = 3;

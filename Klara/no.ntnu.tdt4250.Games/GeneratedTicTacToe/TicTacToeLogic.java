@@ -1,24 +1,24 @@
 import java.util.Scanner;
-class TickTackToeLogic
+class TicTacToeLogic
 {
 	// Attribute declaration	
-	private final TickTackToeRules rules; 
-	private final TickTackToeBoard board;
-	private final TickTackToePlayer player1;
-	private final TickTackToePlayer player2;
+	private final TicTacToeRules rules; 
+	private final TicTacToeBoard board;
+	private final TicTacToePlayer player1;
+	private final TicTacToePlayer player2;
 
 	
-	public TickTackToeLogic(TickTackToePlayer p1, TickTackToePlayer p2){
+	public TicTacToeLogic(TicTacToePlayer p1, TicTacToePlayer p2){
 		this.player1 = p1;
 		this.player2 = p2;
-		board = new TickTackToeBoard();
-		rules = new TickTackToeRules();
+		board = new TicTacToeBoard();
+		rules = new TicTacToeRules();
 	}
 
 
 	public void startGame(){
 	    Scanner scanner = new Scanner(System.in);
-    	TickTackToePlayer currentPlayer = player1;
+    	TicTacToePlayer currentPlayer = player1;
 
 	 while (true) {
       board.displayBoard();
@@ -72,10 +72,10 @@ class TickTackToeLogic
 	    System.out.print("Choose a symbol for Player 2: ");
 	    char player2Symbol = scanner.nextLine().charAt(0);
 	
-	    TickTackToePlayer player1 = new TickTackToePlayer(player1Name, player1Symbol);
-	    TickTackToePlayer player2 = new TickTackToePlayer(player2Name, player2Symbol);
+	    TicTacToePlayer player1 = new TicTacToePlayer(player1Name, player1Symbol);
+	    TicTacToePlayer player2 = new TicTacToePlayer(player2Name, player2Symbol);
 	
-	    TickTackToeLogic game = new TickTackToeLogic(player1, player2);
+	    TicTacToeLogic game = new TicTacToeLogic(player1, player2);
 	    game.startGame();
 	  }
 	

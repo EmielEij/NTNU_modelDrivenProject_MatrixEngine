@@ -2,6 +2,6 @@
 <matrixGames:Logic xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:matrixGames="http:/ntnu.tdt4250/matrixGames">
   <player name="X" symbol="88" GamePlayer="Player X"/>
   <player name="O" symbol="79" GamePlayer="Player O"/>
-  <board rows="3" columns="3" boardName="TickTackToe"/>
+  <board rows="3" columns="3" boardName="TicTacToe"/>
   <rule rows="3" columns="3"/>
 </matrixGames:Logic>
