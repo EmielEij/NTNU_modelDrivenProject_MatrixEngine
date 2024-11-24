@@ -1,21 +1,19 @@
-class Connect4Player
-{
+class Connect4Player {
 
-	private String playerName;
-	private char symbol;
+  private String playerName;
+  private char symbol;
 
-	//Constructor
-	Connect4Player(String n, char s){
-	this.playerName = n;
-	this.symbol = s;
+  // Constructor
+  Connect4Player(String n, char s) {
+    this.playerName = n;
+    this.symbol = s;
+  }
 
-	}
-	public String getNamePlayer(){
-		return playerName;
-	}
-	public char getNameSymbol(){
-		return symbol;
-	
-	}
-	
+  public String getNamePlayer() {
+    return playerName;
+  }
+
+  public char getNameSymbol() {
+    return symbol;
+  }
 }
