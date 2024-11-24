@@ -27,6 +27,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixGames.ecore#//Board/rows"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixGames.ecore#//Board/columns"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute matrixGames.ecore#//Board/boardName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference matrixGames.ecore#//Board/depends_on"/>
       <genOperations ecoreOperation="matrixGames.ecore#//Board/displayBoard"/>
       <genOperations ecoreOperation="matrixGames.ecore#//Board/dropPiece"/>
       <genOperations ecoreOperation="matrixGames.ecore#//Board/getGameBoard"/>
