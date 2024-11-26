@@ -241,13 +241,22 @@ public interface MatrixGamesPackage extends EPackage {
 	int BOARD__BOARD_NAME = 3;
 
 	/**
+	 * The feature id for the '<em><b>Depends on</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOARD__DEPENDS_ON = 4;
+
+	/**
 	 * The number of structural features of the '<em>Board</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOARD_FEATURE_COUNT = 4;
+	int BOARD_FEATURE_COUNT = 5;
 
 	/**
 	 * The operation id for the '<em>Display Board</em>' operation.
@@ -510,6 +519,17 @@ public interface MatrixGamesPackage extends EPackage {
 	EAttribute getBoard_BoardName();
 
 	/**
+	 * Returns the meta object for the reference '{@link matrixGames.Board#getDepends_on <em>Depends on</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Depends on</em>'.
+	 * @see matrixGames.Board#getDepends_on()
+	 * @see #getBoard()
+	 * @generated
+	 */
+	EReference getBoard_Depends_on();
+
+	/**
 	 * Returns the meta object for the '{@link matrixGames.Board#displayBoard() <em>Display Board</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -738,6 +758,14 @@ public interface MatrixGamesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute BOARD__BOARD_NAME = eINSTANCE.getBoard_BoardName();
+
+		/**
+		 * The meta object literal for the '<em><b>Depends on</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BOARD__DEPENDS_ON = eINSTANCE.getBoard_Depends_on();
 
 		/**
 		 * The meta object literal for the '<em><b>Display Board</b></em>' operation.

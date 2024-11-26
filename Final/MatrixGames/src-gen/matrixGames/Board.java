@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link matrixGames.Board#getRows <em>Rows</em>}</li>
  *   <li>{@link matrixGames.Board#getColumns <em>Columns</em>}</li>
  *   <li>{@link matrixGames.Board#getBoardName <em>Board Name</em>}</li>
+ *   <li>{@link matrixGames.Board#getDepends_on <em>Depends on</em>}</li>
  * </ul>
  *
  * @see matrixGames.MatrixGamesPackage#getBoard()
@@ -111,6 +112,17 @@ public interface Board extends EObject {
 	 * @generated
 	 */
 	void setBoardName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Depends on</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Depends on</em>' reference.
+	 * @see matrixGames.MatrixGamesPackage#getBoard_Depends_on()
+	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
+	 * @generated
+	 */
+	Rule getDepends_on();
 
 	/**
 	 * <!-- begin-user-doc -->

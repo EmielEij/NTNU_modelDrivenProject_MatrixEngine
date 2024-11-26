@@ -292,6 +292,16 @@ public class MatrixGamesPackageImpl extends EPackageImpl implements MatrixGamesP
 	 * @generated
 	 */
 	@Override
+	public EReference getBoard_Depends_on() {
+		return (EReference) boardEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EOperation getBoard__DisplayBoard() {
 		return boardEClass.getEOperations().get(0);
 	}
@@ -404,6 +414,7 @@ public class MatrixGamesPackageImpl extends EPackageImpl implements MatrixGamesP
 		createEAttribute(boardEClass, BOARD__ROWS);
 		createEAttribute(boardEClass, BOARD__COLUMNS);
 		createEAttribute(boardEClass, BOARD__BOARD_NAME);
+		createEReference(boardEClass, BOARD__DEPENDS_ON);
 		createEOperation(boardEClass, BOARD___DISPLAY_BOARD);
 		createEOperation(boardEClass, BOARD___DROP_PIECE);
 		createEOperation(boardEClass, BOARD___GET_GAME_BOARD);
@@ -481,6 +492,9 @@ public class MatrixGamesPackageImpl extends EPackageImpl implements MatrixGamesP
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBoard_BoardName(), ecorePackage.getEString(), "boardName", null, 1, 1, Board.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBoard_Depends_on(), this.getRule(), null, "depends_on", null, 1, 1, Board.class, IS_TRANSIENT,
+				IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED,
+				IS_ORDERED);
 
 		initEOperation(getBoard__DisplayBoard(), null, "displayBoard", 0, 1, IS_UNIQUE, IS_ORDERED);
 

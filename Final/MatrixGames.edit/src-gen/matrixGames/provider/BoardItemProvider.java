@@ -57,6 +57,7 @@ public class BoardItemProvider extends ItemProviderAdapter implements IEditingDo
 			addRowsPropertyDescriptor(object);
 			addColumnsPropertyDescriptor(object);
 			addBoardNamePropertyDescriptor(object);
+			addDepends_onPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -120,6 +121,21 @@ public class BoardItemProvider extends ItemProviderAdapter implements IEditingDo
 								"_UI_Board_type"),
 						MatrixGamesPackage.Literals.BOARD__BOARD_NAME, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Depends on feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDepends_onPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Board_depends_on_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Board_depends_on_feature",
+								"_UI_Board_type"),
+						MatrixGamesPackage.Literals.BOARD__DEPENDS_ON, true, false, true, null, null, null));
 	}
 
 	/**

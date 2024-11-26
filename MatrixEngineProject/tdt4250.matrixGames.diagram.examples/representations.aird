@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:matrixGames="http:/ntnu.tdt4250/matrixGames" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http:/ntnu.tdt4250/matrixGames platform:/resource/Klara/MatrixGames/model/matrixGames.ecore http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
-  <viewpoint:DAnalysis uid="_oJJWAKpdEe--Rb3aOnZRbw" selectedViews="_MuyLQKpgEe-M3IcevaCMkQ" version="15.4.1.202403191723">
+  <viewpoint:DAnalysis uid="_oJJWAKpdEe--Rb3aOnZRbw" selectedViews="_QxMGYKqEEe-mhJTHZgXwPw _Ou3MoKpgEe-M3IcevaCMkQ" version="15.4.1.202403191723">
     <semanticResources>platform:/resource/Klara/MatrixGames/model/Connect4.xmi</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_MuyLQKpgEe-M3IcevaCMkQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/tdt4250.matrixgame.diagram/description/diagram.odesign#//@ownedViewpoints[name='MatrixGameDiagramViewpoint']"/>
@@ -11,6 +11,9 @@
     </ownedViews>
     <ownedViews xmi:type="viewpoint:DView" uid="_Ou3MoKpgEe-M3IcevaCMkQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/tdt4250.MatrixGame.diagram/description/diagram.odesign#//@ownedViewpoints[name='MatrixGameViewpoint']"/>
+    </ownedViews>
+    <ownedViews xmi:type="viewpoint:DView" uid="_QxMGYKqEEe-mhJTHZgXwPw">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/Klara/tdt4250.MatrixGame.diagram/description/diagram.odesign#//@ownedViewpoints[name='MatrixGameViewpoint']"/>
     </ownedViews>
   </viewpoint:DAnalysis>
   <diagram:DSemanticDiagram uid="_RQOWIKpgEe-M3IcevaCMkQ">

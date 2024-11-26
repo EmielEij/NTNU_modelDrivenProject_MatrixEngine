@@ -7,12 +7,14 @@ import java.lang.reflect.InvocationTargetException;
 import matrixGames.Board;
 import matrixGames.MatrixGamesPackage;
 
+import matrixGames.Rule;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -28,6 +30,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link matrixGames.impl.BoardImpl#getRows <em>Rows</em>}</li>
  *   <li>{@link matrixGames.impl.BoardImpl#getColumns <em>Columns</em>}</li>
  *   <li>{@link matrixGames.impl.BoardImpl#getBoardName <em>Board Name</em>}</li>
+ *   <li>{@link matrixGames.impl.BoardImpl#getDepends_on <em>Depends on</em>}</li>
  * </ul>
  *
  * @generated
@@ -232,6 +235,30 @@ public class BoardImpl extends MinimalEObjectImpl.Container implements Board {
 	 * @generated
 	 */
 	@Override
+	public Rule getDepends_on() {
+		Rule depends_on = basicGetDepends_on();
+		return depends_on != null && depends_on.eIsProxy() ? (Rule) eResolveProxy((InternalEObject) depends_on)
+				: depends_on;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Rule basicGetDepends_on() {
+		// TODO: implement this method to return the 'Depends on' reference
+		// -> do not perform proxy resolution
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public void displayBoard() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -278,6 +305,10 @@ public class BoardImpl extends MinimalEObjectImpl.Container implements Board {
 			return getColumns();
 		case MatrixGamesPackage.BOARD__BOARD_NAME:
 			return getBoardName();
+		case MatrixGamesPackage.BOARD__DEPENDS_ON:
+			if (resolve)
+				return getDepends_on();
+			return basicGetDepends_on();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -346,6 +377,8 @@ public class BoardImpl extends MinimalEObjectImpl.Container implements Board {
 			return columns != COLUMNS_EDEFAULT;
 		case MatrixGamesPackage.BOARD__BOARD_NAME:
 			return BOARD_NAME_EDEFAULT == null ? boardName != null : !BOARD_NAME_EDEFAULT.equals(boardName);
+		case MatrixGamesPackage.BOARD__DEPENDS_ON:
+			return basicGetDepends_on() != null;
 		}
 		return super.eIsSet(featureID);
 	}

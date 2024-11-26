@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/MatrixGame.feature.core_1.0.0.202411262133.jar" id="MatrixGame.feature.core" version="1.0.0.202411262133"/>
+   <feature url="features/MatrixGame.features.Generation_1.0.0.202411262133.jar" id="MatrixGame.features.Generation" version="1.0.0.202411262133"/>
+   <feature url="features/MatrixGames.feature.diagram_1.0.0.202411262133.jar" id="MatrixGames.feature.diagram" version="1.0.0.202411262133"/>
+</site>
